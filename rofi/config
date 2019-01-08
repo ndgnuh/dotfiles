@@ -1,5 +1,9 @@
 rofi.show: run
 rofi.modi: window,ssh,run,keys
-rofi.theme: .config/rofi/Adapta-Nokto.rasi
-rofi.blur-background = true
+rofi.theme: .config/rofi/Adapta-Nokto-sidebar.rasi 
+! rofi.blur-background = true
 rofi.fullscreen:false
+rofi.sidebar-mode:false
+rofi.width:30
+rofi.location:7
+rofi.font: Choco cooky 14

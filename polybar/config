@@ -100,7 +100,8 @@ padding-right = 0
 module-margin-left = 2
 module-margin-right = 1
 
-font-0 = fixed:pixelsize=10:weight=bold;0
+;font-0 = fixed:pixelsize=10:weight=bold;0
+font-0 = "Choco cooky:fontformat=truetype:weight=bold:pixelsize=12;0"
 font-1 = unifont:fontformat=truetype:size=10:weight=bold:antialias=false;0
 font-2 = "Latin Modern Sans Demi Cond:fontformat=truetype:pixelsize=10;1"
 font-3 = "FontAwesome:style=Regular:pixelsize=12;1"
@@ -112,7 +113,7 @@ modules-left =  userpanel i3 xwindow
 modules-center = clock date 
 modules-right = cpu alsa screen battery wlan
 
-tray-position = 
+tray-position = none
 tray-padding = 2
 
 wm-restack = i3
@@ -328,7 +329,7 @@ type = internal/date
 interval = 1
 
 format = <label>
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.random}
 format-foreground = #fff
 ;format-underline = #0a6cf5
@@ -347,7 +348,7 @@ format-prefix-foreground = ${colors.random}
 ;format-underline = #0a6cf5
 
 label = %date%
-label-font = 3
+label-font = 1
 
 [module/pulseaudio]
 type = internal/pulseaudio

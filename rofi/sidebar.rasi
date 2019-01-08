@@ -42,7 +42,7 @@
     highlight:     bold #ffffff;
 }
 #window {
-    fullscreen: true;
+    fullscreen: false;
     location: west;
     anchor:   west;
     border:  0px 2px 0px 0px;
