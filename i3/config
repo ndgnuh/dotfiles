@@ -165,24 +165,23 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
 
 # Sscreenshot
 bindsym Print exec spectacle
 
 #color
-set $bg-color 	         #2f343f
 set $text-color          #f3f4f5
 set $txt_in #676E7D
 set $bg_u #E53935
 set $bg     #263238
 set $bg_in  #2f343f
-set $bbg #4bd6ac
+set $bbg #689f38
 
 # window colors
-#              					border    background    text          indicator   childborder
-client.focused  				$bg   $bg     $text-color   #11998e   			$bbg
+# border background text indicator childborder
+client.focused  				$bg   $bg $text-color   #ccff90   			$bbg
 client.unfocused        $bg   $bg        $txt_in 			$bg
 client.focused_inactive $bg	  $bg_in        $txt_in 		  $bg
 client.urgent           $bg	  $bg_u         $text-color   $bg
@@ -192,5 +191,5 @@ client.placeholder      $bg       $bg           $bg           $bg
 exec_always --no-startup-id ibus-daemon -rdx
 exec_always --no-startup-id sh -c '/home/hung/.config/i3/fehbg'
 exec_always --no-startup-id polybar example
-exec_always --no-startup-id termite -e "tty-clock -c -s"
-
+# exec_always --no-startup-id termite -e "tty-clock -c -s"
+exec_always --no-startup-id dunst
