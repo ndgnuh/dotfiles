@@ -11,38 +11,22 @@
 
 set $mod Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font pango: Latin Modern Mono 12 12
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+font pango: LM Sans Demi Cond 10 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 bindsym $mod+F4 kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
- bindsym $mod+d exec xfce4-popup-whiskermenu
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-#bindsym $mod+d exec --no-startup-id rofi -show run
+
+# bindsym $mod+d exec xfce4-popup-whiskermenu
+bindsym $mod+d exec --no-startup-id rofi -show run
 
 # change focus
 bindsym $mod+j focus left
@@ -132,7 +116,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 bindsym $mod+Shift+r reload
-bindsym $mod+Shift+e exec xfce4-session-logout
+bindsym $mod+Shift+e exec /home/hung/.config/i3/power-menu.sh
 
 # resize window (you can also use the mouse for that)
 
@@ -165,24 +149,47 @@ mode "resize" {
 #bindsym $mod+r mode "resize"
 bindsym $mod+r mode "resize"
 
+
+gaps inner 15
+gaps outer 5
+
+# Create borders
+for_window [class="^.*"] border pixel 4
+
+new_window	pixel 5
+new_float	pixel 5
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec light -U 10 # decrease screen brightness
+
+# Sscreenshot
+bindsym Print exec spectacle
+
 #color
-
-set $bg-color 	         #383838
-set $inactive-bg-color   #383838
-set $text-color          #FFFFFF
-set $inactive-text-color #999999
-set $urgent-bg-color     #E53935
-
+set $text-color          #f3f4f5
+set $txt_in #676E7D
+set $bg_u #E53935
+set $bg     #263238
+set $bg_in  #2f343f
+set $bbg #689f38
 
 # window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color          $bg-color         $text-color          #00BCD4
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #4DB6AC
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #4DB6AC
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00BCD4
+# border background text indicator childborder
+client.focused  				$bg   $bg $text-color   #ccff90   			$bbg
+client.unfocused        $bg   $bg        $txt_in 			$bg
+client.focused_inactive $bg	  $bg_in        $txt_in 		  $bg
+client.urgent           $bg	  $bg_u         $text-color   $bg
+client.placeholder      $bg       $bg           $bg           $bg         
 
-gaps inner 20
-
-exec_always feh --bg-scale '/home/hung/Pictures/wallpaper.png'
-exec_always --no-startup-id feh --bg-scale '/home/hung/Pictures/wallpaper.png'
-exec_always compton
+# ibus
+exec_always --no-startup-id ibus-daemon -rdx
+exec_always --no-startup-id sh -c '/home/hung/.config/i3/fehbg'
+exec_always --no-startup-id polybar example
+# exec_always --no-startup-id termite -e "tty-clock -c -s"
+exec_always --no-startup-id dunst
