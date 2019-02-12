@@ -64,7 +64,7 @@
 	}
 
 #inputbar {
-    children:   [ textbox-prompt-colon,prompt,entry,case-indicator ];
+    children:   [ textbox-prompt-colon,prompt,entry ];
 }
 
 #textbox-prompt-colon {
