@@ -12,10 +12,10 @@ configuration {
 }
 
 * {
-	background-color:            #080808;
-	text-color:                  #d3d7cf;
+	background-color:            #263238;
+	text-color:                  #f3f4f5;
 	selbg:                       #215d9c;
-	actbg:                       #262626;
+	actbg:                       #f3f4f5;
 	urgbg:                       #e53935;
 	winbg:			     #26c6da;
 

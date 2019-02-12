@@ -1,0 +1,76 @@
+/*
+	@name: dmenu-arch
+	@author: ndgnuh
+*/
+
+* {
+	fg: #ffffff;
+	bg: #263238;
+	
+
+	font: "Fira code 11";
+	background-color: @bg;
+	color: @fg;
+	opacity: 0.65;
+
+}
+
+#window {
+	location: north;
+	width: 100%;
+	height: 32px;
+}
+
+#mainbox {
+	orientation: horizontal;
+}
+
+
+#listview {
+	lines: 12;
+	spacing: 0px;
+	layout: horizontal;
+}
+
+#entry {
+	expand: false;
+	width: 12em;
+	padding: 5;
+}
+
+#element {
+	padding: 5 10;
+}
+
+#element.selected {
+	background-color: @fg;
+	color: @bg;
+}
+
+
+#inputbar {
+    spacing:    0;
+    text-color: @fg;
+    padding:    0px ;
+}
+
+#prompt {
+	padding: 5;
+	str: "$USER@$(hostname):";
+}
+#case-indicator {
+	padding: 5;
+	spacing: 0;
+	}
+
+#inputbar {
+    children:   [ textbox-prompt-colon,prompt,entry,case-indicator ];
+}
+
+#textbox-prompt-colon {
+    expand:     false;
+    str:        " ";
+    padding: 4;
+    font: "3270Medium Nerd Font 13";
+
+}

@@ -11,11 +11,11 @@ hibernate_command="systemctl hibernate"
 suspend_command="systemctl suspend"
 
 # you can customise the rofi command all you want ...
-rofi_command="rofi --hide-scrollbar"
+rofi_command='rofi --hide-scrollbar  '
 
 options=$'poweroff\nreboot\nlogout\nhibernate\nsuspend' 
 
 # ... because the essential options (-dmenu and -p) are added here
-eval \$"$(echo "$options" | $rofi_command -dmenu -p "")_command"
+eval \$"$(echo "$options" | $rofi_command -dmenu -p "$USER@$(hostname):")_command"
 
 

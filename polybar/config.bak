@@ -18,15 +18,37 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #162228
+background = #263238
+opacity = 0.75
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #8bc34a
 primary = #263238
 secondary = #e60053
-alert = #bd2c40
-fg = #8bc34a
+warning = #ffc107
+alert = #e91e63
+; fg = #8bc34a
+fg = #81d4fa
+
+[bar/title]
+width = 100%
+height = 32
+background = ${colors.background}
+foreground = ${colors.fg}
+
+modules-center= xwindow
+modules-left = 
+modules-right= 
+font-0 = fira code:pixelsize=13;1
+; font-0 = fira sans:style=bold;pixelsize=13;1
+; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-1 = Siji:pixelsize=13;1
+; font-1 = 3270Medium Nerd Font:style=Medium:pixelsize=13;
+;font-2 = Material Icons:size=13;
+;font-2 =  Siji:style=Regular:pixelsize=13;
+
+
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -34,18 +56,18 @@ width = 100%
 height = 32
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 0.0
-fixed-center = false
+radius = 5
+fixed-center = true
 bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+line-size = 4
+line-color = ${colors.fg}
 
-border-size = 0
-border-color = #FF0000
+border-size = 3
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 2
@@ -53,18 +75,22 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = source sans pro:style=bold:pixelsize=13;1
-# font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-# font-2 = siji:pixelsize=10;1
-font-1 = Material Icons:size=16;
+font-0 = fira sans:style=bold;pixelsize=13;1
+; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-1 = Siji:pixelsize=13;1
+font-1 = 3270Medium Nerd Font:style=Medium:pixelsize=13;
+;font-2 = Material Icons:size=13;
+;font-2 =  Siji:style=Regular:pixelsize=13;
 
-modules-left = i3 
-;modules-center = xwindows
-modules-right = i3 xbacklight alsa pulseaudio wlan battery date
+
+
+modules-left = user xbacklight pulseaudio 
+modules-center = 
+modules-right = i3 wlan battery time date
 
 tray-position = right
 tray-padding = 2
-tray-background = #263238
+tray-background = #162228
 
 ;wm-restack = bspwm
 wm-restack = i3
@@ -83,7 +109,12 @@ cursor-scroll = ns-resize
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+
+format = <label>
+format-foreground = ${colors.fg}
+format-padding = 4
+label = %title%
+label-empty = Welcome
 
 [module/filesystem]
 type = internal/fs
@@ -124,7 +155,7 @@ index-sort = true
 wrapping-scroll = false
 
 ; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -132,12 +163,14 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${module/bspwm.label-focused-background}
+label-focused-foreground = ${colors.fg}
+label-focused-background = ${colors.background}
 label-focused-underline = ${colors.fg}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
 label-unfocused = %index%
+;label-unfocused-background = #263238
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
@@ -158,11 +191,18 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label>
-format-prefix = " "
+format =<bar> <label> 
+format-prefix = " "
 format-prefix-foreground = ${colors.fg}
 label = %percentage%%
 
+bar-width = 12
+bar-indicator-foreground = ${colors.fg}
+bar-indicator = 
+bar-indicator-font=2
+bar-fill = ═
+bar-fill-foreground = ${colors.fg}
+bar-empty = ═
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -190,21 +230,25 @@ type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-;format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <label-connected>
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.fg}
+label-connected = %essid%(%signal%%)
 
-format-disconnected =  no wifi
+format-disconnected-prefix = "睊 "
+format-disconnected-prefix-foreground = ${colors.fg}
+format-disconnected = "no network"
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-font = 3
 ramp-signal-foreground = ${colors.fg}
 
 [module/eth]
@@ -226,77 +270,52 @@ format-disconnected =
 [module/date]
 type = internal/date
 interval = 5
-
 date = "%d/%m/%Y"
-date-alt = " %Y-%m-%d"
+date-alt = "%d/%m/%Y"
+format-prefix = " "
+format-prefix-foreground = ${colors.fg}
+;format-underline = ${colors.fg}
 
+label = %date%
+
+[module/time]
+type = internal/date
+interval = 5
 time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-;format-underline = ${colors.foreground-alt}
-
-label = %date% %time%
-
+label = %time%
+format-prefix = " "
+format-prefix-foreground = ${colors.fg}
 
 [module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume = <label-volume>
-label-volume = volume %percentage%%
-label-volume-foreground = ${colors.fg}
-label-volume-prefix = vol
-
-label-muted = 🔇 muted
-label-muted-foreground = #666
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
-
-[module/alsa]
 type = internal/alsa
 
-format-volume = <label-volume>
-label-volume =  %percentage%%
-format-volume-prefix = 
+format-volume =  <bar-volume> <label-volume>
+label-volume = %percentage%%
 format-volume-prefix-foreground = ${colors.fg}
-; label-volume-foreground = ${root.foreground}
+format-volume-prefix = "墳 "
 
-format-muted-prefix = " "
-format-muted-foreground = ${colors.fg}
-label-muted = muted
+format-muted-prefix = "ﱝ "
+format-muted-prefix-font = 2
+format-muted-prefix-foreground = ${colors.fg}
+label-muted = ══════════════
 
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-width = 12
+bar-volume-foreground-0 = ${colors.fg}
+bar-volume-foreground-1 = ${colors.fg}
+bar-volume-foreground-2 = ${colors.fg}
+bar-volume-foreground-3 = ${colors.fg}
+bar-volume-foreground-4 = ${colors.fg}
+bar-volume-foreground-5 = ${colors.fg}
+bar-volume-foreground-6 = ${colors.fg}
 bar-volume-gradient = false
-bar-volume-indicator = |
+bar-volume-indicator = 
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-indicator-foreground = ${colors.fg}
+bar-volume-fill = ═
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = ═
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-empty-foreground = #FFFFFF
 
 [module/battery]
 type = internal/battery
@@ -304,16 +323,27 @@ battery = BAT1
 ;adapter = AC
 full-at = 98
 
-format-charging = <label-charging>
-format-charging-prefix = ""
+format-charging = <animation-charging> <label-charging> 
+; format-charging-prefix = ""
 ; format-charging-underline = #00FF00
 
-format-discharging = <label-discharging>
-format-discharging-prefix = ""
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.fg}
+animation-charging-framerate = 750
+
+format-discharging =  <ramp-capacity> <label-discharging>
+; format-discharging-prefix = 
 format-discharging-prefix-foreground = ${colors.fg}
 ;format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "full"
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-foreground = ${colors.fg}
+
+format-full-prefix = " full"
 format-full-prefix-foreground = ${colors.fg}
 ; format-full-underline = ${self.format-charging-underline}
 
@@ -364,6 +394,16 @@ menu-2-0 = power off
 menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
+
+[module/user]
+type = custom/script
+exec = echo "$USER@$(hostname)"
+format = <label> 
+label = %output%
+format-prefix = "  "
+format-prefix-foreground = ${colors.fg}
+
+click-left = kitty
 
 [settings]
 screenchange-reload = true

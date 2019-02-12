@@ -4,11 +4,11 @@
    Based on the Gruvbox color scheme for Vim by morhetz
    https://github.com/morhetz/gruvbox
 
-   File: gruvbox-light.rasi
-   Desc: Gruvbox light color theme for rofi
+   File: gruvbox-dark-hard.rasi
+   Desc: Gruvbox dark (hard contrast) color theme for Rofi
    Author: bardisty <b@bah.im>
    Source: https://github.com/bardisty/gruvbox-rofi
-   Modified: Mon Feb 12 2018 06:06:06 PST -0800
+   Modified: Mon Feb 12 2018 06:04:26 PST -0800
    ========================================================================== */
 
 * {
@@ -16,47 +16,47 @@
     highlight: bold italic;
     scrollbar: true;
 
-    /* Gruvbox light colors */
-    gruvbox-light-bg0:          #fbf1c7;
-    gruvbox-light-bg0-soft:     #f2e5bc;
-    gruvbox-light-bg2:          #d5c4a1;
-    gruvbox-light-fg0:          #282828;
-    gruvbox-light-fg1:          #3c3836;
-    gruvbox-light-gray:         #7c6f64;
-    gruvbox-light-red-dark:     #9d0006;
-    gruvbox-light-red-light:    #cc241d;
-    gruvbox-light-yellow-dark:  #b57614;
-    gruvbox-light-yellow-light: #d79921;
+    /* Gruvbox dark colors */
+    gruvbox-dark-bg0-hard:     #1d2021;
+    gruvbox-dark-bg0:          #282828;
+    gruvbox-dark-bg2:          #504945;
+    gruvbox-dark-fg0:          #fbf1c7;
+    gruvbox-dark-fg1:          #ebdbb2;
+    gruvbox-dark-red-dark:     #cc241d;
+    gruvbox-dark-red-light:    #fb4934;
+    gruvbox-dark-yellow-dark:  #d79921;
+    gruvbox-dark-yellow-light: #fabd2f;
+    gruvbox-dark-gray:         #a89984;
 
     /* Theme colors */
-    background:                  @gruvbox-light-bg0;
+    background:                  @gruvbox-dark-bg0-hard;
     background-color:            @background;
-    foreground:                  @gruvbox-light-fg1;
-    border-color:                @gruvbox-light-gray;
+    foreground:                  @gruvbox-dark-fg1;
+    border-color:                @gruvbox-dark-gray;
     separatorcolor:              @border-color;
     scrollbar-handle:            @border-color;
 
     normal-background:           @background;
     normal-foreground:           @foreground;
-    alternate-normal-background: @gruvbox-light-bg0-soft;
+    alternate-normal-background: @gruvbox-dark-bg0;
     alternate-normal-foreground: @foreground;
-    selected-normal-background:  @gruvbox-light-bg2;
-    selected-normal-foreground:  @gruvbox-light-fg0;
+    selected-normal-background:  @gruvbox-dark-bg2;
+    selected-normal-foreground:  @gruvbox-dark-fg0;
 
-    active-background:           @gruvbox-light-yellow-dark;
+    active-background:           @gruvbox-dark-yellow-dark;
     active-foreground:           @background;
     alternate-active-background: @active-background;
     alternate-active-foreground: @active-foreground;
-    selected-active-background:  @gruvbox-light-yellow-light;
+    selected-active-background:  @gruvbox-dark-yellow-light;
     selected-active-foreground:  @active-foreground;
 
-    urgent-background:           @gruvbox-light-red-dark;
+    urgent-background:           @gruvbox-dark-red-dark;
     urgent-foreground:           @background;
     alternate-urgent-background: @urgent-background;
     alternate-urgent-foreground: @urgent-foreground;
-    selected-urgent-background:  @gruvbox-light-red-light;
+    selected-urgent-background:  @gruvbox-dark-red-light;
     selected-urgent-foreground:  @urgent-foreground;
 }
 
-@import "gruvbox-common.inc"
+@import "gruvbox-common.rasi"
 
