@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/hung/void-packages/srcpkgs/ibus-bamboo'
+let g:netrw_dirhist_2='/home/hung/void-packages/srcpkgs/lightdm-slick-greeter'
+let g:netrw_dirhist_3='/usr'
+let g:netrw_dirhist_4='/'
+let g:netrw_dirhist_5='/usr'
+let g:netrw_dirhist_6='/home/hung/.config/awesome'
+let g:netrw_dirhist_7='/home/hung/.config/awesome/widgets'
+let g:netrw_dirhist_8='/home/hung/.config/awesome'
