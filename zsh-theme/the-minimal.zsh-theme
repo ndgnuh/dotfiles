@@ -1,7 +1,7 @@
 if [ "$EUID" -ne 0 ]; then
-	PROMPT='%K{green}%F{black} %1~$(git_prompt_info) %k %F{green} $%f '
+	PROMPT='%K{green}%F{black} %1~$(git_prompt_info) %k %F{green}$%f '
 else
-	PROMPT='%K{red}%F{white} %1~$(git_prompt_info) %k %F{red} #%f '
+	PROMPT='%K{red}%F{white} %1~$(git_prompt_info) %k %F{red}#%f '
 fi
 # PROMPT='%K{blue}%F{black} %n@%m %F{black}%K{green} %1~$(git_prompt_info) %f%k %F{green}%#%f '
 
