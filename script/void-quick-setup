@@ -1,0 +1,19 @@
+#!/bin/sh
+GRAPHICAL='xorg-minimal awesome xfce4-power-manager vscode spotify sddm qt5ct rofi papirus-icon-theme oomox obs network-manager-applet lxappearance light gscreenshot gparted firefox compton breeze-snow-cursor-theme autorandr arandr Thunar Adapta gimp gpick'
+UTILS='acpi acpi_call-dkms alsa-utils android-tools base-devel blueman bluez crda elogind feh fff ffmpeg find-cursor font-iosevka git htop ibus ibus-bamboo kvantum lsof mono mupdf neofetch neovim ntfs-3g p7zip pdfpc polkit-elogind powertop pv python3-neovim python3-pip ranger sakura thefuck tlp transmission tree udisks2 unrar unzip upower virtualbox-ose vlc void-repo-multilib void-repo-nonfree void-repo-multilib-nonfree wine-32bit winetricks xf86-video-intel xtools youtube-dl zip xfce-polkit'
+THINKPAD='tp_smapi-dkms tpacpi-bat'
+
+yes | sudo -T 0 xbps-install -S fish-shell
+chsh -s $(which fish)
+
+yes | sudo -T 0 xbps-install -S $GRAPHICAL $UTILS $THINKPAD
+
+fish
+fish_hybrid_key_bindings
+
+sudo ln -sf /etc/sv/sddm       /var/service/
+sudo ln -sf /etc/sv/polkitd    /var/service/
+sudo ln -sf /etc/sv/tlp        /var/service/
+sudo ln -sf /etc/sv/acpid      /var/service/
+sudo ln -sf /etc/sv/dbus       /var/service/
+sudo ln -sf /etc/sv/bluetoothd /var/service/
