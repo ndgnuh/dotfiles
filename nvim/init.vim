@@ -126,7 +126,7 @@ autocmd BufNewFile,BufRead *.tex inoremap ,l[ \left[<++>\right]<++><Esc>2?<++><E
 autocmd BufNewFile,BufRead *.tex inoremap ,begin <Esc>:TexBegin<Space>
 
 " Ibus engine stuffs
-autocmd InsertEnter * :silent ! ibus engine Bamboo
+autocmd InsertEnter * :silent ! ibus engine xkb:us::eng
 autocmd InsertLeave * :silent ! ibus engine xkb:us::eng 
 autocmd VimEnter * :silent ! ibus engine Bamboo
 imap <F2> <Esc>:silent ! ibus engine xkb:us::eng<CR><CR>a
