@@ -16,34 +16,35 @@ set history=50
 set modifiable
 
 call plug#begin()
-" Plug 'Valloric/YouCompleteMe'
-" Plug 'w0rp/ale'
-Plug 'scrooloose/nerdtree'
+" Plug 'https://github.com/conornewton/vim-latex-preview'
+" Plug 'scrooloose/nerdtree'
 Plug 'junegunn/goyo.vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', 
 Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'lervag/vimtex'
 call plug#end()
 
-autocmd BufNewFile,BufRead *.js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
-autocmd BufNewFile,BufRead *.tex  UltiSnipsAddFiletypes tex.texmath.all
-autocmd BufNewFile,BufRead *.css  UltiSnipsAddFiletypes css.all
-autocmd BufNewFile,BufRead *.bib  UltiSnipsAddFiletypes bib.all
-autocmd BufNewFile,BufRead *.lua  UltiSnipsAddFiletypes lua.all
-autocmd BufNewFile,BufRead *.cs   UltiSnipsAddFiletypes cs.all
-autocmd BufNewFile,BufRead *.py   UltiSnipsAddFiletypes python.all
-autocmd BufNewFile,BufRead *.sh   UltiSnipsAddFiletypes sh.all
-autocmd BufNewFile,BufRead *.nvim UltiSnipsAddFiletypes vim.all
-autocmd BufNewFile,BufRead *.md   UltiSnipsAddFiletypes markdown.all
+autocmd FileType js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
+autocmd FileType tex  UltiSnipsAddFiletypes tex.texmath.all
+autocmd FileType css  UltiSnipsAddFiletypes css.all
+autocmd FileType bib  UltiSnipsAddFiletypes bib.all
+autocmd FileType lua  UltiSnipsAddFiletypes lua.all
+autocmd FileType cs   UltiSnipsAddFiletypes cs.all
+autocmd FileType python   UltiSnipsAddFiletypes python.all
+autocmd FileType sh   UltiSnipsAddFiletypes sh.all
+autocmd FileType nvim UltiSnipsAddFiletypes vim.all
+autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 
+let g:latex_pdf_viewer = "mupdf"
+let g:latex_engine = "pdflatex"
 let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinPos = "right"
 let g:auto_save = 1
@@ -87,15 +88,15 @@ nmap <Tab> gt
 nmap <C-Tab> Gt
 
 " run stuffs
-autocmd BufNewFile,BufRead *.tex map <F4> :let g:TexFile = expand("%")<CR><CR>
-autocmd BufNewFile,BufRead *.tex map <F5> :execute "! pdflatex  -halt-on-error " . g:TexFile . " && pkill -HUP mupdf" <CR>
-autocmd BufNewFile,BufRead *.tex map <F9> :execute "! mupdf (echo (echo (basename "  . g:TexFile . ") \| sed 's/tex$/pdf/')) &disown"<CR>
-autocmd BufNewFile,BufRead *.py map <F5> <Esc>:!python % <CR>
+autocmd FileType tex map <F4> :let g:TexFile = expand("%")<CR><CR>
+autocmd FileType tex map <F5> :execute "! pdflatex  -halt-on-error " . g:TexFile . " && pkill -HUP mupdf" <CR>
+autocmd FileType tex map <F9> :execute "! mupdf (echo (echo (basename "  . g:TexFile . ") \| sed 's/tex$/pdf/')) &disown"<CR>
+autocmd FileType python map <F5> <Esc>:!python % <CR>
 
 " Ibus engine stuffs
-autocmd InsertEnter * :silent ! ibus engine Bamboo
-autocmd InsertLeave * :silent ! ibus engine xkb:us::eng 
-autocmd VimEnter * :silent ! ibus engine xkb:us::eng
+autocmd InsertEnter * :silent ! ibus engine Bamboo & disown
+autocmd InsertLeave * :silent ! ibus engine xkb:us::eng  & disown
+autocmd VimEnter * :silent ! ibus engine xkb:us::eng & disown
 imap <F2> <Esc>:silent ! ibus engine xkb:us::eng<CR><CR>a
 nmap <F2> :silent ! ibus engine Bamboo<CR><CR>
 map <F3> :silent !~/.config/nvim/ibus-daemon-toggle.sh<CR><CR>
