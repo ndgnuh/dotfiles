@@ -1,4 +1,3 @@
-colorscheme nord
 filetype plugin indent on
 syntax on
 runtime marcos/matchit.vim
@@ -18,10 +17,11 @@ set modifiable
 call plug#begin()
 " Plug 'https://github.com/conornewton/vim-latex-preview'
 " Plug 'scrooloose/nerdtree'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'junegunn/goyo.vim'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
-Plug 'Shougo/deoplete.nvim', 
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'https://github.com/vim-scripts/vim-auto-save.git'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -31,6 +31,7 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'lervag/vimtex'
 call plug#end()
+color nord
 
 autocmd FileType js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
 autocmd FileType tex  UltiSnipsAddFiletypes tex.texmath.all
@@ -43,8 +44,10 @@ autocmd FileType sh   UltiSnipsAddFiletypes sh.all
 autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 
+set bg=dark
 let g:latex_pdf_viewer = "mupdf"
 let g:latex_engine = "pdflatex"
+let g:vimtex_compiler_method = "pdflatex"
 let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinPos = "right"
 let g:auto_save = 1
