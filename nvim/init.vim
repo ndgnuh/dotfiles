@@ -13,6 +13,7 @@ set number
 set relativenumber
 set history=50
 set modifiable
+set termguicolors
 
 call plug#begin()
 " Plug 'https://github.com/conornewton/vim-latex-preview'
