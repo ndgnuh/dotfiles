@@ -1,7 +1,5 @@
 git_branch() {
-	if [ -d .git ]; then
-		echo "%F{green}:$(git branch | grep \* | awk '{print $2}')%F{blue}"
-	fi
+	echo "%F{green}$(git branch 2>&1 | grep -v "fatal: not a git" | grep \* | awk '{print ":" $2}')%F{blue}"
 }
 
 PROMPT='%F{blue}%1~$(git_branch)/ %f> '

@@ -1,7 +1,8 @@
-thebranch(){
-	[[ $(current_branch) ]] && echo ":$(current_branch)"
+git_branch() {
+	echo "%F{green}$(git branch 2>&1 | grep -v "fatal: not a git" | grep \* | awk '{print ":" $2}')%F{blue}"
 }
-PROMPT='%F{red}%n@%m%F{blue}:%3~%F{green}$(thebranch)%F{blue}/ %f> '
+
+PROMPT='%F{red}%n@%m%F{blue}%3~$(thebranch)/ %f> '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" ("
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$GIT_PROMPT_INFO%})"
