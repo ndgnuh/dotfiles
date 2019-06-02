@@ -19,4 +19,4 @@ else
 fi
 cover="cover/$(cat list_cover | grep $album | awk -F "|" '{print $2}' | sed 's/^ *//g' | sed 's/ *$//g')"
 id3tag --song "$realname"  --artist "$artist" --album "$album" "$musicdir/$name.$format" 
-[[ -f $cover ]] && id3v2 --APIC $cover "$musicdir/$name.$format"
+# [[ -f $cover ]] && id3v2 --APIC $cover "$musicdir/$name.$format"
