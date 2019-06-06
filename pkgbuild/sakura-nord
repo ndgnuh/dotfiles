@@ -1,4 +1,4 @@
-pkgname=sakura
+pkgname=sakura-nord
 _pkgname=sakura
 pkgver=2.4.2
 pkgrel=3
@@ -11,12 +11,12 @@ depends=('vte3')
 makedepends=('cmake')
 provides=('sakura')
 conflicts=('sakura')
-source=("$pkgname-$pkgver::git+https://github.com/ndgnuh/sakura-nord.git")
+source=("$_pkgname-$pkgver::git+https://github.com/ndgnuh/sakura-nord.git")
 
 md5sums=('SKIP')
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${_pkgname}-${pkgver}
 
   # Set default font size a bit smaller
   sed -i 's|#define DEFAULT_FONT "Bitstream Vera Sans Mono 14"|#define DEFAULT_FONT "Bitstream Vera Sans Mono 10"|g' src/sakura.c
