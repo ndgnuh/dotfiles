@@ -18,6 +18,7 @@ set termguicolors
 call plug#begin()
 " Plug 'https://github.com/conornewton/vim-latex-preview'
 " Plug 'scrooloose/nerdtree'
+Plug 'equalsraf/neovim-gui-shim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'junegunn/goyo.vim'
 Plug 'honza/vim-snippets'
@@ -46,6 +47,8 @@ autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 
 set bg=dark
+set guifont=Iosevka\ Term\ SS02\ Light:h14
+let g:session_dir = "~/.config/nvim/sessions/"
 let g:latex_pdf_viewer = "mupdf"
 let g:latex_engine = "pdflatex"
 let g:vimtex_compiler_method = "pdflatex"
@@ -68,7 +71,7 @@ let g:lightline = {
 
 
 nmap <C-p> :Files<CR>
-nmap <C-m> :NERDTreeToggle<CR><CR>
+" nmap <C-m> :NERDTreeToggle<CR><CR>
 imap <C-s> <Esc> :w<CR><CR>
 
 " Go yo map
@@ -108,3 +111,8 @@ map <F3> :silent !~/.config/nvim/ibus-daemon-toggle.sh<CR><CR>
 " Easy align
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
+
+" nvim-qt
+exec 'map <C-k>f <Esc>:mks! ' . g:session_dir 
+exec 'map <C-k><C-o> <Esc>:so ' . g:session_dir 
+

@@ -1,7 +1,0 @@
-#!/bin/sh
-
-ln -sf $PWD/rofi $HOME/.config/rofi
-ln -sf $PWD/nvim $HOME/.config/nvim
-ln -sf $PWD/compton.conf ~/.config/compton.conf
-ln -sf $PWD/sakura $XDG_CONFIG_HOME/
-# nvim --cmd PlugInstall
