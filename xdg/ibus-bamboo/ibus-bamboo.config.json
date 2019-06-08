@@ -171,11 +171,11 @@
     "nvim-qt:nvim-qt"
   ],
   "ForwardKeyWhiteList": [
-    "Navigator:Firefox",
     "sakura:Sakura",
-    "Sakura:Sakura",
+    "termite:Termite",
     "dmenu:dmenu",
-    "lxappearance:Lxappearance"
+    "lxappearance:Lxappearance",
+    "Navigator:Firefox"
   ],
   "DirectForwardKeyWhiteList": null,
   "SurroundingTextWhiteList": null

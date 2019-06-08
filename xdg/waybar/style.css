@@ -1,15 +1,15 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Latin Modern Sans', Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background: #2e3440; 
+    border-bottom: 3px solid #88c0d0;
+    color: #d8dee9;
     transition-property: background, background-color;
     transition-duration: .5s;
 }
