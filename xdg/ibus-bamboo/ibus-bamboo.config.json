@@ -163,19 +163,21 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 6640,
+  "IBflags": 14832,
   "AutoCommitAfter": 3000,
   "ExceptedList": null,
-  "PreeditWhiteList": null,
+  "PreeditWhiteList": [
+    "terminal"
+  ],
   "X11ClipboardWhiteList": [
     "nvim-qt:nvim-qt"
   ],
   "ForwardKeyWhiteList": [
     "sakura:Sakura",
-    "termite:Termite",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
-    "Navigator:Firefox"
+    "Navigator:Firefox",
+    "chromium:Chromium"
   ],
   "DirectForwardKeyWhiteList": null,
   "SurroundingTextWhiteList": null

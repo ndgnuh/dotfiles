@@ -1,0 +1,13 @@
+#!/bin/sh
+while [ true ]
+do
+	date=$(date "+%d/%m/%y %H:%M")
+	light="brightness: $(light | cut -d '.' -f 1)%"
+	ibus=$([ $(ibus engine) = "Bamboo" ] && echo "VN" || echo "EN")
+	vollv=$(amixer get Master | grep Left: | grep -o '[[:digit:]]*%')
+	volon=$(amixer get Master | grep Left: | grep -o '\[on\]')
+	[ -z $volon ] && vol="volume muted" || vol="volume: $vollv" 
+	echo "$ibus | $light |  $vol | $date "
+	sleep 60
+done
+

@@ -1,4 +1,4 @@
-# Default config for sway
+#Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
 #
@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term termite
+set $term terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu dmenu_path | bemenu -b --tb "#2e3440" --fb \#2e3440 --nb \#2e3440 --nf \#ffffff --sf \#009688 --fn "Iosevka Term SS02 Light 14" --tf \#009688 --hf \#009688 | xargs swaymsg exec --
@@ -90,38 +90,59 @@ output eDP1 resolution 1920x1080 position 1280,0
 # Moving around:
 #
     # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
+    bindsym $mod+$left  focus left
+    bindsym $mod+$down  focus down
+    bindsym $mod+$up    focus up
     bindsym $mod+$right focus right
     # or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
+    bindsym $mod+Left  focus left
+    bindsym $mod+Down  focus down
+    bindsym $mod+Up    focus up
     bindsym $mod+Right focus right
+    # Move container
+    bindsym $mod+shift+$left  move left
+    bindsym $mod+shift+$down  move down
+    bindsym $mod+shift+$up    move up
+    bindsym $mod+shift+$right move right
+    bindsym $mod+shift+Left   move left
+    bindsym $mod+shift+Down   move down
+    bindsym $mod+shift+Up     move up
+    bindsym $mod+shift+Right  move right
+
+# workspace name
+    set $ws1   www
+    set $ws2   term
+    set $ws3   media
+    set $ws4   4
+    set $ws5   5
+    set $ws6   6
+    set $ws7   7
+    set $ws8   extra1
+    set $ws9   extra2
+    set $ws10  extra3
 
     # switch to workspace
-    bindsym $mod+1 workspace www 
-    bindsym $mod+2 workspace term 
-    bindsym $mod+3 workspace media
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 'extra 1'
-    bindsym $mod+9 workspace 'extra 2'
-    bindsym $mod+0 workspace 10
+    bindsym $mod+1 workspace $ws1 
+    bindsym $mod+2 workspace $ws2 
+    bindsym $mod+3 workspace $ws3 
+    bindsym $mod+4 workspace $ws4 
+    bindsym $mod+5 workspace $ws5 
+    bindsym $mod+6 workspace $ws6 
+    bindsym $mod+7 workspace $ws7 
+    bindsym $mod+8 workspace $ws8 
+    bindsym $mod+9 workspace $ws9 
+    bindsym $mod+0 workspace $ws10
     # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace www
-    bindsym $mod+Shift+2 move container to workspace term
-    bindsym $mod+Shift+3 move container to workspace media
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+Shift+1 move container to workspace $ws1 
+    bindsym $mod+Shift+2 move container to workspace $ws2 
+    bindsym $mod+Shift+3 move container to workspace $ws3 
+    bindsym $mod+Shift+4 move container to workspace $ws4 
+    bindsym $mod+Shift+5 move container to workspace $ws5 
+    bindsym $mod+Shift+6 move container to workspace $ws6 
+    bindsym $mod+Shift+7 move container to workspace $ws7 
+    bindsym $mod+Shift+8 move container to workspace $ws8 
+    bindsym $mod+Shift+9 move container to workspace $ws9 
+    bindsym $mod+Shift+0 move container to workspace $ws10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
@@ -134,7 +155,7 @@ output eDP1 resolution 1920x1080 position 1280,0
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    bindsym $mod+shift+s layout stacking
     bindsym $mod+t layout tabbed
     bindsym $mod+e layout toggle split
 
@@ -193,16 +214,16 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 exec waybar
 exec ibus-daemon -rdx
-exec dunst
+exec mako
 font pango: Latin Modern Sans 13
 
 bindsym XF86AudioMicMute exec amixer set Capture toggle
-bindsym XF86AudioMute exec amixer set Master toggle
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer set Master 5%-
-bindsym XF86MonBrightnessUp exec light -A 6
-bindsym XF86MonBrightnessDown exec light -U 6
-bindsym Mod4+Space exec ibus-engine-switch
+bindsym XF86AudioMute exec amixer set Master toggle ; exec status-command-refresh 
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ ;exec status-command-refresh 
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- ;exec status-command-refresh 
+bindsym XF86MonBrightnessUp exec light -A 6 && status-command-refresh 
+bindsym XF86MonBrightnessDown exec light -U 6;exec status-command-refresh 
+bindsym Mod4+Space exec ibus-engine-switch;exec status-command-refresh 
 
 gaps inner 10
 
@@ -210,15 +231,57 @@ set $bg '#2e3440'
 set $ac '#81a1c1'
 set $nf '#d8dee9'
 set $sf '#2e3440'
-client.unfocused  $bg $bg $nf $bg $bg
-client.focused $bg $ac $sf $ac $ac
+set $wn '#ff0000'
+client.unfocused        $bg $bg $nf $bg $bg
+client.focused_inactive $bg $bg $nf $bg $bg
+client.focused          $bg $ac $sf $ac $ac
+client.urgent           $bg $wn $sf $wn $wn
+client.background       $bg
 
 title_align center
 default_border normal pixel 4
 hide_edge_borders smart
 
-assign [class='sakura'] workspace term
-assign [class='sakura'] term
-assign [class='Sakura'] workspace term
-assign [class='Sakura'] term
+# set gtk theme
 
+set $gnome-schema org.gnome.desktop.interface
+
+exec_always {
+	gsettings set $gnome-schema gtk-theme 'Adapta-Indigo-Eta'
+	gsettings set $gnome-schema icon-theme 'Papirus'
+	gsettings set $gnome-schema cursor-theme 'Breeze Snow'
+}
+
+assign [app_id="terminal"]                 workspace term
+assign [app_id="termite"]                  workspace term
+assign [class="sakura"]                    workspace term
+assign [class="Firefox Developer Edition"] workspace term
+assign [class="Firefox"]                   workspace term
+
+# send workspace to proper outputs 
+workspace $ws1  output eDP-1
+workspace $ws2  output eDP-1
+workspace $ws3  output eDP-1
+workspace $ws4  output eDP-1
+workspace $ws5  output eDP-1
+workspace $ws6  output eDP-1
+workspace $ws7  output eDP-1
+workspace $ws8  output HDMI-A-1
+workspace $ws9  output HDMI-A-1
+workspace $ws10 output HDMI-A-1
+
+bindsym $mod+s exec sway-screen-swap
+focus_on_window_activation focus
+
+# bar {
+# 	position bottom
+# 	status_command status-command
+# 	colors {
+# 		statusline #ffffff
+# 		background #2e3440b3
+# 		inactive_workspace #2e3440b3 #2e3440b3 #ffffff
+# 		active_workspace $ac $ac $sf
+# 		focused_workspace $ac $ac $sf
+# 	}
+# 	tray_output eDP-1
+# }

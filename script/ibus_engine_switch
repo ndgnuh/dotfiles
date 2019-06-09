@@ -1,8 +1,0 @@
-#!/bin/bash
-ENGINES=(xkb:us::eng Bamboo)
-ENGINES_COUNT=${#ENGINES[@]}
-ENGINE_CURRENT=$(ibus engine)
-ENGINE_NEXT_INDEX=$(echo ${ENGINES[@]} | tr ' ' '\n' | grep -n $ENGINE_CURRENT | awk -F: '{print $1}')
-ENGINE_NEXT_INDEX=$((  ENGINE_NEXT_INDEX  % ENGINES_COUNT ))
-
-ibus engine $(echo ${ENGINES[$ENGINE_NEXT_INDEX]})
