@@ -110,16 +110,16 @@ output eDP1 resolution 1920x1080 position 1280,0
     bindsym $mod+shift+Right  move right
 
 # workspace name
-    set $ws1   www
-    set $ws2   term
-    set $ws3   media
-    set $ws4   4
-    set $ws5   5
-    set $ws6   6
-    set $ws7   7
-    set $ws8   extra1
-    set $ws9   extra2
-    set $ws10  extra3
+    set $ws1  1:www
+    set $ws2  2:term
+    set $ws3  3:media
+    set $ws4  4:4
+    set $ws5  5:5
+    set $ws6  6:6
+    set $ws7  7:7
+    set $ws8  8:extra-1
+    set $ws9  9:extra-2
+    set $ws10 10:extra-3
 
     # switch to workspace
     bindsym $mod+1 workspace $ws1 
@@ -212,9 +212,10 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-exec waybar
+# exec waybar
 exec ibus-daemon -rdx
 exec mako
+exec_always killlall status_command
 font pango: Latin Modern Sans 13
 
 bindsym XF86AudioMicMute exec amixer set Capture toggle
@@ -223,12 +224,13 @@ bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ ;exec status-command-ref
 bindsym XF86AudioLowerVolume exec amixer set Master 5%- ;exec status-command-refresh 
 bindsym XF86MonBrightnessUp exec light -A 6 && status-command-refresh 
 bindsym XF86MonBrightnessDown exec light -U 6;exec status-command-refresh 
-bindsym Mod4+Space exec ibus-engine-switch;exec status-command-refresh 
+bindsym F12 exec status-command-refresh 
+bindsym Mod4+Space exec ibus-engine-switch;exec sleep 0.1; exec status-command-refresh 
 
 gaps inner 10
 
 set $bg '#2e3440'
-set $ac '#81a1c1'
+set $ac '#7394f6'
 set $nf '#d8dee9'
 set $sf '#2e3440'
 set $wn '#ff0000'
@@ -239,8 +241,7 @@ client.urgent           $bg $wn $sf $wn $wn
 client.background       $bg
 
 title_align center
-default_border normal pixel 4
-hide_edge_borders smart
+default_border normal 4pixel 
 
 # set gtk theme
 
@@ -252,11 +253,12 @@ exec_always {
 	gsettings set $gnome-schema cursor-theme 'Breeze Snow'
 }
 
-assign [app_id="terminal"]                 workspace term
-assign [app_id="termite"]                  workspace term
-assign [class="sakura"]                    workspace term
-assign [class="Firefox Developer Edition"] workspace term
-assign [class="Firefox"]                   workspace term
+assign [app_id="terminal"]                 workspace $ws2
+assign [app_id="termite"]                  workspace $ws2
+assign [class="sakura"]                    workspace $ws2
+assign [class="Firefox Developer Edition"] workspace $ws1
+assign [class="Firefox"]                   workspace $ws1
+assign [app_id="firefox"]                  workspace $ws1
 
 # send workspace to proper outputs 
 workspace $ws1  output eDP-1
@@ -273,15 +275,43 @@ workspace $ws10 output HDMI-A-1
 bindsym $mod+s exec sway-screen-swap
 focus_on_window_activation focus
 
-# bar {
-# 	position bottom
-# 	status_command status-command
-# 	colors {
-# 		statusline #ffffff
-# 		background #2e3440b3
-# 		inactive_workspace #2e3440b3 #2e3440b3 #ffffff
-# 		active_workspace $ac $ac $sf
-# 		focused_workspace $ac $ac $sf
-# 	}
-# 	tray_output eDP-1
-# }
+bar {
+	workspace_buttons yes
+	strip_workspace_numbers yes
+	strip_workspace_name no
+	mode dock
+	position top
+	colors {
+		statusline #ffffff
+		background #2e3440b3
+		focused_workspace  #2e3400b3 #ffffff61 #ffffff
+		active_workspace   #2e3400b3 #ffffff61 #ffffff
+		inactive_workspace #2e3440b3 #2e3440b3 #f3f4f5
+		urgent_workspace   #2e3440b3 #bf616ab3 #ffffff
+		binding_mode       #2e3440b3 #bf616ab3 #ffffff
+	}
+	tray_output eDP-1
+	status_command status-command
+	id bar-main
+	output eDP-1
+}
+
+bar { 
+	id bar-extra
+	output HDMI-A-1
+	status_command while date +'%Y-%m-%d %H:%M'; do sleep 60; done
+	workspace_buttons yes
+	strip_workspace_numbers yes
+	strip_workspace_name no
+	mode dock
+	position top
+	colors {
+		statusline #ffffff
+		background #2e3440b3
+		focused_workspace  #2e3400b3 #ffffff61 #ffffff
+		active_workspace   #2e3400b3 #ffffff61 #ffffff
+		inactive_workspace #2e3440b3 #2e3440b3 #f3f4f5
+		urgent_workspace   #2e3440b3 #bf616ab3 #ffffff
+		binding_mode       #2e3440b3 #bf616ab3 #ffffff
+	}
+}

@@ -1,13 +1,57 @@
 #!/bin/sh
+delim(){
+	echo " | "
+}
+
+status () {
+	# ibus engine
+	[ $(ibus engine) = "Bamboo" ] && echo "VN" || echo "EN"
+	delim
+
+	# network 
+	nmcli | grep 'wlp3s0: connected' | cut -d ' ' -f 4
+	grep "^\s*w" /proc/net/wireless | awk '{ print "(" int($3 * 100 / 70) "%)"}'
+	delim
+
+	# audio
+	echo "Volume:"
+	amixer sget Master | grep '\[on\]' | tail -n 1 | grep '[[:digit:]]*%' -o
+	amixer sget Master | tail -n 1 | grep -o off
+	delim
+	echo "Mic:"
+	amixer sget Capture | tail -n 1 | sed 's/^ *//g' | cut -d ' ' -f 6 | grep -o 'on\|off'
+	delim
+
+	# brightness
+	echo "Brightness: $(light | cut -d '.' -f 1)%"
+	delim
+
+	# battery
+	# Will show all batteries with approximate icon for remaining power.
+	for x in /sys/class/power_supply/BAT?/capacity;
+	do
+	case "$(cat $x)" in
+		100|9[0-9])	echo "Battery: $(cat $x)%" ;;
+		8[0-9]|7[0-9])	echo "Battery: $(cat $x)%" ;;
+		6[0-9]|5[0-9])	echo "Battery: $(cat $x)%" ;;
+		4[0-9]|3[0-9])	echo "Battery: $(cat $x)%" ;;
+		*)		echo "Battery: $(cat $x)%" ;;
+	esac
+	done 
+	echo "(`acpi | cut -d ' ' -f 3 | sed 's/,//'`)"
+	delim
+
+	# datetime
+	date "+%d/%m/%Y %H:%M"
+}
+
 while [ true ]
 do
-	date=$(date "+%d/%m/%y %H:%M")
-	light="brightness: $(light | cut -d '.' -f 1)%"
-	ibus=$([ $(ibus engine) = "Bamboo" ] && echo "VN" || echo "EN")
-	vollv=$(amixer get Master | grep Left: | grep -o '[[:digit:]]*%')
-	volon=$(amixer get Master | grep Left: | grep -o '\[on\]')
-	[ -z $volon ] && vol="volume muted" || vol="volume: $vollv" 
-	echo "$ibus | $light |  $vol | $date "
+	status | tr "\n" " "
+	# vollv=$(amixer get Master | grep Left: | grep -o '[[:digit:]]*%')
+	# volon=$(amixer get Master | grep Left: | grep -o '\[on\]')
+	# [ -z $volon ] && vol="volume muted" || vol="volume: $vollv" 
+	# echo "$networkicon $networkssid | $ibus | $light |  $vol | $date "
 	sleep 60
 done
 
