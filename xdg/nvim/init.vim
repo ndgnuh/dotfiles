@@ -14,11 +14,16 @@ set relativenumber
 set history=50
 set modifiable
 set termguicolors
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 
 call plug#begin()
 " Plug 'https://github.com/conornewton/vim-latex-preview'
 " Plug 'scrooloose/nerdtree'
-Plug 'equalsraf/neovim-gui-shim'
+Plug 'Yggdroot/indentLine'
+Plug 'tpope/vim-sleuth'
+" Plug 'equalsraf/neovim-gui-shim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'junegunn/goyo.vim'
 Plug 'honza/vim-snippets'
@@ -31,9 +36,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'lervag/vimtex'
+" Plug 'lervag/vimtex'
 call plug#end()
-color nord
+set termguicolors
+set background=dark
+colorscheme onehalfdark
 
 autocmd FileType js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
 autocmd FileType tex  UltiSnipsAddFiletypes tex.texmath.all
@@ -47,11 +54,12 @@ autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 
 set bg=dark
-set guifont=Iosevka\ Term\ SS02\ Light:h14
+set guifont=Liga\ Iosevka\ Term:h14
 let g:session_dir = "~/.config/nvim/sessions/"
 let g:latex_pdf_viewer = "mupdf"
-let g:latex_engine = "pdflatex"
+let g:latex_engine = "xelatex"
 let g:vimtex_compiler_method = "pdflatex"
+let g:tex_conceal = ""
 let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinPos = "right"
 let g:auto_save = 1
@@ -59,7 +67,7 @@ let g:UltiSnipExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'onehalfdark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -96,8 +104,8 @@ nmap <C-Tab> Gt
 
 " run stuffs
 autocmd FileType tex map <F4> :let g:TexFile = expand("%")<CR><CR>
-autocmd FileType tex map <F5> :execute "! pdflatex  -halt-on-error " . g:TexFile . " && pkill -HUP mupdf" <CR>
-autocmd FileType tex map <F9> :execute "! mupdf (echo (echo (basename "  . g:TexFile . ") \| sed 's/tex$/pdf/')) &disown"<CR>
+autocmd FileType tex map <F5> :silent !xelatex --shell-escape % > /dev/null 2> /dev/null; pkill -HUP mupdf <CR><CR>
+autocmd FileType tex map <F9> :execute "!mupdf $(echo $(echo $(basename "  . g:TexFile . ") \| sed 's/tex/pdf/')) &disown"<CR>
 autocmd FileType python map <F5> <Esc>:!python % <CR>
 
 " Ibus engine stuffs
@@ -116,3 +124,10 @@ xmap ga <Plug>(EasyAlign)
 exec 'map <C-k>f <Esc>:mks! ' . g:session_dir 
 exec 'map <C-k><C-o> <Esc>:so ' . g:session_dir 
 
+set list lcs=tab:\┊\ 
+" highlight SpecialKey ctermfg=8
+set nowrap
+
+" fuck conceal feature
+set conceallevel=0
+autocmd FileType * setlocal cole=0

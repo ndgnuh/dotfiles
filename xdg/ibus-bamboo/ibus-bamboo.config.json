@@ -167,7 +167,8 @@
   "AutoCommitAfter": 3000,
   "ExceptedList": null,
   "PreeditWhiteList": [
-    "terminal"
+    "terminal",
+    "kitty:kitty"
   ],
   "X11ClipboardWhiteList": [
     "nvim-qt:nvim-qt"
