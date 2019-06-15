@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/hung/projects/tex-documents/toan-roi-rac-pah/root.tex'
 let g:netrw_dirhist_2='/home/hung/.config'
 let g:netrw_dirhist_3='/home/hung/projects/dotfiles/script/setup.sh'
+let g:netrw_dirhist_4='/home/hung'

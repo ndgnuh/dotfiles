@@ -6,7 +6,7 @@ bold_is_bright = true
 #cell_width_scale = 1.0
 clickable_url = true
 dynamic_title = true
-font = Iosevka Term SS02 14
+font = Iosevka Light 14
 #fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
@@ -45,28 +45,49 @@ scrollbar = off
 #cursor_foreground = #dcdccc
 # highlight = #2f2f2f
 # https://git.io/nord
-foreground = #d8dee9
-background = rgba(46,52,64,0.75)
+#foreground = #d8dee9
+background = rgba(46,52,64,0.92)
+; background = #000000
+; background = rgb(40,44,52)
+foreground = #dcdfe4
 # background = #3b4252
-cursor     = #d8dee9
+cursor     = #dcdfe4
 
-color0 = #3b4252
-color1 = #bf616a
-color2 = #a3be8c
-color3 = #ebcb8b
-color4 = #81a1c1
-color5 = #b48ead
-color6 = #88c0d0
-color7 = #e5e8f0
+color0 =  #282c34
+color1 =  #e06c75
+color2 =  #98c379
+color3 =  #e5c07b
+color4 =  #61afef
+color5 =  #c678dd
+color6 =  #56b6c2
+color7 =  #dcdfe4
 
-color8  = #4c566a
-color9  = #bf616a
-color10 = #a3be8c
-color11 = #ebcb8b
-color12 = #81a1c1
-color13 = #b48ead
-color14 = #8fbcbb
-color15 = #eceff4
+color8  = #282c34
+color9  = #e06c75
+color10 = #98c379
+color11 = #e5c07b
+color12 = #61afef
+color13 = #c678dd
+color14 = #56b6c2
+color15 = #dcdfe4
+
+# color0 = #3b4252
+# color1 = #bf616a
+# color2 = #a3be8c
+# color3 = #ebcb8b
+# color4 = #81a1c1
+# color5 = #b48ead
+# color6 = #88c0d0
+# color7 = #e5e8f0
+#
+# color8  = #4c566a
+# color9  = #bf616a
+# color10 = #a3be8c
+# color11 = #ebcb8b
+# color12 = #81a1c1
+# color13 = #b48ead
+# color14 = #8fbcbb
+# color15 = #eceff4
 
 [hints]
 #font = Iosevka Term SS02 14
