@@ -19,7 +19,7 @@ set softtabstop=8
 set tabstop=8
 
 call plug#begin()
-" Plug 'https://github.com/conornewton/vim-latex-preview'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 " Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
@@ -53,12 +53,14 @@ autocmd FileType sh   UltiSnipsAddFiletypes sh.all
 autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 
+" vim-latex-live-preview
+let g:livepreview_previewer = 'xreader'
+let g:livepreview_engine = "lualatex"
+let g:livepreview_cursorhold_recompile = 0
+
 set bg=dark
 set guifont=Liga\ Iosevka\ Term:h14
 let g:session_dir = "~/.config/nvim/sessions/"
-let g:latex_pdf_viewer = "mupdf"
-let g:latex_engine = "xelatex"
-let g:vimtex_compiler_method = "pdflatex"
 let g:tex_conceal = ""
 let g:deoplete#enable_at_startup = 1
 let g:NERDTreeWinPos = "right"
@@ -104,7 +106,7 @@ nmap <C-Tab> Gt
 
 " run stuffs
 autocmd FileType tex map <F4> :let g:TexFile = expand("%")<CR><CR>
-autocmd FileType tex map <F5> :silent !xelatex --shell-escape % > /dev/null 2> /dev/null; pkill -HUP mupdf <CR><CR>
+autocmd FileType tex map <F5> :silent !lualatex % > /dev/null 2> /dev/null; pkill -HUP mupdf <CR><CR>
 autocmd FileType tex map <F9> :execute "!mupdf $(echo $(echo $(basename "  . g:TexFile . ") \| sed 's/tex/pdf/')) &disown"<CR>
 autocmd FileType python map <F5> <Esc>:!python % <CR>
 

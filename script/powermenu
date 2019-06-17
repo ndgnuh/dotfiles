@@ -1,0 +1,3 @@
+#!/bin/sh
+res=$(echo "poweroff\nreboot\nsuspend\nhibernate\nlogout" | menu)
+[ $res = "logout" ] && swaymsg exit || systemctl $res
