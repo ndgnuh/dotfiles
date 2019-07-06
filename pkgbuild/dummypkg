@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "pkgname='$1-dummy'
+pkgver=0.1
+pkgrel=1
+arch=(any)
+provides=('$1')" | tee dummypkgbuild
+
+makepkg -sifp dummypkgbuild
+rm dummypkgbuild *.gz *.xz

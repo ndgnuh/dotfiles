@@ -1,2 +1,2 @@
 #!/bin/sh
-makepkg -sircCp $1
+makepkg --force -sircCp $1

@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ -z $2 ]
+then
+    port=8080
+else
+    port=$2
+fi
+ruby -run -e httpd $1 -p $port

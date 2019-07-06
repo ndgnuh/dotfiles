@@ -168,7 +168,8 @@
   "ExceptedList": null,
   "PreeditWhiteList": [
     "terminal",
-    "kitty:kitty"
+    "kitty:kitty",
+    "liri-text:Text"
   ],
   "X11ClipboardWhiteList": [
     "nvim-qt:nvim-qt"
@@ -177,9 +178,12 @@
     "sakura:Sakura",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
-    "Navigator:Firefox",
     "chromium:Chromium"
   ],
-  "DirectForwardKeyWhiteList": null,
-  "SurroundingTextWhiteList": null
+  "DirectForwardKeyWhiteList": [
+    "Navigator:Firefox"
+  ],
+  "SurroundingTextWhiteList": [
+    "Opera:Opera"
+  ]
 }

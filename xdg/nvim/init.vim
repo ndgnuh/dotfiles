@@ -19,11 +19,13 @@ set softtabstop=8
 set tabstop=8
 
 call plug#begin()
+Plug 'https://github.com/jiangmiao/auto-pairs'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+Plug 'https://github.com/andrejlevkovitch/vim-lua-format'
 " Plug 'scrooloose/nerdtree'
+" Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-sleuth'
-" Plug 'equalsraf/neovim-gui-shim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'junegunn/goyo.vim'
 Plug 'honza/vim-snippets'
@@ -126,10 +128,8 @@ xmap ga <Plug>(EasyAlign)
 exec 'map <C-k>f <Esc>:mks! ' . g:session_dir 
 exec 'map <C-k><C-o> <Esc>:so ' . g:session_dir 
 
-set list lcs=tab:\┊\ 
-" highlight SpecialKey ctermfg=8
-set nowrap
-
-" fuck conceal feature
-set conceallevel=0
-autocmd FileType * setlocal cole=0
+let g:indent_guides_enable_on_vim_startup = 1
+" let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_char = '┊'
+" let g:indentLine_bgcolor_gui = '#FF5F00'
