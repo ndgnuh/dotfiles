@@ -2,6 +2,7 @@ filetype plugin indent on
 syntax on
 runtime marcos/matchit.vim
 
+set clipboard^=unnamedplus
 set mouse=a
 set laststatus=2
 set cindent
