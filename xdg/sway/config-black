@@ -22,7 +22,7 @@ set $menu dmenu_path | bemenu -b --tb "#2e3440" --fb \#2e3440 --nb \#2e3440 --nf
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/hung/Pictures/wallpaper.jpg fill
+output * bg /home/hung/Pictures/wallpaper fill
 #
 # Example configuration:
 #

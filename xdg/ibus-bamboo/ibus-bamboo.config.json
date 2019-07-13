@@ -163,7 +163,7 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 14832,
+  "IBflags": 31216,
   "AutoCommitAfter": 3000,
   "ExceptedList": null,
   "PreeditWhiteList": [
@@ -178,7 +178,8 @@
     "sakura:Sakura",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
-    "chromium:Chromium"
+    "chromium:Chromium",
+    "skype:Skype"
   ],
   "DirectForwardKeyWhiteList": [
     "Navigator:Firefox"

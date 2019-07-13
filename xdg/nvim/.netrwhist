@@ -1,7 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/hung/.config/awesome'
 let g:netrw_dirhist_2='/home/hung/.config'
 let g:netrw_dirhist_3='/home/hung/.config/awesome'
 let g:netrw_dirhist_4='/home/hung/.config/awesome/ggz'
 let g:netrw_dirhist_5='/home/hung/.config/awesome'
+let g:netrw_dirhist_6='/home/hung/.config/sway'
+let g:netrw_dirhist_7='/home/hung/.config/awesome'
+let g:netrw_dirhist_8='/home/hung/projects/dotfiles/xdg/nvim'
+let g:netrw_dirhist_9='/home/hung/projects/documents/icomm-doc'

@@ -1,3 +1,9 @@
 #!/bin/sh
-res=$(echo "poweroff\nreboot\nsuspend\nhibernate\nlogout" | menu)
-[ $res = "logout" ] && swaymsg exit || systemctl $res
+options="Lock screen,swaylock-blur\n
+Shutdown,poweroff\n
+Reboot,reboot\n
+Suspend,suspend\n
+Logout,swaymsg exit"
+res="$(echo $options | awk -F ',' '{print $1}' | menu)"
+#[ $res = "logout" ] && swaymsg exit || systemctl  $res
+sh -c $(echo $options | grep "$res" | awk -F ',' '{print $2}')

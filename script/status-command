@@ -10,7 +10,7 @@ status () {
 
 	# network 
 	nmcli | grep 'wlp3s0: connected' | cut -d ' ' -f 4
-	grep "^\s*w" /proc/net/wireless | awk '{ print "(" int($3 * 100 / 70) "%)"}'
+	grep "^\s*w" /proc/net/wireless | awk '{ print "(" int($0 * 100 / 70) "%)"}'
 	delim
 
 	# audio
