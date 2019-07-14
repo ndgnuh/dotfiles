@@ -1,29 +1,32 @@
 #!/bin/sh
 delim(){
-	echo " | "
+	echo "/"
 }
 
 status () {
 	# ibus engine
+	echo ""
 	[ $(ibus engine) = "Bamboo" ] && echo "VN" || echo "EN"
 	delim
 
 	# network 
-	nmcli | grep 'wlp3s0: connected' | cut -d ' ' -f 4
+	echo "直"
+	nmcli | grep 'connected to' | sed 's/.*: connected to //g'
 	grep "^\s*w" /proc/net/wireless | awk '{ print "(" int($0 * 100 / 70) "%)"}'
 	delim
 
 	# audio
-	echo "Volume:"
-	amixer sget Master | grep '\[on\]' | tail -n 1 | grep '[[:digit:]]*%' -o
-	amixer sget Master | tail -n 1 | grep -o off
+	amixer sget Master | grep '\[on\]' | tail -n 1 | grep '[[:digit:]]*%' -o | awk '{ print " " $0 }'
+
+	amixer sget Master | tail -n 1 | grep -o off | tr '[:lower:]' '[:upper:]' | awk '{print " " $0}'
+
 	delim
-	echo "Mic:"
-	amixer sget Capture | tail -n 1 | sed 's/^ *//g' | cut -d ' ' -f 6 | grep -o 'on\|off'
-	delim
+	# echo "Mic:"
+	# amixer sget Capture | tail -n 1 | sed 's/^ *//g' | cut -d ' ' -f 6 | grep -o 'on\|off'
+	# delim
 
 	# brightness
-	echo "Brightness: $(light | cut -d '.' -f 1)%"
+	echo " $(light | cut -d '.' -f 1)%"
 	delim
 
 	# battery
@@ -31,18 +34,20 @@ status () {
 	for x in /sys/class/power_supply/BAT?/capacity;
 	do
 	case "$(cat $x)" in
-		100|9[0-9])	echo "Battery: $(cat $x)%" ;;
-		8[0-9]|7[0-9])	echo "Battery: $(cat $x)%" ;;
-		6[0-9]|5[0-9])	echo "Battery: $(cat $x)%" ;;
-		4[0-9]|3[0-9])	echo "Battery: $(cat $x)%" ;;
-		*)		echo "Battery: $(cat $x)%" ;;
+		100|9[0-9])	echo "⚡ $(cat $x)%" ;;
+		8[0-9]|7[0-9])	echo "⚡ $(cat $x)%" ;;
+		6[0-9]|5[0-9])	echo "⚡ $(cat $x)%" ;;
+		4[0-9]|3[0-9])	echo "⚡ $(cat $x)%" ;;
+		*)		echo "⚡ $(cat $x)%" ;;
 	esac
 	done 
-	echo "(`acpi | cut -d ' ' -f 3 | sed 's/,//'`)"
+	echo "(`acpi | cut -d ' ' -f 3 | sed 's/,//' | tr '[:lower:]' '[:upper:]'`)"
 	delim
 
 	# datetime
+	echo ""
 	date "+%d/%m/%Y %H:%M"
+
 }
 
 while [ true ]

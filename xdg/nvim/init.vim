@@ -20,6 +20,7 @@ set softtabstop=8
 set tabstop=8
 
 call plug#begin()
+Plug 'dylanaraps/wal.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'wincent/terminus'
 Plug 'https://github.com/jiangmiao/auto-pairs'
@@ -45,7 +46,7 @@ Plug 'https://github.com/tomtom/tcomment_vim'
 call plug#end()
 set termguicolors
 set background=dark
-colorscheme onehalfdark
+colorscheme wal
 
 autocmd FileType js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
 autocmd FileType tex  UltiSnipsAddFiletypes tex.texmath.all
@@ -77,7 +78,7 @@ let g:UltiSnipExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
+      \ 'colorscheme': 'wal',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

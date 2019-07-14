@@ -17,7 +17,7 @@ set $right l
 set $term terminal
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu dmenu_path | bemenu -b --tb "#2e3440" --fb \#2e3440 --nb \#2e3440 --nf \#ffffff --sf \#009688 --fn "Iosevka Term SS02 Light 14" --tf \#009688 --hf \#009688 | xargs swaymsg exec --
+set $menu echo "rofi -show run -theme ~/.cache/wal/colors-rofi-dark.rasi" | xargs swaymsg exec --
 
 ### Output configuration
 #
@@ -110,16 +110,16 @@ output eDP1 resolution 1920x1080 position 1280,0
     bindsym $mod+shift+Right  move right
 
 # workspace name
-    set $ws1  1:www
-    set $ws2  2:term
-    set $ws3  3:media
-    set $ws4  4:4
-    set $ws5  5:5
-    set $ws6  6:6
-    set $ws7  7:7
-    set $ws8  8:extra-1
-    set $ws9  9:extra-2
-    set $ws10 10:extra-3
+    set $ws1  1:one
+    set $ws2  2:two
+    set $ws3  3:three
+    set $ws4  4:four
+    set $ws5  5:five
+    set $ws6  6:six
+    set $ws7  7:seven
+    set $ws8  8:eight
+    set $ws9  9:nine
+    set $ws10 10:ten
 
     # switch to workspace
     bindsym $mod+1 workspace $ws1 
@@ -217,7 +217,8 @@ exec ibus-daemon -rdx
 exec mako
 exec redshift
 exec_always killlall status_command
-font pango: Latin Modern Sans 13
+# font pango: Latin Modern Sans 13
+font pango: Iosevka 14
 
 bindsym XF86AudioMicMute exec amixer set Capture toggle
 bindsym XF86AudioMute exec amixer set Master toggle ; exec status-command-refresh 
@@ -230,17 +231,12 @@ bindsym Mod4+Space exec ibus-engine-switch;exec sleep 0.1; exec status-command-r
 
 gaps inner 10
 
-set $bg '#2e3440b3'
-set $ac '#d7ffabb3'
-set $id '#e5c07bb3'
-set $nf '#d8dee9'
-set $sf '#2e3440'
-set $wn '#ff0000'
-client.unfocused        $bg $bg $nf $bg $bg
-client.focused_inactive $bg $bg $nf $bg $bg
-client.focused          $bg $ac $sf $id $ac
-client.urgent           $bg $wn $sf $wn $wn
-client.background       $bg
+include ~/.cache/wal/colors-sway
+client.unfocused        $background $background $foreground $background $background
+client.focused_inactive $background $background $foreground $background $background
+client.focused          $background $color3     $color0     $color5     $color3
+client.urgent           $background $color7     $color6     $color7     $color7
+client.background       $background
 
 title_align center
 default_border normal 4pixel 
@@ -255,13 +251,14 @@ exec_always {
 	gsettings set $gnome-schema cursor-theme 'Breeze Snow'
 }
 
-assign [app_id="terminal"]                 workspace $ws2
-assign [app_id="termite"]                  workspace $ws2
-assign [app_id="kitty"]                    workspace $ws2
-assign [class="sakura"]                    workspace $ws2
-assign [class="Firefox Developer Edition"] workspace $ws1
-assign [class="Firefox"]                   workspace $ws1
-assign [app_id="firefox"]                  workspace $ws1
+# assign app to workspace
+#assign [app_id="terminal"]                 workspace $ws2
+#assign [app_id="termite"]                  workspace $ws2
+#assign [app_id="kitty"]                    workspace $ws2
+#assign [class="sakura"]                    workspace $ws2
+#assign [class="Firefox Developer Edition"] workspace $ws1
+#assign [class="Firefox"]                   workspace $ws1
+#assign [app_id="firefox"]                  workspace $ws1
 
 # send workspace to proper outputs 
 workspace $ws1  output eDP-1
@@ -278,29 +275,32 @@ workspace $ws10 output HDMI-A-1
 bindsym $mod+s exec sway-screen-swap
 focus_on_window_activation focus
 
+#exec_always killall waybar;waybar -s ~/.cache/wal/colors-waybar.css
+#bar
 bar {
-	workspace_buttons yes
+    font pango: Iosevka Nerd Font 14
+    workspace_buttons yes
 	strip_workspace_numbers yes
 	strip_workspace_name no
 	mode dock
 	position top
 	colors {
-		statusline #ffffff
-		background #2e3440b3
-		focused_workspace  #2e3400b3 #ffffff61 #ffffff
-		active_workspace   #2e3400b3 #ffffff61 #ffffff
-		inactive_workspace #2e3440b3 #2e3440b3 #f3f4f5
-		urgent_workspace   #2e3440b3 #bf616ab3 #ffffff
-		binding_mode       #2e3440b3 #bf616ab3 #ffffff
+	    statusline $foreground
+		background $background
+		focused_workspace  $background $color3 $color0
+		active_workspace   $background $color3 $color0
+		inactive_workspace $background $color7 $color0
+		urgent_workspace   $background $color7 $color0
+		binding_mode       $background $color7 $color0
 	}
-	tray_output eDP-1
+    tray_output eDP-1
 	status_command status-command
 	id bar-main
 	output eDP-1
 }
 
 bar { 
-	id bar-extra
+    id bar-extra
 	output HDMI-A-1
 	status_command while date +'%Y-%m-%d %H:%M'; do sleep 60; done
 	workspace_buttons yes
@@ -309,12 +309,12 @@ bar {
 	mode dock
 	position top
 	colors {
-		statusline #ffffff
-		background #2e3440b3
-		focused_workspace  #2e3400b3 #ffffff61 #ffffff
-		active_workspace   #2e3400b3 #ffffff61 #ffffff
-		inactive_workspace #2e3440b3 #2e3440b3 #f3f4f5
-		urgent_workspace   #2e3440b3 #bf616ab3 #ffffff
-		binding_mode       #2e3440b3 #bf616ab3 #ffffff
+	    statusline $foreground
+		background $background
+		focused_workspace  $background $color3 $color0
+		active_workspace   $background $color3 $color0
+		inactive_workspace $background $color7 $color0
+		urgent_workspace   $background $color7 $color0
+		binding_mode       $background $color7 $color0
 	}
 }
