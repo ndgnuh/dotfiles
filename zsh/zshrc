@@ -69,7 +69,7 @@ ZSH_THEME="suse-minimal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(zsh_reload git)
+plugins=(zsh_reload git thefuck chucknorris)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,4 +101,6 @@ source $ZSH/oh-my-zsh.sh
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # eval $(dircolors -b $HOME/.dircolors)
-(cat ~/.cache/wal/sequences&)
+# (cat ~/.cache/wal/sequences&)
+alias clone="terminal 2> /dev/null & disown"
+alias :q="exit"

@@ -1,8 +1,10 @@
 #!/bin/sh
-echo "pkgname='$1-dummy'
+[ $2 = "exact" ] && dummy="" || dummy="-dummy"
+echo "pkgname='$1$dummy'
 pkgver=0.1
 pkgrel=1
 arch=(any)
+conflicts=('$1')
 provides=('$1')" | tee dummypkgbuild
 
 makepkg -sifp dummypkgbuild

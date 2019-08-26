@@ -64,6 +64,10 @@ output eDP1 resolution 1920x1080 position 1280,0
 #
 # Basics:
 #
+    # Sreenshot with grim and wl-copy
+    bindsym Print exec grim /tmp/screenshot && cat /tmp/screenshot | wl-copy
+    bindsym Ctrl+Print exec slurp | xargs -I {} grim -g {} /tmp/screenshot && cat /tmp/screenshot | wl-copy
+
     # start a terminal
     bindsym $mod+Return exec $term
 
@@ -232,9 +236,10 @@ bindsym Mod4+Space exec ibus-engine-switch;exec sleep 0.1; exec status-command-r
 gaps inner 10
 
 include ~/.cache/wal/colors-sway
+set $bgfocused $color5
 client.unfocused        $background $background $foreground $background $background
 client.focused_inactive $background $background $foreground $background $background
-client.focused          $background $color3     $color0     $color5     $color3
+client.focused          $background $bgfocused  $color7     $color6     $bgfocused
 client.urgent           $background $color7     $color6     $color7     $color7
 client.background       $background
 
@@ -250,6 +255,7 @@ exec_always {
 	gsettings set $gnome-schema icon-theme 'Papirus'
 	gsettings set $gnome-schema cursor-theme 'Breeze Snow'
 }
+exec ibus-daemon -rdx
 
 # assign app to workspace
 #assign [app_id="terminal"]                 workspace $ws2
@@ -278,25 +284,25 @@ focus_on_window_activation focus
 #exec_always killall waybar;waybar -s ~/.cache/wal/colors-waybar.css
 #bar
 bar {
-    font pango: Iosevka Nerd Font 14
+    font pango: Iosevka Nerd Font, Awesome 14
     workspace_buttons yes
-	strip_workspace_numbers yes
-	strip_workspace_name no
-	mode dock
-	position top
-	colors {
-	    statusline $foreground
-		background $background
-		focused_workspace  $background $color3 $color0
-		active_workspace   $background $color3 $color0
-		inactive_workspace $background $color7 $color0
-		urgent_workspace   $background $color7 $color0
-		binding_mode       $background $color7 $color0
-	}
+    strip_workspace_numbers yes
+    strip_workspace_name no
+    mode dock
+    position top
+    colors {
+	statusline $foreground
+	background $background
+	focused_workspace  $background $background $bgfocused
+	active_workspace   $background $background $bgfocused
+	inactive_workspace $background $background $foreground
+	urgent_workspace   $background $background $foreground
+	binding_mode       $background $background $color1
+    }
     tray_output eDP-1
-	status_command status-command
-	id bar-main
-	output eDP-1
+    status_command sleep 1 && i3status-rs ~/.config/i3status-rust/config.toml
+    id bar-main
+    output eDP-1
 }
 
 bar { 

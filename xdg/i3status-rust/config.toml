@@ -1,0 +1,70 @@
+[theme]
+name = "solarized-dark"
+
+[icons]
+name = "awesome"
+
+[theme.overrides]
+separator = ''
+
+[icons.overrides]
+"backlight_empty"    = "  "
+"backlight_partial1" = "  "
+"backlight_partial2" = "  "
+"backlight_partial3" = "  "
+"backlight_full"     = "  "
+
+# [[block]]
+# block = "weather"
+# format = "{weather} ({location})  {temp}糖"
+# service = { name = "openweathermap", api_key = "d792a3ca77d3af25844e70e9e7cc15c0", city_id = "1581130",	units = "metric" }
+
+[[block]]
+block = "ibus"
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block  = "battery"
+driver = "upower"
+device = "BAT1"
+format = "{percentage}% {time}"
+
+[[block]]
+block = "net"
+device = "wlan0"
+ssid = true
+ip = false
+speed_up = false
+speed_down = false
+graph_up = false
+interval = 5
+
+[[block]]
+block = "music"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m/%Y %R"
+
+[[block]]
+block = "custom"
+command= 'echo '
+on_click= 'swaylock-blur'
+
+[[block]]
+block = "custom"
+command= 'echo 襤'
+on_click= 'systemctl poweroff'
+
+[[block]]
+block = "custom"
+command= 'echo 累'
+on_click= 'systemctl reboot'
+

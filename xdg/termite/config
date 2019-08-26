@@ -6,9 +6,9 @@ bold_is_bright = true
 #cell_width_scale = 1.0
 clickable_url = true
 dynamic_title = true
-font = Iosevka Light 14
+font = IBM Plex Mono 14
 #fullscreen = true
-#icon_name = terminal
+icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
 #scroll_on_keystroke = true
@@ -35,7 +35,7 @@ cursor_shape = block
 #modify_other_keys = false
 
 # set size hints for the window
-size_hints = true
+size_hints = false
 
 # "off", "left" or "right"
 scrollbar = off
@@ -46,7 +46,7 @@ scrollbar = off
 # highlight = #2f2f2f
 # https://git.io/nord
 #foreground = #d8dee9
-background = rgba(46,52,64,0.92)
+background = #222232
 ; background = #000000
 ; background = rgb(40,44,52)
 foreground = #dcdfe4
@@ -90,13 +90,13 @@ color15 = #dcdfe4
 # color15 = #eceff4
 
 [hints]
-#font = Iosevka Term SS02 14
-#foreground = #dcdccc
-#background = #3f3f3f
+font = IBM Plex Mono 14
+foreground = #dcdccc
+background = #3f3f3f
 #active_foreground = #e68080
 #active_background = #3f3f3f
 #padding = 4
-#border = #3f3f3f
+border = #3f3f3f
 #border_width = 1
 #roundness = 2.0
 

@@ -1,0 +1,15 @@
+[theme]
+name = "plain"
+
+[icons]
+name = "none"
+
+[[block]]
+block = "net"
+device = "wlan0"
+ssid = true
+ip = false
+speed_up = false
+speed_down = false
+graph_up = false
+interval = 5

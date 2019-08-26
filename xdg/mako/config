@@ -1,6 +1,6 @@
-anchor=bottom-right
+anchor=top-right
 font=Latin Modern Sans 13
-background-color=#2e3440
+background-color=#282c34
 padding=12
 width=300
 height=100

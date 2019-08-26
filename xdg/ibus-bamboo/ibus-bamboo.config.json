@@ -169,22 +169,30 @@
   "PreeditWhiteList": [
     "terminal",
     "kitty:kitty",
-    "liri-text:Text"
+    "liri-text:Text",
+    "[No Name] + - NVIM",
+    "Gonvim"
   ],
-  "X11ClipboardWhiteList": [
-    "nvim-qt:nvim-qt"
-  ],
+  "X11ClipboardWhiteList": null,
   "ForwardKeyWhiteList": [
     "sakura:Sakura",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
     "chromium:Chromium",
-    "skype:Skype"
+    "skype:Skype",
+    "Alacritty:Alacritty",
+    "emacs:Emacs",
+    "Navigator:firefox"
+  ],
+  "SLForwardKeyWhiteList": [
+    "franz:Franz"
   ],
   "DirectForwardKeyWhiteList": [
-    "Navigator:Firefox"
+    "Navigator:Firefox",
+    "nvim-qt:nvim-qt"
   ],
   "SurroundingTextWhiteList": [
     "Opera:Opera"
-  ]
+  ],
+  "X11ShiftLeftWhiteList": null
 }

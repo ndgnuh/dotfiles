@@ -1,0 +1,19 @@
+# Maintainer: lans9831@gmail.com
+_pkgname=gonvim
+pkgname=gonvim-fork
+pkgver=0.3.5
+pkgrel=1
+pkgdesc="Fork of gonvim for the purpose of maintenance and enhancement"
+arch=('any')
+url="https://github.com/akiyosi/gonvim"
+license=('mit')
+depends=('neovim' 'qt5-base' 'qt5-tools' 'qt5-multimedia' 'qt5-svg' 'qt5-declarative' 'qt5-webchannel' 'qt5-webengine')
+provides=("${_pkgname}")
+conflicts=("gonvim")
+source=("https://github.com/akiyosi/gonvim/releases/download/v$pkgver/Gonvim-$pkgver-linux.tar.gz")
+sha256sums=('05a2492da8e182e5024f8ccd8543ada0dd1411cbcce45e26242ad8efe81e3043')
+
+package() {
+  cd "Gonvim-$pkgver-linux"
+  install -Dm 755 "${_pkgname}" -t "$pkgdir/usr/bin/"
+}
