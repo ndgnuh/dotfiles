@@ -87,17 +87,16 @@ tabspaces: 2
 # Font configuration (changes require restart)
 font:
   # Normal (roman) font face
-  normal:
+  # normal:
     # Font family
     #
     # Default:
     #   - (macOS) Menlo
     #   - (Linux) monospace
     #   - (Windows) Consolas
-    family: IBM Plex Mono
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    # style: Regular
 
   # Bold font face
   #bold:
@@ -167,7 +166,7 @@ draw_bold_text_with_bright_colors: true
 colors:
   # Default colors
   primary:
-    background: '0x262a36'
+    background: '0x242426'
     foreground: '0xeaeaea'
 
     # Bright and dim foreground colors

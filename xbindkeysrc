@@ -1,0 +1,13 @@
+"amixer sset Master 5%+"
+	XF86AudioRaiseVolume
+"amixer sset Master 5%-"
+	XF86AudioLowerVolume
+"amixer sset Master toggle"
+	XF86AudioMute
+"light -A 10"
+	XF86MonBrightnessUp
+"light -U 10;\
+notify-send 'brightness' $(light)%"
+	XF86MonBrightnessDown
+"awesome-client \"awesome.emit_signal('brightness')\""
+	XF86MonBrightnessDown

@@ -1,6 +1,16 @@
 {
-  "InputMethod": "Telex",
+  "InputMethod": "Custom",
   "InputMethodDefinitions": {
+    "Custom": {
+      "'": "DauSac",
+      "/": "DauHoi",
+      "1": "OEA_ÔÊÂ",
+      "2": "UOA_ƯƠĂ",
+      "3": "D_Đ",
+      "`": "DauHuyen",
+      "j": "DauNang",
+      "x": "DauNga"
+    },
     "Microsoft layout": {
       "!": "_Ă",
       "#": "_Ê",
@@ -123,6 +133,15 @@
       "z": "XoaDauThanh",
       "{": "_ƯƠ"
     },
+    "Telex Mod": {
+      "\\": "ODEA_ÔĐÊÂ",
+      "f": "DauHuyen",
+      "j": "DauNang",
+      "r": "DauHoi",
+      "s": "DauSac",
+      "w": "UOA_ƯƠĂ",
+      "x": "DauNga"
+    },
     "VIQR": {
       "'": "DauSac",
       "(": "A_Ă",
@@ -135,6 +154,15 @@
       "^": "AEO_ÂÊÔ",
       "`": "DauHuyen",
       "~": "DauNga"
+    },
+    "VIQR Custom": {
+      "\\": "ODEA_ÔĐÊÂ",
+      "f": "DauHuyen",
+      "j": "DauNang",
+      "r": "DauHoi",
+      "s": "DauSac",
+      "w": "UOA_ƯƠĂ",
+      "x": "DauNga"
     },
     "VNI": {
       "0": "XoaDauThanh",
@@ -163,7 +191,7 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 31216,
+  "IBflags": 162288,
   "AutoCommitAfter": 3000,
   "ExceptedList": null,
   "PreeditWhiteList": [
@@ -171,17 +199,22 @@
     "kitty:kitty",
     "liri-text:Text",
     "[No Name] + - NVIM",
-    "Gonvim"
+    "Opera:Opera"
   ],
-  "X11ClipboardWhiteList": null,
+  "X11ClipboardWhiteList": [
+    "code-oss:code-oss"
+  ],
   "ForwardKeyWhiteList": [
     "sakura:Sakura",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
     "chromium:Chromium",
     "skype:Skype",
-    "Alacritty:Alacritty",
+    "Gonvim",
     "emacs:Emacs",
+    "sun-awt-X11-XFramePeer:MATLAB R2018b",
+    "termite:Termite",
+    "Alacritty:Alacritty",
     "Navigator:firefox"
   ],
   "SLForwardKeyWhiteList": [
@@ -191,8 +224,6 @@
     "Navigator:Firefox",
     "nvim-qt:nvim-qt"
   ],
-  "SurroundingTextWhiteList": [
-    "Opera:Opera"
-  ],
+  "SurroundingTextWhiteList": null,
   "X11ShiftLeftWhiteList": null
 }
