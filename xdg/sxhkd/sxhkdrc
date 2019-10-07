@@ -4,7 +4,7 @@ XF86Audio{Mute,RaiseVolume,LowerVolume}
 	vol=$(amixer sset Master {toggle,5%+,5%-}\
 		| tail -n 2 \
 		| tr '\n' ';');\
-	awesome-client "awesome.emit_signal('brightness', \"$vol\")"
+	awesome-client "awesome.emit_signal('volume', \"$vol\")"
 XF86MonBrightness{Up,Down}
 	light -{A,U} 10;\
 	awesome-client "awesome.emit_signal('brightness', \"$(light)\")"

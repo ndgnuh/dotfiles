@@ -3,23 +3,27 @@ syntax enable
 runtime marcos/matchit.vim
 
 call plug#begin()
+" Indentation guide
+Plug 'https://github.com/thaerkh/vim-indentguides'
+
+" Navigation
+Plug 'scrooloose/nerdtree'
 " Plug 'kkoomen/vim-doge'
 " Plug 'akiyosi/gonvim-fuzzy'
+" Plug 'Yggdroot/indentLine'
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'scrooloose/nerdtree'
 " Snippet and completion
-Plug 'Yggdroot/indentLine'
+Plug 'roxma/nvim-yarp'
 Plug 'w0rp/ale'
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
 Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
 
 " Functionals
 Plug 'sheerun/vim-polyglot'
@@ -33,6 +37,7 @@ Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
 
 " Code display
+Plug 'luochen1990/rainbow'
 Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-sleuth'
@@ -49,11 +54,11 @@ call plug#end()
 nmap <C-/> gcc
 vmap <C-/> gc
 
+let g:rainbow_active = 1
+
 " look and feels
-set guifont=Clear\ Sans:h14
 set termguicolors
 let g:enable_bold_font = 1
-let g:hybrid_transparent_background = 0
 colorscheme onehalfdark
 if has('gui_running')
     set background=light
@@ -72,6 +77,7 @@ autocmd FileType python   UltiSnipsAddFiletypes python.all
 autocmd FileType sh   UltiSnipsAddFiletypes sh.all
 autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
+autocmd FileType jl   UltiSnipsAddFiletypes julia.all
 
 " exit terminal mode with Esc key
 tnoremap :q <C-\><C-n>
@@ -135,54 +141,58 @@ autocmd FileType tex map <F7> :!make bib <CR>
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 
-let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_enable_on_vim_startup = 1
 " let g:indentLine_color_gui = '#A4E57E'
-let g:indentLine_bgcolor_term = 202
-let g:indentLine_char = '┊'
+" let g:indentLine_bgcolor_term = 202
+" let g:indentLine_char = '┊'
 
 " Ibus engine stuffs
-:silent! unmap <F2>
-:silent! unmap <F3>
-:silent! unmap <F4>
-
 " autocmd InsertEnter * :silent ! ibus engine Bamboo & disown
 " autocmd InsertLeave * :silent ! ibus engine xkb:us::eng  & disown
 " autocmd VimEnter * :silent ! ibus engine xkb:us::eng & disown
 
-imap <F2> <Esc>:silent ! ibus engine xkb:us::eng<CR><CR>a
-map <F2> :silent ! ibus engine Bamboo<CR><CR>
-map <F3> :silent !~/.config/nvim/ibus-daemon-toggle.sh<CR><CR>
-"
-" ʕ◔ϖ◔ʔ Gonvim setting
-if exists('g:gonvim_running')
-  " ʕ◔ϖ◔ʔ Use Gonvim UI instead of vim native UII
-  let mapleader = "\\"
-  set laststatus=0
-  set noshowmode
-  set noruler
-
-  " ʕ◔ϖ◔ʔ I use `ripgrep` for :GonvimFuzzyAg
-  let g:gonvim_fuzzy_ag_cmd = 'rg --column --line-number --no-heading --color never'
-
-  " ʕ◔ϖ◔ʔ Mapping for gonvim-fuzzy
-  nnoremap <leader><leader> :GonvimWorkspaceNew<CR>
-  nnoremap <leader>n :GonvimWorkspaceNext<CR>
-  nnoremap <leader>p :GonvimWorkspacePrevious<CR>
-  nnoremap <leader>ff :GonvimFuzzyFiles<CR>
-  nnoremap <C-p> :GonvimFuzzyFiles<CR>
-  nnoremap <leader>fg :GonvimFuzzyAg<CR>
-  nnoremap <leader>fb :GonvimFuzzyBuffers<CR>
-  nnoremap <leader>fl :GonvimFuzzyBLines<CR>
-endif
-
 " Background color
-hi Normal guibg=#242426
+hi Normal guibg=#282828
+
+" Open NERDTree if start with nvim .
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" julia
+let g:default_julia_version = '1.2'
+
+" language server
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_serverCommands = {
+\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+\       using LanguageServer;
+\       using Pkg;
+\       import StaticLint;
+\       import SymbolServer;
+\       env_path = dirname(Pkg.Types.Context().env.project_file);
+\       debug = false;
+\       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict());
+\       server.runlinter = true;
+\       run(server);
+\   ']
+\ }
+
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+" Press F9 to toggle fold
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
+" Disable continual comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Set options
 set clipboard^=unnamedplus
-set shiftwidth=4
-set comments
-set mouse=a
+set mouse=
 set laststatus=2
 set backspace=indent,eol,start
 set incsearch
@@ -192,4 +202,13 @@ set number
 set relativenumber
 set history=50
 set encoding=UTF-8
-
+set formatoptions-=cro
+" set listchars=tab:\┆\ 
+" set list
+set cursorcolumn
+set cursorline
+set expandtab
+set softtabstop=4
+set tabstop=4
+set foldmethod=marker
+set shiftwidth=4

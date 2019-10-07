@@ -193,16 +193,19 @@
   "Flags": 7,
   "IBflags": 162288,
   "AutoCommitAfter": 3000,
-  "ExceptedList": null,
+  "ExceptedList": [
+    "kitty:kitty"
+  ],
   "PreeditWhiteList": [
     "terminal",
-    "kitty:kitty",
     "liri-text:Text",
     "[No Name] + - NVIM",
     "Opera:Opera"
   ],
   "X11ClipboardWhiteList": [
-    "code-oss:code-oss"
+    "code-oss:code-oss",
+    "konsole:konsole",
+    "terminal:qterminal"
   ],
   "ForwardKeyWhiteList": [
     "sakura:Sakura",
