@@ -191,7 +191,7 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 162288,
+  "IBflags": 424384,
   "AutoCommitAfter": 3000,
   "ExceptedList": [
     "kitty:kitty"
@@ -200,12 +200,14 @@
     "terminal",
     "liri-text:Text",
     "[No Name] + - NVIM",
-    "Opera:Opera"
+    "Opera:Opera",
+    "Pidgin:Pidgin"
   ],
   "X11ClipboardWhiteList": [
     "code-oss:code-oss",
     "konsole:konsole",
-    "terminal:qterminal"
+    "terminal:qterminal",
+    "Oni2_editor.exe:Oni2_editor.exe"
   ],
   "ForwardKeyWhiteList": [
     "sakura:Sakura",
@@ -217,16 +219,16 @@
     "emacs:Emacs",
     "sun-awt-X11-XFramePeer:MATLAB R2018b",
     "termite:Termite",
+    "min:Min",
+    "Navigator:firefox",
     "Alacritty:Alacritty",
-    "Navigator:firefox"
+    "Navigator:Firefox"
   ],
   "SLForwardKeyWhiteList": [
     "franz:Franz"
   ],
   "DirectForwardKeyWhiteList": [
-    "Navigator:Firefox",
     "nvim-qt:nvim-qt"
   ],
-  "SurroundingTextWhiteList": null,
-  "X11ShiftLeftWhiteList": null
+  "SurroundingTextWhiteList": null
 }

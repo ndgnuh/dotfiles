@@ -4,7 +4,7 @@ runtime marcos/matchit.vim
 
 call plug#begin()
 " Indentation guide
-Plug 'https://github.com/thaerkh/vim-indentguides'
+" Plug 'https://github.com/thaerkh/vim-indentguides'
 
 " Navigation
 Plug 'scrooloose/nerdtree'
@@ -78,6 +78,7 @@ autocmd FileType sh   UltiSnipsAddFiletypes sh.all
 autocmd FileType nvim UltiSnipsAddFiletypes vim.all
 autocmd FileType md   UltiSnipsAddFiletypes markdown.all
 autocmd FileType jl   UltiSnipsAddFiletypes julia.all
+autocmd FileType markdown setl conceallevel=0
 
 " exit terminal mode with Esc key
 tnoremap :q <C-\><C-n>
@@ -152,7 +153,7 @@ xmap ga <Plug>(EasyAlign)
 " autocmd VimEnter * :silent ! ibus engine xkb:us::eng & disown
 
 " Background color
-hi Normal guibg=#282828
+hi Normal guibg=#1d1f21
 
 " Open NERDTree if start with nvim .
 autocmd StdinReadPre * let s:std_in=1
@@ -212,3 +213,4 @@ set softtabstop=4
 set tabstop=4
 set foldmethod=marker
 set shiftwidth=4
+set conceallevel=0

@@ -1,2 +1,0 @@
-#!/bin/sh
-$(which kill) $(pstree -lp | grep status | grep 'sleep([[:digit:]]*)' -o | grep -o '[[:digit:]]*')
