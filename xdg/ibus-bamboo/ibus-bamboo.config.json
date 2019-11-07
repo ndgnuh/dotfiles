@@ -142,6 +142,19 @@
       "w": "UOA_ƯƠĂ",
       "x": "DauNga"
     },
+    "Telex W": {
+      "a": "A_Â",
+      "d": "D_Đ",
+      "e": "E_Ê",
+      "f": "DauHuyen",
+      "j": "DauNang",
+      "o": "O_Ô",
+      "r": "DauHoi",
+      "s": "DauSac",
+      "w": "UOA_ƯƠĂ__Ư",
+      "x": "DauNga",
+      "z": "XoaDauThanh"
+    },
     "VIQR": {
       "'": "DauSac",
       "(": "A_Ă",
@@ -178,7 +191,7 @@
     },
     "VNI Bàn phím tiếng Pháp": {
       "\"": "DauHuyen",
-      "\u0026": "XoaDauThanh",
+      "&": "XoaDauThanh",
       "'": "DauHoi",
       "(": "DauNga",
       "-": "DauNang",
@@ -192,7 +205,7 @@
   "OutputCharset": "Unicode",
   "Flags": 7,
   "IBflags": 424384,
-  "AutoCommitAfter": 3000,
+  "DefaultInputMode": 3,
   "ExceptedList": [
     "kitty:kitty"
   ],
@@ -213,19 +226,21 @@
     "sakura:Sakura",
     "dmenu:dmenu",
     "lxappearance:Lxappearance",
-    "chromium:Chromium",
     "skype:Skype",
     "Gonvim",
     "emacs:Emacs",
     "sun-awt-X11-XFramePeer:MATLAB R2018b",
     "termite:Termite",
     "min:Min",
-    "Navigator:firefox",
     "Alacritty:Alacritty",
-    "Navigator:Firefox"
+    "Navigator:Firefox",
+    "io.liri.Browser:Browser",
+    "soffice:Soffice",
+    "Navigator:firefox"
   ],
   "SLForwardKeyWhiteList": [
-    "franz:Franz"
+    "franz:Franz",
+    "chromium:Chromium"
   ],
   "DirectForwardKeyWhiteList": [
     "nvim-qt:nvim-qt"

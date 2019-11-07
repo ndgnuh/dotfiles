@@ -35,6 +35,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
+Plug 'wsdjeg/vim-lua'
 
 " Code display
 Plug 'luochen1990/rainbow'
@@ -147,10 +148,26 @@ xmap ga <Plug>(EasyAlign)
 " let g:indentLine_bgcolor_term = 202
 " let g:indentLine_char = '┊'
 
-" Ibus engine stuffs
-" autocmd InsertEnter * :silent ! ibus engine Bamboo & disown
-" autocmd InsertLeave * :silent ! ibus engine xkb:us::eng  & disown
-" autocmd VimEnter * :silent ! ibus engine xkb:us::eng & disown
+""" Ibus engine
+function! IbusOff()
+    " Lưu engine hiện tại
+    let g:ibus_prev_engine = system('ibus engine')
+    " Chuyển sang engine tiếng Anh
+    execute 'silent !ibus engine xkb:us::eng'
+endfunction
+function! IbusOn()
+    let l:current_engine = system('ibus engine')
+    " nếu engine được set trong normal mode thì
+    " lúc vào insert mode duùn luôn engine đó
+    if l:current_engine !~? 'xkb:us::eng'
+        let g:ibus_prev_engine = l:current_engine
+    endif
+    " Khôi phục lại engine
+    execute '!' . 'ibus engine ' . g:ibus_prev_engine
+endfunction
+autocmd InsertEnter * call IbusOn()
+autocmd InsertLeave * call IbusOff()
+call IbusOff()
 
 " Background color
 hi Normal guibg=#1d1f21

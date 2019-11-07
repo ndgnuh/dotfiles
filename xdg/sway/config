@@ -28,10 +28,10 @@ set $menu swaymsg exec "rofi\
 #     --hf $indigoa200| xargs swaymsg exec
 #  }}} variables # 
 
-#  ouput config {{{ # 
+#  output config {{{ # 
 output * bg /home/hung/Pictures/wallpaper fill
-# output HDMI1 resolution 1280x960 position 0,0
-# output eDP1 resolution 1920x1080 position 0,0
+output HDMI1 resolution 1280x1024 position 0,0
+output eDP1 resolution 1920x1080 position 0,0
 #  }}} ouput config # 
 
 #  key binding {{{ # 
