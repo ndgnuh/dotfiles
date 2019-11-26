@@ -12,18 +12,16 @@ Plug 'scrooloose/nerdtree'
 " Plug 'akiyosi/gonvim-fuzzy'
 " Plug 'Yggdroot/indentLine'
 " Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Snippet and completion
 Plug 'roxma/nvim-yarp'
 Plug 'w0rp/ale'
-Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'ncm2/ncm2'
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
+Plug 'http://github.com/joom/latex-unicoder.vim'
 
 " Functionals
 Plug 'sheerun/vim-polyglot'
@@ -35,7 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'wsdjeg/vim-lua'
+Plug 'tbastos/vim-lua'
 
 " Code display
 Plug 'luochen1990/rainbow'
@@ -46,10 +44,8 @@ Plug 'tpope/vim-sleuth'
 
 " Color schemes
 Plug 'sainnhe/vim-color-forest-night'
-Plug 'dylanaraps/wal.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 nmap <C-/> gcc
@@ -88,7 +84,7 @@ set bg=dark
 let g:session_dir = "~/.config/nvim/sessions/"
 let g:tex_conceal = ""
 let g:deoplete#enable_at_startup = 1
-let g:auto_save = 1
+let g:auto_save = 0
 let g:UltiSnipExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-k>"
@@ -176,24 +172,27 @@ hi Normal guibg=#1d1f21
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
+" toggle nerd tree
+nmap <F4> :NERDTreeToggle<CR><CR>
+
 " julia
 let g:default_julia_version = '1.2'
 
 " language server
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-\   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-\       using LanguageServer;
-\       using Pkg;
-\       import StaticLint;
-\       import SymbolServer;
-\       env_path = dirname(Pkg.Types.Context().env.project_file);
-\       debug = false;
-\       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict());
-\       server.runlinter = true;
-\       run(server);
-\   ']
-\ }
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
+" \       using LanguageServer;
+" \       using Pkg;
+" \       import StaticLint;
+" \       import SymbolServer;
+" \       env_path = dirname(Pkg.Types.Context().env.project_file);
+" \       debug = false;
+" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict());
+" \       server.runlinter = true;
+" \       run(server);
+" \   ']
+" \ }
 
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -231,3 +230,6 @@ set tabstop=4
 set foldmethod=marker
 set shiftwidth=4
 set conceallevel=0
+
+" auto latex to unicode
+let g:latex_to_unicode_auto = 1

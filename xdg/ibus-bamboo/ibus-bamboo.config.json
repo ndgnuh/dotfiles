@@ -191,7 +191,7 @@
     },
     "VNI Bàn phím tiếng Pháp": {
       "\"": "DauHuyen",
-      "&": "XoaDauThanh",
+      "\u0026": "XoaDauThanh",
       "'": "DauHoi",
       "(": "DauNga",
       "-": "DauNang",
@@ -206,44 +206,40 @@
   "Flags": 7,
   "IBflags": 424384,
   "DefaultInputMode": 3,
-  "ExceptedList": [
-    "kitty:kitty"
-  ],
-  "PreeditWhiteList": [
-    "terminal",
-    "liri-text:Text",
-    "[No Name] + - NVIM",
-    "Opera:Opera",
-    "Pidgin:Pidgin"
-  ],
-  "X11ClipboardWhiteList": [
-    "code-oss:code-oss",
-    "konsole:konsole",
-    "terminal:qterminal",
-    "Oni2_editor.exe:Oni2_editor.exe"
-  ],
-  "ForwardKeyWhiteList": [
-    "sakura:Sakura",
-    "dmenu:dmenu",
-    "lxappearance:Lxappearance",
-    "skype:Skype",
-    "Gonvim",
-    "emacs:Emacs",
-    "sun-awt-X11-XFramePeer:MATLAB R2018b",
-    "termite:Termite",
-    "min:Min",
-    "Alacritty:Alacritty",
-    "Navigator:Firefox",
-    "io.liri.Browser:Browser",
-    "soffice:Soffice",
-    "Navigator:firefox"
-  ],
-  "SLForwardKeyWhiteList": [
-    "franz:Franz",
-    "chromium:Chromium"
-  ],
-  "DirectForwardKeyWhiteList": [
-    "nvim-qt:nvim-qt"
-  ],
+  "InputModeMapping": {
+    "Alacritty:Alacritty": 3,
+    "Gonvim": 3,
+    "Navigator:Firefox": 3,
+    "Navigator:firefox": 3,
+    "Oni2_editor.exe:Oni2_editor.exe": 6,
+    "Opera:Opera": 1,
+    "Pidgin:Pidgin": 1,
+    "[No Name] + - NVIM": 1,
+    "chromium:Chromium": 4,
+    "code-oss:code-oss": 6,
+    "dmenu:dmenu": 3,
+    "emacs:Emacs": 3,
+    "franz:Franz": 4,
+    "io.liri.Browser:Browser": 3,
+    "kitty:kitty": 7,
+    "konsole:konsole": 6,
+    "liri-text:Text": 1,
+    "lxappearance:Lxappearance": 3,
+    "min:Min": 3,
+    "nvim-qt:nvim-qt": 5,
+    "sakura:Sakura": 3,
+    "skype:Skype": 3,
+    "soffice:Soffice": 3,
+    "sun-awt-X11-XFramePeer:MATLAB R2018b": 3,
+    "terminal": 1,
+    "terminal:qterminal": 6,
+    "termite:Termite": 3
+  },
+  "ExceptedList": null,
+  "PreeditWhiteList": null,
+  "X11ClipboardWhiteList": null,
+  "ForwardKeyWhiteList": null,
+  "SLForwardKeyWhiteList": null,
+  "DirectForwardKeyWhiteList": null,
   "SurroundingTextWhiteList": null
 }
