@@ -204,7 +204,8 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 424384,
+  "IBflags": 424432,
+  "JupiterFlags": 0,
   "DefaultInputMode": 3,
   "InputModeMapping": {
     "Alacritty:Alacritty": 3,
@@ -215,6 +216,7 @@
     "Opera:Opera": 1,
     "Pidgin:Pidgin": 1,
     "[No Name] + - NVIM": 1,
+    "aegisub-3.2:Aegisub-3.2": 7,
     "chromium:Chromium": 4,
     "code-oss:code-oss": 6,
     "dmenu:dmenu": 3,
@@ -232,8 +234,10 @@
     "soffice:Soffice": 3,
     "sun-awt-X11-XFramePeer:MATLAB R2018b": 3,
     "terminal": 1,
+    "terminal:Terminal": 3,
     "terminal:qterminal": 6,
-    "termite:Termite": 3
+    "termite:Termite": 3,
+    "viber:ViberPC": 2
   },
   "ExceptedList": null,
   "PreeditWhiteList": null,

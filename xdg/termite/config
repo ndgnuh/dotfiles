@@ -1,12 +1,12 @@
 [options]
-allow_bold = true
+allow_bold = false
 audible_bell = false
 bold_is_bright = true
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
 clickable_url = true
 dynamic_title = true
-font = IBM Plex Mono 14
+font = Inconsolata 18
 #fullscreen = true
 icon_name = terminal
 #mouse_autohide = false
@@ -46,10 +46,10 @@ scrollbar = off
 # highlight = #2f2f2f
 # https://git.io/nord
 #foreground = #d8dee9
-background = #222232
+background = rgba(29, 31, 33, 0.8)
 ; background = #000000
 ; background = rgb(40,44,52)
-foreground = #dcdfe4
+foreground = #4caf50
 # background = #3b4252
 cursor     = #dcdfe4
 

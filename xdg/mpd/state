@@ -1,0 +1,68 @@
+sw_volume: 50
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: pause
+current: 14
+time: 23.517000
+random: 1
+repeat: 1
+single: 0
+consume: 1
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Linkin Park - Papercut.mp3
+1:Fort Minor - Slip out the Back (feat Mr Hahn).mp3
+2:KFlay - Everyone I Know.mp3
+3:against-the-current/blood-like-gasoline.mp3
+4:pink-guy/help.mp3
+5:Linkin Park - From the Inside.mp3
+6:joji/we-fall-again.mp3
+7:joji/medicine.mp3
+8:Linkin Park - One Step Closer.mp3
+9:Linkin Park - Given Up.mp3
+10:Fort Minor - Petrified.mp3
+11:Linkin Park - Heavy (feat Kiiara).mp3
+12:joji/test-drive.mp3
+13:joji/attention.mp3
+14:Linkin Park - Faint.mp3
+15:Linkin Park - IN MY REMAINS.mp3
+16:joji/yeah-right.mp3
+17:Linkin Park - New Divide.mp3
+18:Linkin Park - Numb.mp3
+19:Jason Walker - Down.mp3
+20:Linkin Park - One More Light.mp3
+21:X-Ecutioners - It's Goin' Down (feat Mike Shinoda  Mr Hahn).mp3
+22:Linkin Park - Faint.mp3
+23:Mike Shinoda - Promises I Can't Keep.mp3
+24:Linkin Park - A LIGHT THAT NEVER COMES.mp3
+25:Linkin Park - New Divide.mp3
+26:Styles Of Beyond - Second to None.mp3
+27:joji/ill-see-you-in-40.mp3
+28:joji/i-dont-wanna-waste-my-time.mp3
+29:Linkin Park - Bleed It Out.mp3
+30:Linkin Park - Don't Stay.mp3
+31:pink-guy/dumplings.mp3
+32:Linkin Park - Somewhere I Belong.mp3
+33:Linkin Park - Sharp Edges.mp3
+34:KFlay - Hollywood Forever.mp3
+35:Linkin Park - My December.mp3
+36:Linkin Park - Points of Authority.mp3
+37:KFlay - FML.mp3
+38:pink-guy/セックス大好き.mp3
+39:joji/slow-dancing-in-the-dark.mp3
+40:niki/dancing-with-the-devil.mp3
+41:Linkin Park - From the Inside.mp3
+42:pink-guy/fried-noodles.mp3
+43:Mike Shinoda - Can't Hear You Now.mp3
+44:Mike Shinoda - Prove You Wrong.mp3
+45:Linkin Park - Leave Out All The Rest.mp3
+46:Linkin Park - Somewhere I Belong.mp3
+47:pink-guy/kill-yourself.mp3
+48:Linkin Park - Lying from You.mp3
+49:pink-guy/are-you-serious.mp3
+50:niki/i-like-u.mp3
+51:joji/once-in-a-while				.mp3
+52:against-the-current/wasteland.mp3
+playlist_end

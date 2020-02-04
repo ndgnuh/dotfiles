@@ -108,3 +108,17 @@ source $ZSH/oh-my-zsh.sh
 alias clone="terminal 2> /dev/null & disown"
 alias :q="exit"
 alias fucking="sudo"
+
+# node js, again...
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+[ -f "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
+[ -f "/usr/share/nvm/bash_completion" ] && source /usr/share/nvm/bash_completion
+[ -f "/usr/share/nvm/install-nvm-exec" ] && source /usr/share/nvm/install-nvm-exec
+[ -d "$HOME/.yarn/bin/" ] && export PATH=$PATH:~/.yarn/bin
+
+# Android studio
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

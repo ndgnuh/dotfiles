@@ -1,0 +1,575 @@
+Jan 10 00:26 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 10 00:26 : exception: Failed to open '/home/hung/.config/mpd/state': No such file or directory
+Jan 10 00:26 : update: added superorganism/something-for-your-mind.mp3
+Jan 10 00:26 : update: added /Đừng Bỏ Em Một Mình - Lệ Thu-GiicY5fT8bU.opus
+Jan 10 00:26 : update: added dj-okawari/u-feat-stacy-epps.mp3
+Jan 10 00:26 : update: added dj-okawari/brighter-side-feat-amanda-di.mp3
+Jan 10 00:26 : update: added dj-okawari/represent-feat-chieko-kinbar.mp3
+Jan 10 00:26 : update: added dj-okawari/the-bonds-feat-nanase.mp3
+Jan 10 00:26 : update: added dj-okawari/another-sky.mp3
+Jan 10 00:26 : update: added dj-okawari/a-cup-of-coffee.mp3
+Jan 10 00:26 : update: added dj-okawari/flower-dance.mp3
+Jan 10 00:26 : update: added dj-okawari/peacock.mp3
+Jan 10 00:26 : update: added dj-okawari/encounter.mp3
+Jan 10 00:26 : update: added dj-okawari/temperature-of-tears.mp3
+Jan 10 00:26 : update: added dj-okawari/kaleidoscope-feat-tekitha-fr.mp3
+Jan 10 00:26 : update: added dj-okawari/change-the-world-feat-woong.mp3
+Jan 10 00:26 : update: added dj-okawari/brown-eyes-feat-brittany-cam.mp3
+Jan 10 00:26 : update: added /a-ha - Take On Me (Live From MTV Unplugged)--xKM3mGt2pE.opus
+Jan 10 00:26 : update: added green-day/21-guns.mp3
+Jan 10 00:26 : update: added green-day/still-breathing.mp3
+Jan 10 00:26 : update: added green-day/say-goodbye.mp3
+Jan 10 00:26 : update: added green-day/wake-me-up-when-september-ends.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/dj-okawari/u-feat-stacy-epps.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/brighter-side-feat-amanda-di.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/represent-feat-chieko-kinbar.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/the-bonds-feat-nanase.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/another-sky.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/a-cup-of-coffee.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/flower-dance.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/peacock.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/encounter.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/temperature-of-tears.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/kaleidoscope-feat-tekitha-fr.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/change-the-world-feat-woong.mp3
+Jan 10 00:26 : update: added Music/dj-okawari/brown-eyes-feat-brittany-cam.mp3
+Jan 10 00:26 : update: added Music/green-day/21-guns.mp3
+Jan 10 00:26 : update: added Music/green-day/still-breathing.mp3
+Jan 10 00:26 : update: added Music/green-day/say-goodbye.mp3
+Jan 10 00:26 : update: added Music/green-day/wake-me-up-when-september-ends.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/Figure.09 - Linkin Park (Meteora)-LpC0SKU6O00.mp3
+Jan 10 00:26 : update: added Music/joji/plastic-taste.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/joji/unsaved-info.mp3
+Jan 10 00:26 : update: added Music/joji/medicine.mp3
+Jan 10 00:26 : update: added Music/joji/attention.mp3
+Jan 10 00:26 : update: added Music/joji/test-drive.mp3
+Jan 10 00:26 : update: added Music/joji/xnxx.mp3
+Jan 10 00:26 : update: added Music/joji/cant-get-over-you-ft-clams-casino.mp3
+Jan 10 00:26 : update: added Music/joji/why-am-i-still-in-la-ft-shlohmo--d33j.mp3
+Jan 10 00:26 : update: added Music/joji/ill-see-you-in-40.mp3
+Jan 10 00:26 : update: added Music/joji/they-dont-understand.mp3
+Jan 10 00:26 : update: added Music/joji/you-suck-charlie.mp3
+Jan 10 00:26 : update: added Music/joji/we-fall-again.mp3
+Jan 10 00:26 : update: added Music/joji/i-dont-wanna-waste-my-time.mp3
+Jan 10 00:26 : update: added Music/joji/thom.mp3
+Jan 10 00:26 : update: added Music/joji/world$tar-money.mp3
+Jan 10 00:26 : update: added Music/joji/no-fun.mp3
+Jan 10 00:26 : update: added Music/joji/wanted-u.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/joji/rain-on-me.mp3
+Jan 10 00:26 : update: added Music/joji/rip-ft-trippie-redd.mp3
+Jan 10 00:26 : update: added Music/joji/slow-dancing-in-the-dark.mp3
+Jan 10 00:26 : update: added Music/joji/yeah-right.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/joji/come-thru.mp3
+Jan 10 00:26 : update: added Music/against-the-current/in-our-bones.mp3
+Jan 10 00:26 : update: added Music/against-the-current/wasteland.mp3
+Jan 10 00:26 : update: added Music/against-the-current/demons.mp3
+Jan 10 00:26 : update: added Music/against-the-current/forget-me-now.mp3
+Jan 10 00:26 : update: added Music/against-the-current/chasing-ghosts.mp3
+Jan 10 00:26 : update: added Music/against-the-current/roses.mp3
+Jan 10 00:26 : update: added Music/against-the-current/blood-like-gasoline.mp3
+Jan 10 00:26 : update: added Music/against-the-current/steal-the-night.mp3
+Jan 10 00:26 : update: added Music/against-the-current/brighter.mp3
+Jan 10 00:26 : update: added Music/against-the-current/zombie.mp3
+Jan 10 00:26 : update: added Music/against-the-current/young--relentless.mp3
+Jan 10 00:26 : update: added Music/against-the-current/one-more-weekend.mp3
+Jan 10 00:26 : update: added Music/against-the-current/running-with-the-wild-things.mp3
+Jan 10 00:26 : update: added Music/against-the-current/runaway.mp3
+Jan 10 00:26 : update: added Music/Easier To Run - Linkin Park (Meteora)-U5zdmjVeQzE.mp3
+Jan 10 00:26 : update: added Music/Lying From You - Linkin Park (Meteora)-NjdgcHdzvac.mp3
+Jan 10 00:26 : update: added Music/various/midsummer-madness.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-the-stormy-forest-kmst-12488.mp3
+Jan 10 00:26 : update: added Music/nexon/labyrinth-of-suffering-heart-of-suffering.mp3
+Jan 10 00:26 : update: added Music/nexon/black-heaven-heaven-again.mp3
+Jan 10 00:26 : update: added Music/nexon/friendstory-catch-your-dreams!-japanese-jms-342.mp3
+Jan 10 00:26 : update: added Music/nexon/black-heaven-promise-of-heaven-instrumental.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-evening-primrose.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-way-back-home.mp3
+Jan 10 00:26 : update: added Music/nexon/vanishing-journey-volcanic-mountain-kmst-12035.mp3
+Jan 10 00:26 : update: added Music/nexon/pain-and-sorrow-kmst-12024.mp3
+Jan 10 00:26 : update: added Music/nexon/labyrinth-of-suffering-eternal-swamp.mp3
+Jan 10 00:26 : update: added Music/nexon/zeros-temple-be-born-zero-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-diffraction.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-no-name.mp3
+Jan 10 00:26 : update: added Music/nexon/zeros-temple-shadow-temple-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-dimension-library-kms-12201.mp3
+Jan 10 00:26 : update: added Music/nexon/friendstory-catch-your-dreams!-instrumental-kms-12231.mp3
+Jan 10 00:26 : update: added Music/nexon/black-heaven-main-theme.mp3
+Jan 10 00:26 : update: added Music/nexon/vanishing-journey-the-cave-of-peace-kmst-12035.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added Music/nexon/vanishing-journey-the-lake-of-oblivion-kmst-12035.mp3
+Jan 10 00:26 : update: added Music/nexon/elluel-wind-and-flower-kmst-12389.mp3
+Jan 10 00:26 : update: added Music/nexon/moonbridge-strange-fog.mp3
+Jan 10 00:26 : update: added Music/nexon/heroes-of-maple-main-theme-piano-kmst-12024.mp3
+Jan 10 00:26 : update: added Music/nexon/secret-stories-frozen-heart.mp3
+Jan 10 00:26 : update: added Music/nexon/lacheln-shattered-time-kmst-12038.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-forgotten-names.mp3
+Jan 10 00:26 : update: added Music/nexon/mirror-world-temple-of-time-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-the-aurora-kmst-12488.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-le-temple-du-miroir.mp3
+Jan 10 00:26 : update: added Music/nexon/morass-memory-of-kritias.mp3
+Jan 10 00:26 : update: added Music/nexon/lacheln-lacheln-the-city-of-dreams-kmst-12038.mp3
+Jan 10 00:26 : update: added Music/nexon/timeless-beholder-kms-12251.mp3
+Jan 10 00:26 : update: added Music/nexon/pain-to-hope-kms-12253.mp3
+Jan 10 00:26 : update: added Music/nexon/friendstory-the-beast-kms-12231.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-contaminated-sea.mp3
+Jan 10 00:26 : update: added Music/nexon/friendstory-the-beast-2-kms-12231.mp3
+Jan 10 00:26 : update: added Music/nexon/tenebris-outpost.mp3
+Jan 10 00:26 : update: added Music/nexon/friendstory-catch-your-dreams!-kms-12231.mp3
+Jan 10 00:26 : update: added Music/nexon/ereve-queens-garden.mp3
+Jan 10 00:26 : update: added Music/nexon/mirror-world-edelstein-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/moonbridge-war-cloud.mp3
+Jan 10 00:26 : update: added Music/nexon/mirror-world-mu-lung-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-a-place-where-life-begins.mp3
+Jan 10 00:26 : update: added Music/nexon/anthem-for-heroes-kms-12251.mp3
+Jan 10 00:26 : update: added Music/nexon/moonbridge-ferocious-battlefield.mp3
+Jan 10 00:26 : update: added Music/nexon/zeros-temple-nasty-liar-kmst-12482.mp3
+Jan 10 00:26 : update: added Music/nexon/moonbridge-wave-of-emptiness.mp3
+Jan 10 00:26 : update: added Music/nexon/lacheln-phantasmal-woods-kmst-12038.mp3
+Jan 10 00:26 : update: added Music/nexon/labyrinth-of-suffering-depth-of-pain.mp3
+Jan 10 00:26 : update: added Music/nexon/ereve-raindrop-flower.mp3
+Jan 10 00:26 : update: added Music/nexon/labyrinth-of-suffering-secret-labyrinth.mp3
+Jan 10 00:26 : update: added Music/nexon/jazz-for-dr-lim-kms-12252.mp3
+Jan 10 00:26 : update: added Music/nexon/grand-athenaeum-nowhere.mp3
+Jan 10 00:26 : update: added Music/nexon/savage-terminal.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-the-bloody-cage.mp3
+Jan 10 00:26 : update: added Music/nexon/morass-swamp-of-memory.mp3
+Jan 10 00:26 : update: added Music/nexon/esfera-mirror-cage.mp3
+Jan 10 00:26 : update: added Music/nexon/cygnus-garden.mp3
+Jan 10 00:26 : update: added Music/nexon/black-mage-new-beginning-not-the-end.mp3
+Jan 10 00:26 : update: added Music/Don't Stay - Linkin Park (Meteora)-oWfGOVWrueo.mp3
+Jan 10 00:26 : update: added Music/Mr.Robot 'Fuck Society' Speech-LPYCtErvMyA.opus
+Jan 10 00:26 : update: added Music/Hit The Floor - Linkin Park (Meteora)-oMals9XXQY8.mp3
+Jan 10 00:26 : update: added Music/Session - Linkin Park (Meteora)-J1KqQYsUYIk.mp3
+Jan 10 00:26 : update: added Music/Nobody's Listening - Linkin Park (Meteora)-QJ87793QXes.mp3
+Jan 10 00:26 : update: added Music/linkin-park/In Between - Linkin Park (Minutes To Midnight)-YgVzhgygYfs.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Bleed It Out (Official Video) - Linkin Park-OnuuYcqhzCE.mp3
+Jan 10 00:26 : update: added Music/linkin-park/No More Sorrow - Linkin Park (Minutes To Midnight)-rW4uBvP2Dqc.mp3
+Jan 10 00:26 : update: added Music/linkin-park/My December - Linkin Park (Hybrid Theory)-9DCdCoQ49u8.mp3
+Jan 10 00:26 : update: added Music/linkin-park/good-goodbye-feat-pusha-t-and-stormzy.mp3
+Jan 10 00:26 : update: added Music/linkin-park/By Myself - Linkin Park (Hybrid Theory)-wWBp-nlGX1o.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Papercut (Official Video) - Linkin Park-vjVkXlxsO8Q.mp3
+Jan 10 00:26 : update: added Music/linkin-park/With You - Linkin Park (Hybrid Theory)-M8UTS2iFXOo.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Runaway - Linkin Park (Hybrid Theory)-ig-fyQqf510.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Crawling (Official Video) - Linkin Park-Gd9OhYroLN0.mp3
+Jan 10 00:26 : update: added Music/linkin-park/The Little Things Give You Away - Linkin Park (Minutes To Midnight)-Gs0t8LXH6lw.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Valentine's Day - Linkin Park (Minutes To Midnight)-KAFOpywZbMM.mp3
+Jan 10 00:26 : update: added Music/linkin-park/halfway-right.mp3
+Jan 10 00:26 : update: added Music/linkin-park/In Pieces - Linkin Park (Minutes To Midnight)-NaRBn6QIMcQ.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Forgotten - Linkin Park (Hybrid Theory)-HNCgBuI2eJc.mp3
+Jan 10 00:26 : update: added Music/linkin-park/battle-symphony.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Papercut (Recorded Live At BBC1) - Linkin Park (Hybrid Theory)-LR4njlVt6GA.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Given Up (Official Video HQ) - Linkin Park-0xyxtzD54rM.mp3
+Jan 10 00:26 : update: added Music/linkin-park/one-more-light.mp3
+Jan 10 00:26 : update: added Music/linkin-park/sharp-edges.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Leave Out All The Rest (Official Video) - Linkin Park-yZIummTz9mM.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Pushing Me Away - Linkin Park (Hybrid Theory)-Ve1LNJEIKUE.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Hands Held High - Linkin Park (Minutes To Midnight)-gG4P3ayBzVY.mp3
+Jan 10 00:26 : update: added Music/linkin-park/A Place For My Head - Linkin Park (Hybrid Theory)-3t2WkCudwfY.mp3
+Jan 10 00:26 : update: added Music/linkin-park/talking-to-myself.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Cure For The Itch (Official Video) - Linkin Park-u6z5U83lfrQ.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Points Of Authority (Official Video) - Linkin Park-jZSPAp8kCl4.mp3
+Jan 10 00:26 : update: added Music/linkin-park/What I've Done (Official Video) - Linkin Park-8sgycukafqQ.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Wake - Linkin Park (Minutes To Midnight)-Me7TJDHCELk.mp3
+Jan 10 00:26 : update: added Music/linkin-park/invisible.mp3
+Jan 10 00:26 : update: added Music/linkin-park/High Voltage - Linkin Park-nANdZ2ah9yI.mp3
+Jan 10 00:26 : update: added Music/linkin-park/heavy-feat-kiiara.mp3
+Jan 10 00:26 : update: added Music/linkin-park/sorry-for-now.mp3
+Jan 10 00:26 : update: added Music/linkin-park/One Step Closer (Official Video) - Linkin Park-4qlCC1GOwFw.mp3
+Jan 10 00:26 : update: added Music/linkin-park/Shadow Of The Day (Official Video) - Linkin Park-n1PCW0C1aiM.mp3
+Jan 10 00:26 : update: added Music/linkin-park/In The End (Official Video) - Linkin Park-eVTXPUF4Oz4.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/smilling-down.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/the-same-as.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/ending-story.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/all-mine.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/deeper-deeper.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/nothing-helps.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/juvenile.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/clock-strikes.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/the-beginning.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/onion!.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/69.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/be-the-light.mp3
+Jan 10 00:26 : update: added Music/one-ok-rock/introduction.mp3
+Jan 10 00:26 : update: added Music/niki/warpaint.mp3
+Jan 10 00:26 : update: added Music/niki/spell.mp3
+Jan 10 00:26 : update: added Music/niki/sugarplum-elegy.mp3
+Jan 10 00:26 : update: added Music/niki/see-you-never.mp3
+Jan 10 00:26 : update: added Music/niki/vintage.mp3
+Jan 10 00:26 : update: added Music/niki/pools.mp3
+Jan 10 00:26 : update: added Music/niki/around.mp3
+Jan 10 00:26 : update: added Music/niki/i-like-u.mp3
+Jan 10 00:26 : update: added Music/niki/dancing-with-the-devil.mp3
+Jan 10 00:26 : update: added Music/niki/friends.mp3
+Jan 10 00:26 : update: added Music/niki/chilly.mp3
+Jan 10 00:26 : update: added Music/Somewhere I Belong (Official Video) - Linkin Park-zsCD5XCu6CM.mp3
+Jan 10 00:26 : update: added Music/pink-guy/hentai.mp3
+Jan 10 00:26 : update: added Music/pink-guy/meme-machine.mp3
+Jan 10 00:26 : update: added Music/pink-guy/club-banger-3000.mp3
+Jan 10 00:26 : update: added Music/pink-guy/are-you-serious.mp3
+Jan 10 00:26 : update: added Music/pink-guy/セックス大好き.mp3
+Jan 10 00:26 : update: added Music/pink-guy/hand-on-my-gat-politikz.mp3
+Jan 10 00:26 : update: added Music/pink-guy/be-inspired.mp3
+Jan 10 00:26 : update: added Music/pink-guy/fried-noodles.mp3
+Jan 10 00:26 : update: added Music/pink-guy/nickelodeon-girls.mp3
+Jan 10 00:26 : update: added Music/pink-guy/hot-nickel-ball-on-a-pssy.mp3
+Jan 10 00:26 : update: added Music/pink-guy/shes-so-nice.mp3
+Jan 10 00:26 : update: added Music/pink-guy/please-stop-calling-me-gay.mp3
+Jan 10 00:26 : update: added Music/pink-guy/uber-pussy.mp3
+Jan 10 00:26 : update: added Music/pink-guy/dora-the-explora.mp3
+Jan 10 00:26 : update: added Music/pink-guy/dumplings.mp3
+Jan 10 00:26 : update: added Music/pink-guy/stfu.mp3
+Jan 10 00:26 : update: added Music/pink-guy/pink-life.mp3
+Jan 10 00:26 : update: added Music/pink-guy/rice-balls.mp3
+Jan 10 00:26 : update: added Music/pink-guy/i-have-a-gun.mp3
+Jan 10 00:26 : update: added Music/pink-guy/help.mp3
+Jan 10 00:26 : update: added Music/pink-guy/gays-4-donald-trump.mp3
+Jan 10 00:26 : update: added Music/pink-guy/kill-yourself.mp3
+Jan 10 00:26 : update: added Music/pink-guy/high-school-blink193.mp3
+Jan 10 00:26 : update: added Music/Breaking The Habit (Official Video) - Linkin Park-v2H4l9RpkwM.mp3
+Jan 10 00:26 : update: added Music/Foreword - Linkin Park (Meteora)-U6R-twDkrcI.mp3
+Jan 10 00:26 : update: added Music/From The Inside (Official Video) - Linkin Park-YLHpvjrFpe0.mp3
+Jan 10 00:26 : update: added /KFlay - Giver.mp3
+Jan 10 00:26 : update: added /The Moth (Les Deux Love Orchestra Cover) -  Aimee Mann [Mr. Robot S02E12]-JG6x4MHdTWM.mp3
+Jan 10 00:26 : update: added joji/plastic-taste.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added joji/unsaved-info.mp3
+Jan 10 00:26 : update: added joji/medicine.mp3
+Jan 10 00:26 : update: added joji/attention.mp3
+Jan 10 00:26 : update: added joji/test-drive.mp3
+Jan 10 00:26 : update: added joji/xnxx.mp3
+Jan 10 00:26 : update: added joji/cant-get-over-you-ft-clams-casino.mp3
+Jan 10 00:26 : update: added joji/why-am-i-still-in-la-ft-shlohmo--d33j.mp3
+Jan 10 00:26 : update: added joji/ill-see-you-in-40.mp3
+Jan 10 00:26 : update: added joji/they-dont-understand.mp3
+Jan 10 00:26 : update: added joji/you-suck-charlie.mp3
+Jan 10 00:26 : update: added joji/we-fall-again.mp3
+Jan 10 00:26 : update: added joji/i-dont-wanna-waste-my-time.mp3
+Jan 10 00:26 : update: added joji/once-in-a-while				.mp3
+Jan 10 00:26 : update: added joji/thom.mp3
+Jan 10 00:26 : update: added joji/world$tar-money.mp3
+Jan 10 00:26 : update: added joji/no-fun.mp3
+Jan 10 00:26 : update: added joji/wanted-u.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added joji/rain-on-me.mp3
+Jan 10 00:26 : update: added joji/rip-ft-trippie-redd.mp3
+Jan 10 00:26 : update: added joji/slow-dancing-in-the-dark.mp3
+Jan 10 00:26 : update: added joji/yeah-right.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added joji/come-thru.mp3
+Jan 10 00:26 : update: added against-the-current/in-our-bones.mp3
+Jan 10 00:26 : update: added against-the-current/wasteland.mp3
+Jan 10 00:26 : update: added against-the-current/demons.mp3
+Jan 10 00:26 : update: added against-the-current/forget-me-now.mp3
+Jan 10 00:26 : update: added against-the-current/chasing-ghosts.mp3
+Jan 10 00:26 : update: added against-the-current/roses.mp3
+Jan 10 00:26 : update: added against-the-current/blood-like-gasoline.mp3
+Jan 10 00:26 : update: added against-the-current/steal-the-night.mp3
+Jan 10 00:26 : update: added against-the-current/brighter.mp3
+Jan 10 00:26 : update: added against-the-current/zombie.mp3
+Jan 10 00:26 : update: added against-the-current/young--relentless.mp3
+Jan 10 00:26 : update: added against-the-current/one-more-weekend.mp3
+Jan 10 00:26 : update: added against-the-current/running-with-the-wild-things.mp3
+Jan 10 00:26 : update: added against-the-current/runaway.mp3
+Jan 10 00:26 : update: added /Rob#Thomas#-#Little#Wonders#[Official#Music#Video].mp3_new.mp3
+Jan 10 00:26 : update: added /KFlay - Dreamers.mp3
+Jan 10 00:26 : update: added /KFlay - Everyone I Know.mp3
+Jan 10 00:26 : update: added various/midsummer-madness.mp3
+Jan 10 00:26 : update: added /The Irrepressibles - In This Shirt (lyrics)-_17uuVDY_Po.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-the-stormy-forest-kmst-12488.mp3
+Jan 10 00:26 : update: added nexon/labyrinth-of-suffering-heart-of-suffering.mp3
+Jan 10 00:26 : update: added nexon/black-heaven-heaven-again.mp3
+Jan 10 00:26 : update: added nexon/friendstory-catch-your-dreams!-japanese-jms-342.mp3
+Jan 10 00:26 : update: added nexon/black-heaven-promise-of-heaven-instrumental.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-evening-primrose.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-way-back-home.mp3
+Jan 10 00:26 : update: added nexon/vanishing-journey-volcanic-mountain-kmst-12035.mp3
+Jan 10 00:26 : update: added nexon/pain-and-sorrow-kmst-12024.mp3
+Jan 10 00:26 : update: added nexon/labyrinth-of-suffering-eternal-swamp.mp3
+Jan 10 00:26 : update: added nexon/zeros-temple-be-born-zero-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/esfera-diffraction.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-no-name.mp3
+Jan 10 00:26 : update: added nexon/zeros-temple-shadow-temple-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-dimension-library-kms-12201.mp3
+Jan 10 00:26 : update: added nexon/friendstory-catch-your-dreams!-instrumental-kms-12231.mp3
+Jan 10 00:26 : update: added nexon/black-heaven-main-theme.mp3
+Jan 10 00:26 : update: added nexon/vanishing-journey-the-cave-of-peace-kmst-12035.mp3
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:26 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:26 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:26 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:26 : update: added nexon/vanishing-journey-the-lake-of-oblivion-kmst-12035.mp3
+Jan 10 00:26 : update: added nexon/elluel-wind-and-flower-kmst-12389.mp3
+Jan 10 00:26 : update: added nexon/moonbridge-strange-fog.mp3
+Jan 10 00:26 : update: added nexon/heroes-of-maple-main-theme-piano-kmst-12024.mp3
+Jan 10 00:26 : update: added nexon/secret-stories-frozen-heart.mp3
+Jan 10 00:26 : update: added nexon/lacheln-shattered-time-kmst-12038.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-forgotten-names.mp3
+Jan 10 00:26 : update: added nexon/mirror-world-temple-of-time-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-the-aurora-kmst-12488.mp3
+Jan 10 00:26 : update: added nexon/esfera-le-temple-du-miroir.mp3
+Jan 10 00:26 : update: added nexon/morass-memory-of-kritias.mp3
+Jan 10 00:26 : update: added nexon/lacheln-lacheln-the-city-of-dreams-kmst-12038.mp3
+Jan 10 00:26 : update: added nexon/timeless-beholder-kms-12251.mp3
+Jan 10 00:26 : update: added nexon/pain-to-hope-kms-12253.mp3
+Jan 10 00:26 : update: added nexon/friendstory-the-beast-kms-12231.mp3
+Jan 10 00:26 : update: added nexon/esfera-contaminated-sea.mp3
+Jan 10 00:26 : update: added nexon/friendstory-the-beast-2-kms-12231.mp3
+Jan 10 00:26 : update: added nexon/tenebris-outpost.mp3
+Jan 10 00:26 : update: added nexon/friendstory-catch-your-dreams!-kms-12231.mp3
+Jan 10 00:26 : update: added nexon/ereve-queens-garden.mp3
+Jan 10 00:26 : update: added nexon/mirror-world-edelstein-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/moonbridge-war-cloud.mp3
+Jan 10 00:26 : update: added nexon/mirror-world-mu-lung-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/esfera-a-place-where-life-begins.mp3
+Jan 10 00:26 : update: added nexon/anthem-for-heroes-kms-12251.mp3
+Jan 10 00:26 : update: added nexon/moonbridge-ferocious-battlefield.mp3
+Jan 10 00:26 : update: added nexon/zeros-temple-nasty-liar-kmst-12482.mp3
+Jan 10 00:26 : update: added nexon/moonbridge-wave-of-emptiness.mp3
+Jan 10 00:26 : update: added nexon/lacheln-phantasmal-woods-kmst-12038.mp3
+Jan 10 00:26 : update: added nexon/labyrinth-of-suffering-depth-of-pain.mp3
+Jan 10 00:26 : update: added nexon/ereve-raindrop-flower.mp3
+Jan 10 00:26 : update: added nexon/labyrinth-of-suffering-secret-labyrinth.mp3
+Jan 10 00:26 : update: added nexon/jazz-for-dr-lim-kms-12252.mp3
+Jan 10 00:26 : update: added nexon/grand-athenaeum-nowhere.mp3
+Jan 10 00:26 : update: added nexon/savage-terminal.mp3
+Jan 10 00:26 : update: added nexon/esfera-the-bloody-cage.mp3
+Jan 10 00:26 : update: added nexon/morass-swamp-of-memory.mp3
+Jan 10 00:26 : update: added nexon/esfera-mirror-cage.mp3
+Jan 10 00:26 : update: added nexon/cygnus-garden.mp3
+Jan 10 00:26 : update: added nexon/black-mage-new-beginning-not-the-end.mp3
+Jan 10 00:26 : update: added /KFlay - FML.mp3
+Jan 10 00:26 : update: added linkin-park/good-goodbye-feat-pusha-t-and-stormzy.mp3
+Jan 10 00:26 : update: added linkin-park/halfway-right.mp3
+Jan 10 00:26 : update: added linkin-park/battle-symphony.mp3
+Jan 10 00:26 : update: added linkin-park/one-more-light.mp3
+Jan 10 00:26 : update: added linkin-park/sharp-edges.mp3
+Jan 10 00:26 : update: added linkin-park/talking-to-myself.mp3
+Jan 10 00:26 : update: added linkin-park/invisible.mp3
+Jan 10 00:26 : update: added linkin-park/heavy-feat-kiiara.mp3
+Jan 10 00:26 : update: added linkin-park/sorry-for-now.mp3
+Jan 10 00:26 : update: added one-ok-rock/smilling-down.mp3
+Jan 10 00:26 : update: added one-ok-rock/the-same-as.mp3
+Jan 10 00:26 : update: added one-ok-rock/ending-story.mp3
+Jan 10 00:26 : update: added one-ok-rock/all-mine.mp3
+Jan 10 00:26 : update: added one-ok-rock/deeper-deeper.mp3
+Jan 10 00:26 : update: added one-ok-rock/nothing-helps.mp3
+Jan 10 00:26 : update: added one-ok-rock/juvenile.mp3
+Jan 10 00:26 : update: added one-ok-rock/clock-strikes.mp3
+Jan 10 00:26 : update: added one-ok-rock/the-beginning.mp3
+Jan 10 00:26 : update: added one-ok-rock/onion!.mp3
+Jan 10 00:26 : update: added one-ok-rock/69.mp3
+Jan 10 00:26 : update: added one-ok-rock/be-the-light.mp3
+Jan 10 00:26 : update: added one-ok-rock/introduction.mp3
+Jan 10 00:26 : update: added niki/warpaint.mp3
+Jan 10 00:26 : update: added niki/spell.mp3
+Jan 10 00:26 : update: added niki/sugarplum-elegy.mp3
+Jan 10 00:26 : update: added niki/see-you-never.mp3
+Jan 10 00:26 : update: added niki/vintage.mp3
+Jan 10 00:26 : update: added niki/pools.mp3
+Jan 10 00:26 : update: added niki/around.mp3
+Jan 10 00:26 : update: added niki/i-like-u.mp3
+Jan 10 00:26 : update: added niki/dancing-with-the-devil.mp3
+Jan 10 00:26 : update: added niki/friends.mp3
+Jan 10 00:26 : update: added niki/chilly.mp3
+Jan 10 00:26 : update: added pink-guy/hentai.mp3
+Jan 10 00:26 : update: added pink-guy/meme-machine.mp3
+Jan 10 00:26 : update: added pink-guy/club-banger-3000.mp3
+Jan 10 00:26 : update: added pink-guy/are-you-serious.mp3
+Jan 10 00:26 : update: added pink-guy/セックス大好き.mp3
+Jan 10 00:26 : update: added pink-guy/hand-on-my-gat-politikz.mp3
+Jan 10 00:26 : update: added pink-guy/be-inspired.mp3
+Jan 10 00:26 : update: added pink-guy/fried-noodles.mp3
+Jan 10 00:26 : update: added pink-guy/nickelodeon-girls.mp3
+Jan 10 00:26 : update: added pink-guy/hot-nickel-ball-on-a-pssy.mp3
+Jan 10 00:26 : update: added pink-guy/shes-so-nice.mp3
+Jan 10 00:26 : update: added pink-guy/please-stop-calling-me-gay.mp3
+Jan 10 00:26 : update: added pink-guy/uber-pussy.mp3
+Jan 10 00:26 : update: added pink-guy/dora-the-explora.mp3
+Jan 10 00:26 : update: added pink-guy/dumplings.mp3
+Jan 10 00:26 : update: added pink-guy/stfu.mp3
+Jan 10 00:26 : update: added pink-guy/pink-life.mp3
+Jan 10 00:26 : update: added pink-guy/rice-balls.mp3
+Jan 10 00:26 : update: added pink-guy/i-have-a-gun.mp3
+Jan 10 00:26 : update: added pink-guy/help.mp3
+Jan 10 00:26 : update: added pink-guy/gays-4-donald-trump.mp3
+Jan 10 00:26 : update: added pink-guy/kill-yourself.mp3
+Jan 10 00:26 : update: added pink-guy/high-school-blink193.mp3
+Jan 10 00:26 : update: added /KFlay - Hollywood Forever.mp3
+Jan 10 00:26 : update: added /Robot Chicken Ending Theme Song-4qXvEzfsL5k.mp3
+Jan 10 00:26 : update: added /Mazzy Star - Look On Down From The Bridge-LwVXkM_YxMg.mp3
+Jan 10 00:27 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:27 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:27 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:27 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Jan 10 00:33 : exception: RTIOThread could not get realtime scheduling, continuing anyway: sched_setscheduler failed: Operation not permitted
+Jan 10 00:33 : client: [0] opened from 127.0.0.1:52474
+Jan 10 00:33 : client: [0] closed
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.
+Note: Illegal Audio-MPEG-Header 0x00000000 at offset 2172.
+Note: Trying to resync...
+Note: Hit end of (available) data during resync.
+Jan 10 00:33 : mpg123: mpg123_getformat() failed: Message: I am done with this track.
+Jan 10 00:33 : ffmpeg/mp3: Format mp3 detected only with low score of 24, misdetection possible!
+Jan 10 00:33 : ffmpeg/mp3: Failed to read frame size: Could not seek to 1151.

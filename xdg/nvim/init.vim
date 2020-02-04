@@ -17,11 +17,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'roxma/nvim-yarp'
 Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
+" Plug 'joereynolds/vim-minisnip'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'http://github.com/joom/latex-unicoder.vim'
+Plug 'robertbasic/vim-hugo-helper' " hugo helper
 
 " Functionals
 Plug 'sheerun/vim-polyglot'
@@ -32,6 +34,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/godlygeek/tabular'
 Plug 'https://github.com/tomtom/tcomment_vim'
 Plug 'tbastos/vim-lua'
 
@@ -136,8 +139,7 @@ autocmd FileType tex map <F7> :!make clean <CR>
 autocmd FileType tex map <F7> :!make bib <CR>
 
 " Easy align
-nmap ga <Plug>(EasyAlign)
-xmap ga <Plug>(EasyAlign)
+xmap ga :Tab/
 
 " let g:indent_guides_enable_on_vim_startup = 1
 " let g:indentLine_color_gui = '#A4E57E'
@@ -159,14 +161,14 @@ function! IbusOn()
         let g:ibus_prev_engine = l:current_engine
     endif
     " Khôi phục lại engine
-    execute '!' . 'ibus engine ' . g:ibus_prev_engine
+    execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
 endfunction
 autocmd InsertEnter * call IbusOn()
 autocmd InsertLeave * call IbusOff()
 call IbusOff()
 
 " Background color
-hi Normal guibg=#1d1f21
+hi Normal guibg=#1d1f2175
 
 " Open NERDTree if start with nvim .
 autocmd StdinReadPre * let s:std_in=1
