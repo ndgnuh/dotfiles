@@ -1,12 +1,12 @@
 [options]
-allow_bold = false
-audible_bell = false
-bold_is_bright = true
+allow_bold = true
+audible_bell = true
+bold_is_bright = false
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
 clickable_url = true
 dynamic_title = true
-font = Inconsolata 18
+font = monospace 14
 #fullscreen = true
 icon_name = terminal
 #mouse_autohide = false
@@ -23,7 +23,7 @@ hyperlinks = true
 #browser = xdg-open
 
 # "system", "on" or "off"
-cursor_blink = on
+cursor_blink = off
 
 # "block", "underline" or "ibeam"
 cursor_shape = block
@@ -41,63 +41,36 @@ size_hints = false
 scrollbar = off
 
 [colors]
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
-# highlight = #2f2f2f
-# https://git.io/nord
-#foreground = #d8dee9
-background = rgba(29, 31, 33, 0.8)
-; background = #000000
-; background = rgb(40,44,52)
-foreground = #4caf50
-# background = #3b4252
-cursor     = #dcdfe4
-
-color0 =  #282c34
-color1 =  #e06c75
-color2 =  #98c379
-color3 =  #e5c07b
-color4 =  #61afef
-color5 =  #c678dd
-color6 =  #56b6c2
-color7 =  #dcdfe4
-
-color8  = #282c34
-color9  = #e06c75
-color10 = #98c379
-color11 = #e5c07b
-color12 = #61afef
-color13 = #c678dd
-color14 = #56b6c2
-color15 = #dcdfe4
-
-# color0 = #3b4252
-# color1 = #bf616a
-# color2 = #a3be8c
-# color3 = #ebcb8b
-# color4 = #81a1c1
-# color5 = #b48ead
-# color6 = #88c0d0
-# color7 = #e5e8f0
-#
-# color8  = #4c566a
-# color9  = #bf616a
-# color10 = #a3be8c
-# color11 = #ebcb8b
-# color12 = #81a1c1
-# color13 = #b48ead
-# color14 = #8fbcbb
-# color15 = #eceff4
+background = #1D1F28
+foreground = #FDFDFD
+cursor = #C574DD
+cursor_foreground = #1D1F28
+color0 = #282A36
+color1 = #F37F97
+color2 = #5ADECD
+color3 = #F2A272
+color4 = #8897F4
+color5 = #C574DD
+color6 = #79E6F3
+color7 = #FDFDFD
+color8 = #414458
+color9 = #FF4971
+color10 = #18E3C8
+color11 = #FF8037
+color12 = #556FFF
+color13 = #B043D1
+color14 = #3FDCEE
+color15 = #BEBEC1
 
 [hints]
-font = IBM Plex Mono 14
-foreground = #dcdccc
-background = #3f3f3f
+#font = monospace
+#foreground = #dcdccc
+#background = #3f3f3f
 #active_foreground = #e68080
 #active_background = #3f3f3f
 #padding = 4
 border = #3f3f3f
-#border_width = 1
+#border_width = 22
 #roundness = 2.0
 
 # vim: ft=dosini cms=#%s

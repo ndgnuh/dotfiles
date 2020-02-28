@@ -204,7 +204,7 @@
   },
   "OutputCharset": "Unicode",
   "Flags": 7,
-  "IBflags": 424432,
+  "IBflags": 424384,
   "JupiterFlags": 0,
   "DefaultInputMode": 3,
   "InputModeMapping": {
@@ -233,6 +233,7 @@
     "skype:Skype": 3,
     "soffice:Soffice": 3,
     "sun-awt-X11-XFramePeer:MATLAB R2018b": 3,
+    "surf:Surf": 5,
     "terminal": 1,
     "terminal:Terminal": 3,
     "terminal:qterminal": 6,

@@ -12,7 +12,7 @@ export PATH=$PATH:/home/hung/.local/bin
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="suse-minimal"
+ZSH_THEME="dynamic"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -72,7 +72,7 @@ ZSH_THEME="suse-minimal"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(resty zsh_reload git thefuck chucknorris)
+plugins=(zsh_reload thefuck chucknorris)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,7 +111,11 @@ alias fucking="sudo"
 
 # node js, again...
 [ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
-[ -f "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
+nvm () {
+    [ -f "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh || exit 127
+    nvm @.
+}
+# [ -f "/usr/share/nvm/nvm.sh" ] && source /usr/share/nvm/nvm.sh
 [ -f "/usr/share/nvm/bash_completion" ] && source /usr/share/nvm/bash_completion
 [ -f "/usr/share/nvm/install-nvm-exec" ] && source /usr/share/nvm/install-nvm-exec
 [ -d "$HOME/.yarn/bin/" ] && export PATH=$PATH:~/.yarn/bin

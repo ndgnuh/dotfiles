@@ -2,236 +2,431 @@ filetype plugin indent on
 syntax enable
 runtime marcos/matchit.vim
 
+" ~~~ Plugins ~~~
 call plug#begin()
-" Indentation guide
-" Plug 'https://github.com/thaerkh/vim-indentguides'
-
-" Navigation
-Plug 'scrooloose/nerdtree'
-" Plug 'kkoomen/vim-doge'
-" Plug 'akiyosi/gonvim-fuzzy'
-" Plug 'Yggdroot/indentLine'
-" Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-
-" Snippet and completion
-Plug 'roxma/nvim-yarp'
-Plug 'w0rp/ale'
-Plug 'SirVer/ultisnips'
-" Plug 'joereynolds/vim-minisnip'
-Plug 'honza/vim-snippets'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'bakpakin/fennel.vim'
+Plug 'lambdalisue/suda.vim' " sudo when editting a file that is not write enabled
+Plug 'frazrepo/vim-rainbow' " ))))))))))) is kinda hard
+Plug 'sheerun/vim-polyglot' " language pack, indent, syntax and stuff
+Plug 'tpope/vim-sleuth' " auto detect tab
+Plug 'w0rp/ale' " linting and stuff
+Plug 'scrooloose/nerdtree' " tree file explorer
+Plug 'SirVer/ultisnips' " snippets
+Plug 'honza/vim-snippets' " snippets
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' } " ac
+Plug 'Shougo/deoppet.nvim', { 'do': ':UpdateRemotePlugins' } " ac
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'http://github.com/joom/latex-unicoder.vim'
-Plug 'robertbasic/vim-hugo-helper' " hugo helper
-
-" Functionals
-Plug 'sheerun/vim-polyglot'
+Plug 'robertbasic/vim-hugo-helper'
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/vim-scripts/vim-auto-save.git'
-Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'https://github.com/godlygeek/tabular'
-Plug 'https://github.com/tomtom/tcomment_vim'
-Plug 'tbastos/vim-lua'
-
-" Code display
-Plug 'luochen1990/rainbow'
-Plug 'junegunn/goyo.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tpope/vim-sleuth'
-" Plug 'thiagoalessio/rainbow_levels.vim'
-
-" Color schemes
-Plug 'sainnhe/vim-color-forest-night'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
-Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'https://github.com/tomtom/tcomment_vim'
+Plug 'https://github.com/godlygeek/tabular'
 call plug#end()
 
-nmap <C-/> gcc
-vmap <C-/> gc
+" lambda λ
+imap <\-l> 'λ'
+" rainbow brace for )))))))
+" au FileType fennel call rainbow#load()
 
-let g:rainbow_active = 1
+" Auto use suda:// when openning a file that is not writable
+let g:suda_smart_edit = 1
 
-" look and feels
-set termguicolors
-let g:enable_bold_font = 1
-colorscheme onehalfdark
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
+" Highlight the line on which the cursor lives.
+set nocursorline
 
-" ultisnips
-autocmd FileType js   UltiSnipsAddFiletypes javascript-node.javascript.javascript-es6.all
-autocmd FileType tex  UltiSnipsAddFiletypes tex.texmath.all
-autocmd FileType css  UltiSnipsAddFiletypes css.all
-autocmd FileType bib  UltiSnipsAddFiletypes bib.all
-autocmd FileType lua  UltiSnipsAddFiletypes lua.all
-autocmd FileType cs   UltiSnipsAddFiletypes cs.all
-autocmd FileType python   UltiSnipsAddFiletypes python.all
-autocmd FileType sh   UltiSnipsAddFiletypes sh.all
-autocmd FileType nvim UltiSnipsAddFiletypes vim.all
-autocmd FileType md   UltiSnipsAddFiletypes markdown.all
-autocmd FileType jl   UltiSnipsAddFiletypes julia.all
-autocmd FileType markdown setl conceallevel=0
+" Always show at least one line above/below the cursor.
+set scrolloff=15
+" Always show at least one line left/right of the cursor.
+set sidescrolloff=15
 
-" exit terminal mode with Esc key
-tnoremap :q <C-\><C-n>
+" Relative line numbers
+set number relativenumber
 
-set bg=dark
-let g:session_dir = "~/.config/nvim/sessions/"
-let g:tex_conceal = ""
-let g:deoplete#enable_at_startup = 1
-let g:auto_save = 0
-let g:UltiSnipExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
+" Highlight matching pairs of brackets. Use the '%' character to jump between them.
+set matchpairs+=<:>
+
+" Display different types of white spaces.
+set list
+set listchars=tab:›\ ,trail:•,extends:#,nbsp:.
+
+" Use system clipboard
+set clipboard=unnamedplus
+
+" Remove timeout for partially typed commands
+set notimeout
+
+" F keys
+" Quick write session with F2
+map <F2> :mksession! ~/.vim_session<cr>
+" And load session with F3
+map <F3> :source ~/.vim_session<cr>
+
+" Fix indentation
+map <F7> gg=G<C-o><C-o>
+" Toggle auto change directory
+map <F8> :set autochdir! autochdir?<CR>
+
+" Toggle vertical line
+set colorcolumn=
+fun! ToggleCC()
+  if &cc == ''
+    " set cc=1,4,21
+    set cc=80
+  else
+    set cc=
+  endif
+endfun
+nnoremap <silent> <F9> :call ToggleCC()<CR>
+
+" Beginning and end of line
+imap <C-a> <home>
+imap <C-e> <end>
+cmap <C-a> <home>
+cmap <C-e> <end>
+
+" Control-S Save
+nmap <C-S> :w<cr>
+vmap <C-S> <esc>:w<cr>
+imap <C-S> <esc>:w<cr>
+" Save + back into insert
+" imap <C-S> <esc>:w<cr>a
+
+" Control-C Copy in visual mode
+vmap <C-C> y
+
+" Control-V Paste in insert and command mode
+imap <C-V> <esc>pa
+cmap <C-V> <C-r>0
+
+" Window Movement
+nmap <M-h> <C-w>h
+nmap <M-j> <C-w>j
+nmap <M-k> <C-w>k
+nmap <M-l> <C-w>l
+
+" Resizing
+nmap <C-M-H> 2<C-w><
+nmap <C-M-L> 2<C-w>>
+nmap <C-M-K> <C-w>-
+nmap <C-M-J> <C-w>+
+
+" Insert mode movement
+imap <M-h> <left>
+imap <M-j> <down>
+imap <M-k> <up>
+imap <M-l> <right>
+imap <M-f> <C-right>
+imap <M-b> <C-left>
+
+" Spacemacs-like keybinds
+" Change <leader> bind from default \
+" nnoremap <space> <nop>
+" let mapleader=" "
+
+" Make ci( work like quotes do
+function! New_cib()
+  if search("(","bn") == line(".")
+    sil exe "normal! f)ci("
+    sil exe "normal! l"
+    startinsert
+  else
+    sil exe "normal! f(ci("
+    sil exe "normal! l"
+    startinsert
+  endif
+endfunction
+
+" And for curly brackets
+function! New_ciB()
+  if search("{","bn") == line(".")
+    sil exe "normal! f}ci{"
+    sil exe "normal! l"
+    startinsert
+  else
+    sil exe "normal! f{ci{"
+    sil exe "normal! l"
+    startinsert
+  endif
+endfunction
+
+nnoremap ci( :call New_cib()<CR>
+nnoremap cib :call New_cib()<CR>
+nnoremap ci{ :call New_ciB()<CR>
+nnoremap ciB :call New_ciB()<CR>
+
+" Alt-m for creating a new line in insert mode
+imap <M-m> <esc>o
+
+" netrw configuration
+let g:netrw_browse_split = 0
+let g:netrw_altfile = 1
+
+" Cycle windows
+nmap <M-o> <C-W>w
+vmap <M-o> <C-W>w
+tmap <M-o> <esc><C-W>w
+imap <M-o> <esc><C-W>w
+
+" Command mode history
+cmap <M-p> <up>
+cmap <M-n> <down>
+cmap <M-k> <up>
+cmap <M-j> <down>
+
+" Back to normal mode from insert
+" inoremap jk <esc>
+" inoremap JK <esc>
+
+" Manually refresh file
+nmap <F5> :e!<cr>
+
+" Indentation
+set smarttab
+set expandtab
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+
+"set smartindent
+set autoindent
+"set cindent
+
+set nocompatible
+filetype plugin indent on
+
+" Write buffer through sudo (works on vim but not neovim)
+" cnoreabbrev w!! w !sudo -S tee % >/dev/null
+" Neovim: suda plugin
+cnoreabbrev w!! w suda://%
+
+" Allow switching between buffers without saving
+set hidden
+
+" Mouse support
+set mouse=a
+
+"Case insensitive searching
+set ignorecase
+
+"Will automatically switch to case sensitive if you use any capitals
+set smartcase
+
+" Auto toggle smart case of for ex commands
+" Assumes 'set ignorecase smartcase'
+augroup dynamic_smartcase
+  autocmd!
+  autocmd CmdLineEnter : set nosmartcase
+  autocmd CmdLineLeave : set smartcase
+augroup END
+
+" Substitute live preview
+set inccommand=nosplit
+
+" Markdown Folding
+" let g:markdown_fold_style = 'nested'
+
+" Shell
+set shell=/bin/zsh
+
+" Ctrlp
+let g:ctrlp_switch_buffer = '0'
+" Useful for large projects
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=10
+" So that it does not only index starting from current directory
+let g:ctrlp_working_path_mode = ""
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+" Use ag AKA the_silver_searcher for indexing. Faster!!!
+" TIP: Use ~/.ignore to ignore directories/files
+" set grepprg=ag\ --nogroup\ --nocolor
+" let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
+""if executable('ag')
+""  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+""endif
+let g:ctrlp_show_hidden =1
+let g:ctrlp_clear_cache_on_exit = 0
+
+" Lightline
+" Get default from :h lightline
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-      \   'right': [ [ 'lineinfo'],
-      \              [ 'fileencoding', 'filetype'] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
+      \ 'colorscheme': 'lena',
+      \ }
+
+let g:lightline.active = {
+      \ 'left': [ [ 'mode', 'paste', 'sep1' ],
+      \           [ 'readonly', 'filename', 'modified' ],
+      \           [ ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ],
+      \            [ 'filetype' ] ]
+      \ }
+
+let g:lightline.inactive = {
+      \ 'left': [ [ 'mode', 'paste', 'sep1' ],
+      \           [ 'readonly', 'filename', 'modified' ] ],
+      \ 'right': [ [ 'lineinfo' ],
+      \            [ 'percent' ],
+      \            [ 'filetype' ] ]
+      \ }
+
+let g:lightline.tabline = {
+      \ 'left': [ [ 'tabs' ] ],
+      \ 'right': [ ] }
+
+let g:lightline.tab = {
+      \ 'active': [ 'tabnum', 'filename', 'modified' ],
+      \ 'inactive': [ 'tabnum', 'filename', 'modified' ] }
+
+let g:lightline.component = {
+      \ 'mode': '%{lightline#mode()}',
+      \ 'absolutepath': '%F',
+      \ 'relativepath': '%f',
+      \ 'filename': '%t',
+      \ 'modified': '%M',
+      \ 'bufnum': '%n',
+      \ 'paste': '%{&paste?"PASTE":""}',
+      \ 'readonly': '%R',
+      \ 'charvalue': '%b',
+      \ 'charvaluehex': '%B',
+      \ 'fileencoding': '%{&fenc!=#""?&fenc:&enc}',
+      \ 'fileformat': '%{&ff}',
+      \ 'filetype': '%{&ft!=#""?&ft:"no ft"}',
+      \ 'percent': '%3p%%',
+      \ 'percentwin': '%P',
+      \ 'spell': '%{&spell?&spelllang:""}',
+      \ 'lineinfo': '%3l:%-2v',
+      \ 'line': '%l',
+      \ 'column': '%c',
+      \ 'close': '%999X X ',
+      \ 'winnr': '%{winnr()}',
+      \ 'sep1': ''
+      \}
+
+let g:lightline.mode_map = {
+      \ 'n' : 'N',
+      \ 'i' : 'I',
+      \ 'R' : 'R',
+      \ 'v' : 'V',
+      \ 'V' : 'L',
+      \ "\<C-v>": 'B',
+      \ 'c' : 'C',
+      \ 's' : 'S',
+      \ 'S' : 'S-LINE',
+      \ "\<C-s>": 'S-BLOCK',
+      \ 't': 'T',
       \ }
 
 
-nmap <C-p> :Files<CR>
-imap <C-s> <Esc> :w<CR><CR>
+let g:lightline.separator = {
+      \   'left': '', 'right': ''
+      \}
+let g:lightline.subseparator = {
+      \   'left': '', 'right': '' 
+      \}
 
-" Vim ale
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:lightline.tabline_separator = g:lightline.separator
+let g:lightline.tabline_subseparator = g:lightline.subseparator
 
-" Go yo map
-map <C-f> :Goyo<CR><CR>
+let g:lightline.enable = {
+      \ 'statusline': 1,
+      \ 'tabline': 1
+      \ }
 
-" Quickly switch between splits
-map <C-h> <C-w>h
-" map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <C-w> <C-w>w
+" deoplete
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Clipboard
-" map <C-S-v> "+P
-vnoremap <C-c> "+y
+" Clear search highlighting with Escape key
+nnoremap <silent><esc> :noh<return><esc>
 
-" Delete white space
-map <F4> :%s/\s\+$//e<CR><CR>
+" Allow color schemes to do bright colors without forcing bold.
+if &t_Co == 8 && $TERM !~# '^linux\|^Eterm'
+  set t_Co=16
+endif
 
-" switch tab
-nmap <Tab> gt
-nmap <C-Tab> Gt
+set wildmenu
 
-" run stuffs
-autocmd FileType tex map <F5> :!make pdf <CR>
-autocmd FileType tex map <F6> :!make preview <CR>
-autocmd FileType tex map <F7> :!make clean <CR>
-autocmd FileType tex map <F7> :!make bib <CR>
+set encoding=utf8
+scriptencoding utf-8
+
+" Colorscheme
+colorscheme lena
+set fillchars=vert::
+
+" Restore last cursor position and marks on open
+au BufReadPost *
+      \ if line("'\"") > 1 && line("'\"") <= line("$") && &ft !~# 'commit' 
+      \ |   exe "normal! g`\""
+      \ | endif
+
+" Disable continual comment
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" FZF shortcut
+nmap <C-p> :FZF<CR>
 
 " Easy align
 xmap ga :Tab/
 
-" let g:indent_guides_enable_on_vim_startup = 1
-" let g:indentLine_color_gui = '#A4E57E'
-" let g:indentLine_bgcolor_term = 202
-" let g:indentLine_char = '┊'
+" Use tab key to switch tab
+nmap <Tab> gt
+nmap <C-Tab> Gt
 
-""" Ibus engine
+" statusline
+source ~/.config/nvim/statusline.vim
+
+" ibus engine stuff
 function! IbusOff()
-    " Lưu engine hiện tại
-    let g:ibus_prev_engine = system('ibus engine')
-    " Chuyển sang engine tiếng Anh
-    execute 'silent !ibus engine xkb:us::eng'
+  " Lưu engine hiện tại
+  let g:ibus_prev_engine = system('ibus engine')
+  " Chuyển sang engine tiếng Anh
+  execute 'silent !ibus engine xkb:us::eng'
 endfunction
 function! IbusOn()
-    let l:current_engine = system('ibus engine')
-    " nếu engine được set trong normal mode thì
-    " lúc vào insert mode duùn luôn engine đó
-    if l:current_engine !~? 'xkb:us::eng'
-        let g:ibus_prev_engine = l:current_engine
-    endif
-    " Khôi phục lại engine
-    execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
+  let l:current_engine = system('ibus engine')
+  " nếu engine được set trong normal mode thì
+  " lúc vào insert mode duùn luôn engine đó
+  if l:current_engine !~? 'xkb:us::eng'
+    let g:ibus_prev_engine = l:current_engine
+  endif
+  " Khôi phục lại engine
+  execute 'silent !' . 'ibus engine ' . g:ibus_prev_engine
 endfunction
 autocmd InsertEnter * call IbusOn()
 autocmd InsertLeave * call IbusOff()
 call IbusOff()
 
-" Background color
-hi Normal guibg=#1d1f2175
-
-" Open NERDTree if start with nvim .
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-
-" toggle nerd tree
+" toggle nerd tree with F4
 nmap <F4> :NERDTreeToggle<CR><CR>
 
-" julia
-let g:default_julia_version = '1.2'
+" Jump to lint error
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" language server
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommands = {
-" \   'julia': ['julia', '--startup-file=no', '--history-file=no', '-e', '
-" \       using LanguageServer;
-" \       using Pkg;
-" \       import StaticLint;
-" \       import SymbolServer;
-" \       env_path = dirname(Pkg.Types.Context().env.project_file);
-" \       debug = false;
-" \       server = LanguageServer.LanguageServerInstance(stdin, stdout, debug, env_path, "", Dict());
-" \       server.runlinter = true;
-" \       run(server);
-" \   ']
-" \ }
+" Code formats
+" Looks awesome with Victor mono and cursive-italic font
+set notermguicolors
+highlight Comment cterm=italic,underline gui=italic,underline
+highlight Keyword gui=italic cterm=italic
+highlight Repeat gui=italic cterm=italic
+" highlight Label gui=italic cterm=italic
+" highlight Exception gui=italic cterm=italic
+" highlight Conditional gui=bold cterm=bold
+highlight Special gui=italic,bold cterm=italic,bold
+" highlight Type gui=bold cterm=bold
+" highlight Function gui=bold cterm=bold
 
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+" toggle wrapping
+function! ToggleWrap()
+    if &wrap == 1
+        set nowrap
+    else
+        set wrap
+    endif
+endfunction
+nnoremap <F12> :silent :call ToggleWrap()<CR>
+set nowrap
 
-" Press F9 to toggle fold
-inoremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
-
-" Disable continual comment
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-" Set options
-set clipboard^=unnamedplus
-set mouse=
-set laststatus=2
-set backspace=indent,eol,start
-set incsearch
-set ruler
-set wildmenu
-set number
-set relativenumber
-set history=50
-set encoding=UTF-8
-set formatoptions-=cro
-" set listchars=tab:\┆\ 
-" set list
-set cursorcolumn
-set cursorline
-set expandtab
-set softtabstop=4
-set tabstop=4
-set foldmethod=marker
-set shiftwidth=4
-set conceallevel=0
-
-" auto latex to unicode
-let g:latex_to_unicode_auto = 1
