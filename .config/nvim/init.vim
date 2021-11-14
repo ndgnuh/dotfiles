@@ -64,4 +64,4 @@ augroup VIMSO
 	au FileType vim au BufWritePost <buffer> :so %
 augroup END
 
-lua require("lsp")
+lua pcall(require, "lsp")
