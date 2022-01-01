@@ -4,12 +4,13 @@ syntax on
 
 
 " OPTIONS
-set relativenumber
+set number
 set clipboard=unnamedplus
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set notermguicolors
+set linebreak
 
 
 " PACKAGE
@@ -24,6 +25,7 @@ Plug 'morhetz/gruvbox'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'ElmCast/elm-vim'
 call plug#end()
 
 
@@ -48,7 +50,7 @@ hi Normal ctermbg=NONE
 " AUTOFORMAT
 " TODO: toggle
 augroup AUTOFORMAT
-	au FileType python,lua,tex,julia au BufWritePre <buffer> :Autoformat
+	au FileType python,elm,lua,tex,julia au BufWritePre <buffer> :Autoformat
 	au BufWritePre *.sh :Autoformat
 augroup END
 
@@ -64,4 +66,5 @@ augroup VIMSO
 	au FileType vim au BufWritePost <buffer> :so %
 augroup END
 
-lua pcall(require, "lsp")
+" lua pcall(require, "lsp")
+lua require("lsp")
