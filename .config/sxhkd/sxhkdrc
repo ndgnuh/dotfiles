@@ -1,4 +1,4 @@
-super + {Return,enter}
+super + {Return,KP_Enter}
 	konsole
 
 {XF86AudioRaiseVolume,XF86AudioLowerVolume,XF86AudioMute}
@@ -10,3 +10,12 @@ super + {e, v, a}
 
 super + {r,p}
 	rofi -show combi modi
+
+@Print
+	gscreenshot
+
+shift + @Print
+	gscreenshot
+
+super + {F1,F2,F3}
+	playerctl {play-pause,previous,next}
