@@ -26,6 +26,7 @@ Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'ElmCast/elm-vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 

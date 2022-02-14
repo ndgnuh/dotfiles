@@ -1,0 +1,21 @@
+super + {Return,KP_Enter}
+	konsole
+
+{XF86AudioRaiseVolume,XF86AudioLowerVolume,XF86AudioMute}
+	pamixer {-i 5,-d 5,-t}; \
+	dunstify --hints=string:x-dunst-stack-tag:test "Pamixer" "Volume: $(pamixer --get-volume-human)" --icon volume
+
+super + {e, v, a}
+	ibus engine {xkb:us::eng, Bamboo, anthy}
+
+super + {r,p}
+	rofi -show combi modi
+
+@Print
+	gscreenshot
+
+shift + @Print
+	gscreenshot
+
+super + {F1,F2,F3}
+	playerctl {play-pause,previous,next}
