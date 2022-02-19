@@ -1,0 +1,50 @@
+. /etc/profile
+. ~/.zshenv
+
+# using this variable cause qt5ct to not work anymore
+# export QT_STYLE_OVERRIDE=kvantum
+export DESKTOP_SESSION=plasma
+# using this variable cause ibus to stop showing
+# export XDG_CURRENT_DESKTOP=KDE
+
+#
+# input method config, exporting gtk_im_module=xim may cause flicker on some application
+#
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+export QT4_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+
+
+# WINE DOESN'T WORK WITH PROPRIETARY NVIDIA DRIVER
+
+
+# export WINEESYNC=1
+
+
+# CUSTOM PATH
+export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.yarn/bin:$PATH
+
+
+# JULIA STUFF
+export JULIA_DEPOT_PATH=$HOME/.cache/julia
+export JULIA_NUM_THREADS=16
+export JULIA_CUDA_USE_BINARYBUILDER=false
+
+
+# SOME APPLICATION DOESN'T SUPPORT GTK_IM_MODULE=ibus
+alias teams="GTK_IM_MODULE=xim teams"
+alias chromium="GTK_IM_MODULE=xim chromium"
+
+
+# AUTO START
+xscreensaver &
+ibus-daemon -rdx
+nm-applet &
+blueman-applet &
+xfce4-power-manager & 
+copyq &
+xcompmgr &
+dunst &
+sxhkd &
