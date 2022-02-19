@@ -39,6 +39,12 @@ EOF
 " MAPPING
 nmap <C-p> <cmd>FZF<Cr>
 nnoremap <Esc> <cmd>noh<CR>
+" Search visual
+vnoremap <leader>f y
+			\<cmd>mkview<CR>
+			\/<C-R>=escape(@",'/\')<CR><CR>
+			\<cmd>loadview<CR>
+			\<cmd>set hlsearch<CR>
 map <leader>so <cmd>execute "source " . stdpath('config') . "/init.vim"<CR>
 xmap ga :Tab/
 
