@@ -251,3 +251,11 @@ fi
 
 # REMOVE THE % EOL
 unsetopt prompt_cr prompt_sp
+
+# SSH AGENT
+ssh-init () {
+	eval $(ssh-agent -s | grep -v echo)
+	for f in $HOME/.ssh/*id_rsa; do
+		ssh-add $f
+	done
+}
