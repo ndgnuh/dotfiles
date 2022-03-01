@@ -259,3 +259,11 @@ ssh-init () {
 		ssh-add $f
 	done
 }
+
+# GIT ALIAS
+alias gc='git commit -v'
+alias gcm='git commit -v -m'
+alias ga='git add'
+alias gpsh='git push'
+alias gpll='git pull'
+alias gco='git pull'
