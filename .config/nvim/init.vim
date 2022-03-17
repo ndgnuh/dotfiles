@@ -5,16 +5,21 @@ syntax on
 
 " OPTIONS
 set number
-set clipboard=unnamedplus
+if !(empty($DISPLAY))
+	set clipboard=unnamedplus
+endif
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set notermguicolors
 set linebreak
+set completeopt=menu,menuone,noselect
 
+" Package path
+let g:plug_path = stdpath("cache") . "/plugged"
 
 " PACKAGE
-call plug#begin(stdpath("cache") . "/plugged")
+call plug#begin(g:plug_path)
 Plug 'junegunn/fzf', { 'dir': '~/.cache/.fzf', 'do': './install --all', 'on': 'FZF'}
 Plug 'tpope/vim-surround'
 Plug 'vim-autoformat/vim-autoformat', { 'on': 'Autoformat' }
@@ -25,8 +30,20 @@ Plug 'morhetz/gruvbox'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
+Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
+
+" COMPLETION
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+
+" For luasnip users.
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 call plug#end()
 
 
@@ -53,11 +70,23 @@ xmap ga :Tab/
 colorscheme gruvbox
 hi Normal ctermbg=NONE
 
+" CHECK IF FILE EXISTS
+function FileExist(path)
+	return findfile(a:path, '.') == a:path
+endfunction
+
 
 " AUTOFORMAT
 " TODO: toggle
+let g:JuliaFormatter_sysimage_path= g:plug_path . "/JuliaFormatter.vim/scripts/juliaformatter.so"
+if FileExist(g:JuliaFormatter_sysimage_path)
+	let g:JuliaFormatter_use_sysimage=1
+else
+	let g:JuliaFormatter_use_sysimage=0
+endif
 augroup AUTOFORMAT
-	au FileType python,elm,lua,tex,julia au BufWritePre <buffer> :Autoformat
+	au FileType python,elm,lua,tex au BufWritePre <buffer> :Autoformat
+	au BufWritePre *.jl :JuliaFormatterFormat
 	au BufWritePre *.sh :Autoformat
 augroup END
 
