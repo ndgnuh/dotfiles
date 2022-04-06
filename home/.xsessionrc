@@ -1,9 +1,16 @@
 . /etc/profile
 . ~/.zshenv
 
+if ! command -v systemctl &> /dev/null
+then
+	echo ''
+else
+	systemctl --user import-environment PATH
+fi
 # using this variable cause qt5ct to not work anymore
 # export QT_STYLE_OVERRIDE=kvantum
-export DESKTOP_SESSION=plasma
+# export DESKTOP_SESSION=plasma
+export QT_QPA_PLATFORMTHEME=qt5ct
 # using this variable cause ibus to stop showing
 # export XDG_CURRENT_DESKTOP=KDE
 
@@ -19,7 +26,7 @@ export XMODIFIERS=@im=ibus
 # WINE DOESN'T WORK WITH PROPRIETARY NVIDIA DRIVER
 
 
-# export WINEESYNC=1
+export WINEESYNC=1
 
 
 # CUSTOM PATH
@@ -37,13 +44,15 @@ export JULIA_CUDA_USE_BINARYBUILDER=false
 alias teams="GTK_IM_MODULE=xim teams"
 alias chromium="GTK_IM_MODULE=xim chromium"
 
-# FZF use silver searcher if available
-if ! [ $(command -v ag) ]; then
+
+# FZF use silver searcher by default
+if command -v ag &> /dev/null
+then
 	export FZF_DEFAULT_COMMAND='ag -g ""'
 fi
 
+
 # AUTO START
-xscreensaver &
 ibus-daemon -rdx
 nm-applet &
 blueman-applet &
@@ -52,3 +61,8 @@ copyq &
 xcompmgr &
 dunst &
 sxhkd &
+
+# WALLPAPER
+if [ -f ~/.fehbg ]; then
+	bash ~/.fehbg
+fi
