@@ -37,6 +37,10 @@ export JULIA_CUDA_USE_BINARYBUILDER=false
 alias teams="GTK_IM_MODULE=xim teams"
 alias chromium="GTK_IM_MODULE=xim chromium"
 
+# FZF use silver searcher if available
+if ! [ $(command -v ag) ]; then
+	export FZF_DEFAULT_COMMAND='ag -g ""'
+fi
 
 # AUTO START
 xscreensaver &
