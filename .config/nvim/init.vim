@@ -78,6 +78,9 @@ endfunction
 
 " AUTOFORMAT
 " TODO: toggle
+let g:JuliaFormatter_options = {
+        \ 'style' : 'yas',
+        \ }
 let g:JuliaFormatter_sysimage_path= g:plug_path . "/JuliaFormatter.vim/scripts/juliaformatter.so"
 if FileExist(g:JuliaFormatter_sysimage_path)
 	let g:JuliaFormatter_use_sysimage=1
@@ -90,6 +93,11 @@ augroup AUTOFORMAT
 	au BufWritePre *.sh :Autoformat
 augroup END
 
+" DETECT FILETYPE
+augroup FT
+	" FreeFem++
+    au BufNewFile,BufRead *.edp	setf edp
+augroup END
 
 " SOURCING OTHER FILES
 function s:source(file)
