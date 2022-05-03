@@ -9,10 +9,14 @@ else
 fi
 # using this variable cause qt5ct to not work anymore
 # export QT_STYLE_OVERRIDE=kvantum
-# export DESKTOP_SESSION=plasma
+export DESKTOP_SESSION=plasma
 export QT_QPA_PLATFORMTHEME=qt5ct
 # using this variable cause ibus to stop showing
-# export XDG_CURRENT_DESKTOP=KDE
+# export XDG_CURRENT_DESKTOP=
+
+# Prevent QT apps from looking giantic on high dpi settings
+export QT_AUTO_SCREEN_SCALE_FACTOR=0 
+
 
 #
 # input method config, exporting gtk_im_module=xim may cause flicker on some application
