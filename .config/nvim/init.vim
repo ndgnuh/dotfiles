@@ -88,7 +88,7 @@ else
 	let g:JuliaFormatter_use_sysimage=0
 endif
 augroup AUTOFORMAT
-	au FileType python,elm,lua,tex au BufWritePre <buffer> :Autoformat
+	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
 	au BufWritePre *.jl :JuliaFormatterFormat
 	au BufWritePre *.sh :Autoformat
 augroup END
