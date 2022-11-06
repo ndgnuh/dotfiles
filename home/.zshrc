@@ -1,5 +1,4 @@
 . /etc/profile
-. ~/.zshenv
 umask 022
 
 # ANDROID
