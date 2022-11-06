@@ -266,3 +266,11 @@ alias ga='git add'
 alias gpsh='git push'
 alias gpll='git pull'
 alias gco='git pull'
+
+# NVIM PATH
+prepend_path () {
+	if [ -d "$1" ]; then
+		export PATH="$1:$PATH"
+	fi
+}
+prepend_path "$HOME/.local/share/neovim/bin"
