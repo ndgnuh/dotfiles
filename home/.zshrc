@@ -1,14 +1,20 @@
 . /etc/profile
 umask 022
 
+# HELPER
+prepend_path () {
+	if [ -d "$1" ]; then
+		export PATH="$1:$PATH"
+	fi
+}
+
 # ANDROID
 
 
-export ANDROID_SDK_ROOT=$HOME/Application/Android
-export ANDROID_AVD_HOME=$ANDROID_SDK_ROOT/adv
-export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
-
+export ANDROID_HOME=$HOME/Android/sdk
+prepend_path "$ANDROID_ROOT/cmdline-tools/latest/bin"
+prepend_path "$ANDROID_ROOT/platform-tools"
+prepend_path "$ANDROID_ROOT/emulator/bin64"
 
 # HISTORY
 
@@ -268,9 +274,9 @@ alias gpll='git pull'
 alias gco='git pull'
 
 # NVIM PATH
-prepend_path () {
-	if [ -d "$1" ]; then
-		export PATH="$1:$PATH"
-	fi
-}
 prepend_path "$HOME/.local/share/neovim/bin"
+
+# NODE
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
