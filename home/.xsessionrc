@@ -1,12 +1,14 @@
 . /etc/profile
-. ~/.zshenv
-
-if ! command -v systemctl &> /dev/null
-then
-	echo ''
-else
-	systemctl --user import-environment PATH
+if [ -f $HOME/.zshenv ]; then
+	. $HOME/.zshenv
 fi
+
+# if ! command -v systemctl &> /dev/null
+# then
+# 	echo ''
+# else
+# 	systemctl --user import-environment PATH
+# fi
 # using this variable cause qt5ct to not work anymore
 # export QT_STYLE_OVERRIDE=kvantum
 export DESKTOP_SESSION=plasma
@@ -30,7 +32,14 @@ export XMODIFIERS=@im=ibus
 # WINE DOESN'T WORK WITH PROPRIETARY NVIDIA DRIVER
 
 
-export WINEESYNC=1
+# export WINEESYNC=1
+if [ -f $HOME/dxvk.conf ]; then
+	export DXVK_CONFIG_FILE=$HOME/dxvk.conf
+fi
+WINEDIR=$HOME/.local/share/lutris/runners/wine/lutris-GE-Proton7-1-x86_64/bin
+if [ -e "$WINEDIR" ]; then
+	export PATH=$WINEDIR:$PATH
+fi
 
 
 # CUSTOM PATH
@@ -57,16 +66,6 @@ fi
 
 
 # AUTO START
-ibus-daemon -rdx
-nm-applet &
-blueman-applet &
-xfce4-power-manager & 
-copyq &
-xcompmgr &
-dunst &
-sxhkd &
-
-# WALLPAPER
-if [ -f ~/.fehbg ]; then
-	bash ~/.fehbg
+if [ -f $HOME./autostart ]; then
+	$HOME/.autostart
 fi

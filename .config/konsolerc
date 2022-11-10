@@ -1,0 +1,18 @@
+[Desktop Entry]
+DefaultProfile=Main.profile
+
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
+[MainWindow]
+State=AAAA/wAAAAD9AAAAAAAAB1kAAAPpAAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
+
+[SearchSettings]
+SearchHighlightMatches=true
+SearchReverseSearch=false
+
+[TabBar]
+CloseTabButton=None
+TabBarPosition=Top

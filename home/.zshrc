@@ -287,4 +287,11 @@ prepend_path "$HOME/.local/share/neovim/bin"
 # NODE
 . /home/hung/.lazy_node_loader.sh
 
+# >>> juliaup initialize >>>
+# !! Contents within this block are managed by juliaup !!
+path=('/home/hung/.julia/juliaup/bin' $path)
+export PATH
+# <<< juliaup initialize <<<
+
+# Profile
 zmodload zsh/zprof
