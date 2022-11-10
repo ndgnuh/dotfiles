@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 . /etc/profile
 umask 022
 
@@ -11,11 +12,18 @@ prepend_path () {
 # ANDROID
 
 
-export ANDROID_HOME=$HOME/Android/sdk
-prepend_path "$ANDROID_ROOT/cmdline-tools/latest/bin"
-prepend_path "$ANDROID_ROOT/platform-tools"
-prepend_path "$ANDROID_ROOT/emulator/bin64"
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+# export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+# export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+prepend_path "$ANDROID_HOME/cmdline-tools/latest/bin" 
+prepend_path "$ANDROID_HOME/platform-tools"
+prepend_path "$ANDROID_HOME/tools"
+prepend_path "$ANDROID_HOME/tools/bin"
+prepend_path "$ANDROID_HOME/emulator/bin64"
+prepend_path "$ANDROID_HOME/emulator"
 
+zmodload zsh/zprof
 # HISTORY
 
 export HISTFILE=$HOME/.cache/history
@@ -277,6 +285,6 @@ alias gco='git pull'
 prepend_path "$HOME/.local/share/neovim/bin"
 
 # NODE
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+. /home/hung/.lazy_node_loader.sh
+
+zmodload zsh/zprof
