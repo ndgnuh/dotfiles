@@ -66,6 +66,6 @@ fi
 
 
 # AUTO START
-if [ -f $HOME./autostart ]; then
-	$HOME/.autostart
+if [ -f $HOME/.autostart ]; then
+	bash $HOME/.autostart
 fi
