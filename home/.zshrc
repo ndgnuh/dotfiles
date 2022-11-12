@@ -9,6 +9,13 @@ prepend_path () {
 	fi
 }
 
+source_if_exist() {
+	if [ -f "$1" ]; then
+		source $1
+	fi
+
+}
+
 # ANDROID
 
 
@@ -285,7 +292,7 @@ alias gco='git pull'
 prepend_path "$HOME/.local/share/neovim/bin"
 
 # NODE
-. /home/hung/.lazy_node_loader.sh
+source_if_exist /home/hung/.lazy_node_loader.sh
 
 # >>> juliaup initialize >>>
 # !! Contents within this block are managed by juliaup !!
