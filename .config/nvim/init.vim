@@ -33,6 +33,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot' " Multilingual
 
 " COMPLETION
 Plug 'hrsh7th/cmp-nvim-lsp'
