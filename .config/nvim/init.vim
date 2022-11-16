@@ -30,11 +30,13 @@ Plug 'morhetz/gruvbox'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'kdheepak/JuliaFormatter.vim'
+" Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
-Plug 'sheerun/vim-polyglot' " Multilingual
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'sheerun/vim-polyglot'
+" Plug 'williamboman/nvim-lsp-installer'
+Plug 'neoclide/vim-jsx-improve'
+Plug 'lukas-reineke/lsp-format.nvim'
 
 " COMPLETION
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -50,9 +52,7 @@ call plug#end()
 
 
 " SETTING UP LUA PACKAGES
-lua << EOF
-require("nvim_comment").setup{ comment_empty = false }
-EOF
+lua require("nvim_comment").setup{ comment_empty = false }
 
 
 " MAPPING
@@ -80,20 +80,20 @@ endfunction
 
 " AUTOFORMAT
 " TODO: toggle
-let g:JuliaFormatter_options = {
-        \ 'style' : 'yas',
-        \ }
-let g:JuliaFormatter_sysimage_path= g:plug_path . "/JuliaFormatter.vim/scripts/juliaformatter.so"
-if FileExist(g:JuliaFormatter_sysimage_path)
-	let g:JuliaFormatter_use_sysimage=1
-else
-	let g:JuliaFormatter_use_sysimage=0
-endif
-augroup AUTOFORMAT
-	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
-	au BufWritePre *.jl :JuliaFormatterFormat
-	au BufWritePre *.sh :Autoformat
-augroup END
+" let g:JuliaFormatter_options = {
+"         \ 'style' : 'yas',
+"         \ }
+" let g:JuliaFormatter_sysimage_path= g:plug_path . "/JuliaFormatter.vim/scripts/juliaformatter.so"
+" if FileExist(g:JuliaFormatter_sysimage_path)
+" 	let g:JuliaFormatter_use_sysimage=1
+" else
+" 	let g:JuliaFormatter_use_sysimage=0
+" endif
+" augroup AUTOFORMAT
+" 	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
+" 	au BufWritePre *.jl :JuliaFormatterFormat
+" 	au BufWritePre *.sh,*.js :Autoformat
+" augroup END
 
 " DETECT FILETYPE
 augroup FT
