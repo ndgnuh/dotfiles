@@ -16,6 +16,10 @@ source_if_exist() {
 
 }
 
+# Julia daemon mode
+alias juliaclient='julia --startup-file=no -e "using DaemonMode; runargs()"'
+alias juliaserver='julia --startup-file=no -e "using DaemonMode; serve()" & disown'
+
 # ANDROID
 
 
