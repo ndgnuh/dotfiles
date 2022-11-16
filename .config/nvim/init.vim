@@ -34,6 +34,7 @@ Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot' " Multilingual
+Plug 'williamboman/nvim-lsp-installer'
 
 " COMPLETION
 Plug 'hrsh7th/cmp-nvim-lsp'
