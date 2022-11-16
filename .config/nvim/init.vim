@@ -30,9 +30,11 @@ Plug 'morhetz/gruvbox'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'
 Plug 'JuliaEditorSupport/julia-vim'
-Plug 'kdheepak/JuliaFormatter.vim'
+" Plug 'kdheepak/JuliaFormatter.vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'neoclide/vim-jsx-improve'
+Plug 'lukas-reineke/lsp-format.nvim'
 
 " COMPLETION
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -90,7 +92,7 @@ endif
 augroup AUTOFORMAT
 	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
 	au BufWritePre *.jl :JuliaFormatterFormat
-	au BufWritePre *.sh :Autoformat
+	au BufWritePre *.sh,*.js :Autoformat
 augroup END
 
 " DETECT FILETYPE
