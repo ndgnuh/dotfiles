@@ -17,8 +17,15 @@ source_if_exist() {
 }
 
 # Julia daemon mode
-alias juliaclient='julia --startup-file=no -e "using DaemonMode; runargs()"'
 alias juliaserver='julia --startup-file=no -e "using DaemonMode; serve()" & disown'
+juliaclient() {
+  if [ "$1" = "-e" ]; then
+    shift 1
+    julia --startup-file=no -e 'using DaemonMode; runexpr("'$@'")'
+  else
+    julia --startup-file=no -e "using DaemonMode; runargs()" $@
+  fi
+}
 
 # ANDROID
 
@@ -298,11 +305,17 @@ prepend_path "$HOME/.local/share/neovim/bin"
 # NODE
 source_if_exist /home/hung/.lazy_node_loader.sh
 
-# >>> juliaup initialize >>>
-# !! Contents within this block are managed by juliaup !!
-path=('/home/hung/.julia/juliaup/bin' $path)
-export PATH
-# <<< juliaup initialize <<<
-
 # Profile
 zmodload zsh/zprof
+
+export JULIA_DEPOT_PATH=$HOME/.cache/julia
+export JULIA_CUDA_USE_BINARYBUILDER=true
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/hung/.cache/julia/juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
