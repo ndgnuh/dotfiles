@@ -53,17 +53,17 @@ export HISTSIZE=1000
 
 export PATH=$PATH:/home/hung/.local/bin
 export PATH=$PATH:/home/hung/.yarn/bin
-export APPLICATION_DIR=$HOME/Application
-for d in $APPLICATION_DIR/*; do
-	if ! [ -d $d/bin ]; then
-		# NO BIN FOLDER
-		continue
-	elif [ -f $d/bin/python ]; then
-		# SKIP PYTHON VIRTUALENV
-		continue
-	fi
-	export PATH=$PATH:$d/bin
-done
+# export APPLICATION_DIR=$HOME/Application
+# for d in $APPLICATION_DIR/*; do
+# 	if ! [ -d $d/bin ]; then
+# 		# NO BIN FOLDER
+# 		continue
+# 	elif [ -f $d/bin/python ]; then
+# 		# SKIP PYTHON VIRTUALENV
+# 		continue
+# 	fi
+# 	export PATH=$PATH:$d/bin
+# done
 
 
 # PROMPT
@@ -318,4 +318,10 @@ export JULIA_CUDA_USE_BINARYBUILDER=true
 path=('/home/hung/.cache/julia/juliaup/bin' $path)
 export PATH
 
-# <<< juliaup initialize <<<
+# Profile
+zmodload zsh/zprof
+
+# CARGO, if exists
+if [ -f $HOME/.cargo/env ]; then
+  . $HOME/.cargo/env
+fi
