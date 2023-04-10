@@ -67,7 +67,7 @@ export PATH=$PATH:/home/hung/.yarn/bin
 
 
 # PROMPT
-export PS1="%F{green}%n@%m%f:%F{blue}%1c%f$ "
+export PS1="%B%F{green}%n@%m%f:%F{blue}%1c%f$%b "
 
 # Remove / from list of character recognized as word
 export WORDCHARS=${WORDCHARS/\/}

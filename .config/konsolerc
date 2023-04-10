@@ -1,18 +1,11 @@
 [Desktop Entry]
-DefaultProfile=Main.profile
-
-[KonsoleWindow]
-SaveGeometryOnExit=false
-ShowMenuBarByDefault=false
+DefaultProfile=Yoru.profile
 
 [MainWindow]
-State=AAAA/wAAAAD9AAAAAAAAB1kAAAPpAAAABAAAAAQAAAAIAAAACPwAAAAA
+DP-1 Height 1080=1048
+DP-1 Width 1920=1888
+DP-1 XPosition=33
+DP-1 YPosition=33
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAAAAB2AAAAQEAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-
-[SearchSettings]
-SearchHighlightMatches=true
-SearchReverseSearch=false
-
-[TabBar]
-CloseTabButton=None
-TabBarPosition=Top
