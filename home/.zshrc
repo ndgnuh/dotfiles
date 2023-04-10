@@ -305,11 +305,7 @@ prepend_path "$HOME/.local/share/neovim/bin"
 # NODE
 source_if_exist /home/hung/.lazy_node_loader.sh
 
-# Profile
-zmodload zsh/zprof
-
 export JULIA_DEPOT_PATH=$HOME/.cache/julia
-export JULIA_CUDA_USE_BINARYBUILDER=true
 
 # >>> juliaup initialize >>>
 
@@ -318,10 +314,10 @@ export JULIA_CUDA_USE_BINARYBUILDER=true
 path=('/home/hung/.cache/julia/juliaup/bin' $path)
 export PATH
 
-# Profile
-zmodload zsh/zprof
+# <<< juliaup initialize <<<
 
 # CARGO, if exists
 if [ -f $HOME/.cargo/env ]; then
   . $HOME/.cargo/env
 fi
+
