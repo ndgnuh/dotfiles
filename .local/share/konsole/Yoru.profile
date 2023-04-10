@@ -1,5 +1,6 @@
 [Appearance]
-Font=monospace,13,-1,2,50,0,0,0,0,0
+ColorScheme=MateriaDark
+Font=monospace,11,-1,2,50,0,0,0,0,0
 LineSpacing=6
 
 [General]
