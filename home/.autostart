@@ -1,0 +1,12 @@
+chassis=$(cat /sys/class/dmi/id/chassis_type)
+ibus-daemon -rdx
+copyq &
+
+# Only on laptop
+# https://superuser.com/questions/877677/programatically-determine-if-an-script-is-being-executed-on-laptop-or-desktop
+if [ $chassis -eq 9 ] | [ $chassis -eq 10 ]; then
+	xfce4-power-manager &
+	nm-applet &
+fi
+
+# vim: ft=zsh

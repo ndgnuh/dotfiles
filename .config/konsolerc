@@ -1,10 +1,9 @@
 [Desktop Entry]
 DefaultProfile=Yoru.profile
 
+[KonsoleWindow]
+SaveGeometryOnExit=false
+ShowMenuBarByDefault=false
+
 [MainWindow]
-DP-1 Height 1080=1048
-DP-1 Width 1920=1888
-DP-1 XPosition=33
-DP-1 YPosition=33
-State=AAAA/wAAAAD9AAAAAAAAB2AAAAP4AAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
