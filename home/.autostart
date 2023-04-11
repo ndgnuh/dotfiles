@@ -9,4 +9,7 @@ if [ $chassis -eq 9 ] | [ $chassis -eq 10 ]; then
 	nm-applet &
 fi
 
+if [ -f $HOME/.fehbg ]; then
+	$HOME/.fehbg
+fi
 # vim: ft=zsh
