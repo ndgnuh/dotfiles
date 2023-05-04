@@ -53,7 +53,6 @@ require("lspconfig").pylsp.setup({
 })
 
 require("lspconfig").julials.setup({
-	cmd = {config_path .. "/scripts/julials.jl"},
 	on_attach = on_attach,
 	autostart = true,
 	capabilities = capabilities,
