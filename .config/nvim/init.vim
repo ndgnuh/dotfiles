@@ -34,6 +34,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'ElmCast/elm-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sheerun/vim-polyglot'
+Plug 'elkowar/yuck.vim'
 " Plug 'williamboman/nvim-lsp-installer'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'lukas-reineke/lsp-format.nvim'
@@ -65,7 +66,7 @@ vnoremap <leader>f y
 			\<cmd>loadview<CR>
 			\<cmd>set hlsearch<CR>
 map <leader>so <cmd>execute "source " . stdpath('config') . "/init.vim"<CR>
-xmap ga :Tab/
+xmap ga :Tabularize/
 
 
 " COLORSCHEME
