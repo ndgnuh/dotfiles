@@ -1,2 +1,4 @@
-#!/bin/sh
-julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
+#!/bin/env julia
+using Pkg
+Pkg.activate("nvim-lspconfig", shared=true)
+Pkg.add("LanguageServer")
