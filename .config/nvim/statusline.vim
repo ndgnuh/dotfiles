@@ -1,16 +1,16 @@
-hi SttFileName ctermbg=12 ctermfg=BLACK
-hi SttMode ctermbg=12 ctermfg=BLACK
-hi SttModified ctermbg=12 ctermfg=BLACK
-hi SttPercentage ctermbg=12 ctermfg=BLACK
-hi SttFileType ctermbg=12 ctermfg=BLACK
-hi SttLineCol ctermbg=12 ctermfg=BLACK
+hi SttFileName ctermbg=2 ctermfg=BLACK
+hi SttMode ctermbg=2 ctermfg=BLACK
+hi SttModified ctermbg=2 ctermfg=BLACK
+hi SttPercentage ctermbg=2 ctermfg=BLACK
+hi SttFileType ctermbg=2 ctermfg=BLACK
+hi SttLineCol ctermbg=2 ctermfg=BLACK
 
 " Tab line
-hi TabLine ctermfg=NONE
-hi Title ctermfg=12 ctermbg=NONE
+hi TabLine cterm=NONE
+hi Title ctermfg=2 ctermbg=NONE
 hi TabLineFill ctermfg=GREY ctermbg=NONE
 hi TabLine ctermfg=GREY ctermbg=NONE
-hi TabLineSel ctermfg=BLACK ctermbg=12
+hi TabLineSel ctermfg=BLACK ctermbg=2
 
 function! SttModified()
 	let l:modified = &modified
