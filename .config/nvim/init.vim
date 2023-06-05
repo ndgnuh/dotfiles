@@ -107,6 +107,7 @@ function s:source(file)
 endfunction
 call s:source('ibus.vim')
 call s:source('statusline.vim')
+" call s:source('google_python_style.vim')
 augroup VIMSO
 	" Auto sourcing the vim file when saved
 	au FileType vim au BufWritePost <buffer> :so %
@@ -114,3 +115,6 @@ augroup END
 
 " lua pcall(require, "lsp")
 lua require("lsp")
+
+
+let g:python_recommended_style = 0
