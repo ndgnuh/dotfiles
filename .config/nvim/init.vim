@@ -25,7 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-autoformat/vim-autoformat', { 'on': 'Autoformat' }
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'terrortylor/nvim-comment'
-Plug 'godlygeek/tabular', { 'on': 'Tab' }
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'morhetz/gruvbox'
 Plug 'amadeus/vim-convert-color-to'
 Plug 'neovim/nvim-lspconfig'

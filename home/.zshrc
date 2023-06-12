@@ -306,6 +306,7 @@ prepend_path "$HOME/.local/share/neovim/bin"
 source_if_exist /home/hung/.lazy_node_loader.sh
 
 export JULIA_DEPOT_PATH=$HOME/.cache/julia
+prepend_path "$HOME/.cache/julia/bin/"
 
 
 

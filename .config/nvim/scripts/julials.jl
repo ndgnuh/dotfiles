@@ -1,4 +1,4 @@
-#!/bin/env -S julia -J /home/hung/system-images/editor.so
+#!/bin/env -S julia -J /home/hung/system-images/nvim-lspconfig.sys.so
 
 # Load LanguageServer.jl: attempt to load from ~/.julia/environments/nvim-lspconfig
 # with the regular load path as a fallback
@@ -18,7 +18,7 @@ const project_path = let
             p === nothing ? nothing : isempty(p) ? nothing : p
         )),
         ## 2. Look for a Project.toml file in the current working directory,
-        ##    or parent directories, with $HOME as an upper boundary
+        ##    or parent directories, with \$HOME as an upper boundary
         Base.current_project(),
         ## 3. First entry in the load path
         get(Base.load_path(), 1, nothing),
