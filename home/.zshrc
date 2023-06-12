@@ -307,6 +307,18 @@ source_if_exist /home/hung/.lazy_node_loader.sh
 
 export JULIA_DEPOT_PATH=$HOME/.cache/julia
 
+
+
+# CARGO, if exists
+if [ -f $HOME/.cargo/env ]; then
+  . $HOME/.cargo/env
+fi
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # >>> juliaup initialize >>>
 
 # !! Contents within this block are managed by juliaup !!
@@ -316,8 +328,5 @@ export PATH
 
 # <<< juliaup initialize <<<
 
-# CARGO, if exists
-if [ -f $HOME/.cargo/env ]; then
-  . $HOME/.cargo/env
-fi
 
+export EDITOR=nvim
