@@ -90,17 +90,13 @@ endfunction
 " else
 " 	let g:JuliaFormatter_use_sysimage=0
 " endif
-" augroup AUTOFORMAT
-" 	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
-" 	au BufWritePre *.jl :JuliaFormatterFormat
-" 	au BufWritePre *.sh,*.js :Autoformat
-" augroup END
+augroup AUTOFORMAT
+	au FileType python,elm,lua,tex,html,js,css au BufWritePre <buffer> :Autoformat
+	au BufWritePre *.jl :JuliaFormatterFormat
+	au BufWritePre *.sh,*.js :Autoformat
+augroup END
 
 " DETECT FILETYPE
-augroup FT
-	" FreeFem++
-    au BufNewFile,BufRead *.edp	setf edp
-augroup END
 
 " SOURCING OTHER FILES
 function s:source(file)
@@ -119,3 +115,4 @@ lua require("lsp")
 
 
 let g:python_recommended_style = 0
+let g:formatters_python = ["black"]
