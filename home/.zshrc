@@ -316,9 +316,9 @@ if [ -f $HOME/.cargo/env ]; then
 fi
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # >>> juliaup initialize >>>
 
@@ -331,3 +331,10 @@ export PATH
 
 
 export EDITOR=nvim
+
+if [ -d ~/.zshd ]; then
+  for f in $(ls ~/.zshd); do
+    source ~/.zshd/$f
+  done
+fi
+fpath+=~/.zfunc

@@ -44,3 +44,5 @@ if [ -d $TEXHOME ]; then
 	export INFOPATH=$INFOPATH:/home/hung/Application/texlive/2021/texmf-dist/doc/info
 fi
 . "$HOME/.cargo/env"
+
+if [ -e /home/hung/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hung/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
