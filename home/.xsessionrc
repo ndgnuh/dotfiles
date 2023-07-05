@@ -59,10 +59,10 @@ alias chromium="GTK_IM_MODULE=xim chromium"
 
 
 # FZF use silver searcher by default
-if command -v ag > /dev/null
-then
-	export FZF_DEFAULT_COMMAND='ag -g ""'
-fi
+# if command -v ag > /dev/null
+# then
+# 	export FZF_DEFAULT_COMMAND='ag -g ""'
+# fi
 
 
 # AUTO START
