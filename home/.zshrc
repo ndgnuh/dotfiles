@@ -208,6 +208,7 @@ fi
 # ALIAS
 alias ls="ls -h --color=auto"
 alias l="ls -lh --color=auto"
+alias feh="feh --scale-down"
 # if command -v rg &> /dev/null; then
 # 	alias grep="rg"
 # fi
