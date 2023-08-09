@@ -4,4 +4,4 @@ wget https://gitlab.com/volian/volian-archive/uploads/d6b3a118de5384a0be2462905f
 
 sudo apt install /tmp/volian-archive-keyring.deb /tmp/volian-archive-nala.deb -y
 sudo apt update
-sudo apt install nala-legacy -y
+sudo apt install nala -y
