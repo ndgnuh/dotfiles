@@ -1,5 +1,6 @@
 local lspconfig = require("lspconfig")
 local nvim_cmp_lsp = require("cmp_nvim_lsp")
+
 local myconfig = {
     auto_start = true,
     capabilities = nvim_cmp_lsp.default_capabilities()
@@ -18,9 +19,20 @@ require("mason-lspconfig").setup_handlers {
     end
 }
 
--- language servers
-lspconfig.pylsp.setup(myconfig)
+-- manually installed language servers
 lspconfig.julials.setup(myconfig)
+lspconfig.pylsp.setup({
+    auto_start = myconfig.auto_start,
+    capabilities = myconfig.capabilities,
+    settings = {
+        pylsp = {
+            plugins = {
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+            }
+        }
+    }
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -32,8 +44,9 @@ vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
 vim.api.nvim_create_autocmd(
     "LspAttach",
     {
+        group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
-            local opts = {buffer = ev.buf}
+            local opts = { buffer = ev.buf }
 
             -- omni fucntion c-x c-o
             vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
@@ -50,14 +63,24 @@ vim.api.nvim_create_autocmd(
             vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, opts)
 
             -- auto format when writting
-            vim.api.nvim_create_autocmd(
-                "BufWritePre",
-                {
-                    callback = function(ev)
-                        vim.lsp.buf.format {async = false}
-                    end
-                }
-            )
+            -- vim.api.nvim_create_autocmd(
+            --     "BufWritePre",
+            --     {
+            --         callback = function(ev)
+            --             local client = vim.lsp.get_active_clients()[1]
+
+            --             -- Client may be nil
+            --             if client then
+            --                 -- Check if the server supports formatting
+            --                 if client.server_capabilities.documentFormattingProvider then
+            --                     -- Sync formatting prevents weird buffer interactions
+            --                     -- But it's very slow!
+            --                     pcall(vim.lsp.buf.format)
+            --                 end
+            --             end
+            --         end
+            --     }
+            -- )
         end
     }
 )
