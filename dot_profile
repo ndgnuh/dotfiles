@@ -77,7 +77,7 @@ trypath "$ANDROID_HOME/emulator"
 # Setup IBus
 # ==========
 # Some application does not work with global config, thus the alias.
-IME=fcitx
+IME=ibus
 export GTK_IM_MODULE="$IME"
 export QT_IM_MODULE="$IME"
 export QT4_IM_MODULE="$IME"
