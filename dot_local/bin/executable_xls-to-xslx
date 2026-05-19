@@ -1,0 +1,5 @@
+#!/bin/sh
+for input in $@
+do
+    libreoffice --convert-to xlsx "$input" --headless  --outdir "$(dirname $input)"
+done
