@@ -1,0 +1,20 @@
+-- local MiniDeps = require("mini.deps")
+--
+-- -- 1. Install and configure luarocks.nvim
+-- MiniDeps.add({
+-- 	source = "vhyrro/luarocks.nvim",
+-- 	-- Run the setup function immediately upon download/load
+-- 	hooks = {
+-- 		post_checkout = function(args)
+-- 			-- This ensures the plugin sets up its internal structures
+-- 			require("luarocks-nvim").setup()
+-- 		end,
+-- 	},
+-- })
+--
+-- -- Initialize the luarocks-nvim plugin paths globally
+-- require("luarocks-nvim").setup()
+--
+-- -- 2. Use the luarocks command to install 'lgi'
+-- -- This tells Neovim to download and compile lgi into Neovim's path environment
+-- vim.cmd("Rock install lgi"):lua print(_VERSION)
