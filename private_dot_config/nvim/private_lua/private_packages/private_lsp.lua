@@ -1,4 +1,4 @@
-MiniDeps.add("neovim/nvim-lspconfig")
+vim.pack.add({"https://github.com/neovim/nvim-lspconfig"})
 
 vim.diagnostic.config({
 	virtual_text = true,

@@ -1,6 +1,8 @@
-MiniDeps.add("nvim-mini/mini.pick")
-MiniDeps.add("nvim-mini/mini.extra")
-MiniDeps.add("nvim-mini/mini.icons")
+vim.pack.add({
+	"https://github.com/nvim-mini/mini.pick",
+	"https://github.com/nvim-mini/mini.extra",
+	"https://github.com/nvim-mini/mini.icons",
+})
 
 local window_config = function()
 	local height = math.floor(0.95 * vim.o.lines)

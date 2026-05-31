@@ -1,4 +1,7 @@
-MiniDeps.add("RRethy/base16-nvim")
+local github = vim.pack.github
+vim.pack.add({
+    github"RRethy/base16-nvim"
+})
 
 vim.schedule(function()
 	vim.opt.termguicolors = true

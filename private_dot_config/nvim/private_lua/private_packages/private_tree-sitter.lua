@@ -1,6 +1,9 @@
-MiniDeps.add({
-	source = "nvim-treesitter/nvim-treesitter",
-	checkout = "main",
+local github = vim.pack.github
+vim.pack.add({
+    {
+        src = github"nvim-treesitter/nvim-treesitter",
+        version = "main",
+    }
 })
 
 local ts = require("nvim-treesitter")

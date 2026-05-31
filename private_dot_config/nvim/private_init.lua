@@ -1,18 +1,18 @@
 -- provide vim.g.is_termux and vim.g.is_desktop
 
 -- Append global system LuaJIT/Lua 5.1 paths to Neovim's path profile
-package.path = package.path .. ";/usr/share/lua/5.1/?.lua"
-package.path = package.path .. ";/usr/share/lua/5.1/?/init.lua"
-package.cpath = package.cpath .. ";/usr/lib/lua/5.1/?.so"
-package.cpath = package.cpath .. ";/usr/lib/x86_64-linux-gnu/lua/5.1/?.so"
+-- package.path = package.path .. ";/usr/share/lua/5.1/?.lua"
+-- package.path = package.path .. ";/usr/share/lua/5.1/?/init.lua"
+-- package.cpath = package.cpath .. ";/usr/lib/lua/5.1/?.so"
+-- package.cpath = package.cpath .. ";/usr/lib/x86_64-linux-gnu/lua/5.1/?.so"
 
 require("termux-detect")
 require("packages")
 
 -- IBus integration for desktop
 if vim.g.is_desktop then
-	-- require("ibus").setup()
-	require("fcitx_lgi")
+	require("ibus").setup()
+	-- require("fcitx_lgi")
 end
 
 vim.opt.number = true

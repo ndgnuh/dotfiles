@@ -1,8 +1,16 @@
-MiniDeps.add({
-	source = "saghen/blink.cmp",
-	depends = { "rafamadriz/friendly-snippets" },
-	checkout = "v1.7.0",
+local github = vim.pack.github
+vim.pack.add({
+    {
+        src = github"saghen/blink.cmp",
+        version = vim.version.range("1.0.0"),
+    },
+    github"saghen/blink.lib",
+	github"rafamadriz/friendly-snippets",
+	-- checkout = "v1.7.0",
 })
+
+-- Run lua require('blink.cmp').build():pwait()
+-- After the installation
 
 -- setup
 require("blink.cmp").setup({

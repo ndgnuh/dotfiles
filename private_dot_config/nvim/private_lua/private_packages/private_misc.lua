@@ -1,21 +1,22 @@
-local install_packages = {
-	"lukas-reineke/indent-blankline.nvim",
-	"itchyny/lightline.vim",
+local github = vim.pack.github
+
+vim.pack.add({
+  	github"nvim-mini/mini.nvim",
+	github"lukas-reineke/indent-blankline.nvim",
+	github"itchyny/lightline.vim",
 
 	-- Languages
-	"lervag/vimtex",
-	"JuliaEditorSupport/julia-vim",
-	"hiphish/jinja.vim",
-	"folke/lazydev.nvim",
-	"lark-parser/vim-lark-syntax",
-	"goerz/jupytext.nvim",
+	github"lervag/vimtex",
+	github"JuliaEditorSupport/julia-vim",
+	github"folke/lazydev.nvim",
+	github"lark-parser/vim-lark-syntax",
+	github"goerz/jupytext.nvim",
 
 	-- etc
-	"tpope/vim-surround",
-	"terrortylor/nvim-comment",
-	"godlygeek/tabular",
-	-- "github/copilot.vim",
-}
+	github"tpope/vim-surround",
+	github"terrortylor/nvim-comment",
+	github"godlygeek/tabular",
+})
 
 local setup_default_packages = {
 	"ibl",
@@ -23,9 +24,6 @@ local setup_default_packages = {
 	"nvim_comment",
 }
 
-for _, pkg in ipairs(install_packages) do
-	MiniDeps.add(pkg)
-end
 
 for _, pkg in ipairs(setup_default_packages) do
 	require(pkg).setup()
@@ -34,6 +32,5 @@ end
 -- From package godlygeek/tabular
 vim.keymap.set("x", "ga", ":Tabularize/")
 
-vim.g.lightline = {
-	colorscheme = "one",
-}
+-- Color scheme for lightline
+vim.g.lightline = { colorscheme = "one" }
