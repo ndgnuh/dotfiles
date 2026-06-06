@@ -74,12 +74,17 @@ trypath "$ANDROID_HOME/emulator"
 # export PATH=$(echo $PATH | tr  ':' '\n' | grep $HOME/\.nix-profile/bin -v  |tr '\n' ':')
 # alias home-manager="$HOME/.nix-profile/bin/home-manager"
 
+# Force winetricks to use these
+export WINE_BIN=/opt/wine-staging/bin/wine
+export WINESERVER_BIN=/opt/wine-staging/bin/wineserver
+
 # Setup IBus
 # ==========
 # Some application does not work with global config, thus the alias.
 IME=ibus
 export GTK_IM_MODULE="$IME"
 export QT_IM_MODULE="$IME"
+export QT_IM_MODULES="wayland;$IME"
 export QT4_IM_MODULE="$IME"
 export XMODIFIERS=@im="$IME"
 # alias teams="GTK_IM_MODULE=xim teams"
