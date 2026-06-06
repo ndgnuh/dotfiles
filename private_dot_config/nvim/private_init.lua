@@ -14,6 +14,7 @@ if vim.g.is_desktop then
 	require("ibus").setup()
 	-- require("fcitx_lgi")
 end
+require("doi2bib")
 
 vim.opt.number = true
 vim.opt.signcolumn = "yes"
