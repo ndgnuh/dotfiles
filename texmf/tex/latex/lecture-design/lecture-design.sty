@@ -1,0 +1,422 @@
+%% lecture-design.sty
+%% Copyright 2008 Hung Nguyen Duc
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Hung Nguyen Duc
+%
+% This work consists of the files lecture-design.sty and its
+% lyx counter part
+\ProvidesPackage{lecture-design}[2026/01/22 Lecture design package
+for typesetting lecture notes]
+\ProvidesExplPackage{lecture-design}{2026-01-22}{0.1.0}{Lecture
+design package for typesetting lecture notes}
+\RequirePackage{expl3}
+
+\RequirePackage{amsthm}
+
+\RequirePackage{hyperref}
+
+%% Make this package compat with older versions of expl
+\ExplSyntaxOn
+\cs_if_exist:NF \cs_set:Npe
+{
+  \cs_new_protected:Npn \cs_set:Npe #1#2
+  {
+    \cs_set:Npx #1 { \exp_not:n {#2} }
+  }
+}
+
+\cs_if_exist:NF \cs_set:cpe
+{
+  \cs_new_protected:Npn \cs_set:cpe #1#2
+  {
+    \cs_set:cpx {#1} { \exp_not:n {#2} }
+  }
+}
+
+\cs_if_exist:NF \cs_gset:cpe
+{
+  \cs_new_protected:Npn \cs_gset:cpe #1#2
+  {
+    \cs_gset:cpx {#1} { \exp_not:n {#2} }
+  }
+}
+
+%% Patch \not to be centered by default
+%% ====================================
+%% This is expactly the code of centernot.sty,
+%% Just with \not replaced by \oldnot
+%% DO NOT LOAD centernot.sty TOGETHER WITH THIS FILE
+\let\oldnot\not%
+\def\not{\mathpalette\@centernot}%
+\def\@centernot#1#2{%%
+  \mathrel{%
+    \rlap{%
+      \settowidth\dimen@{$\m@th#1{#2}$}%
+      \kern.5\dimen@
+      \settowidth\dimen@{$\m@th#1=$}%
+      \kern-.5\dimen@
+      $\m@th#1\oldnot$%
+    }%
+    {#2}%
+  }%
+}
+
+% Spacing hacks for amsmath environments
+% ======================================
+\frenchspacing
+\let\oldleft\left
+\let\oldright\right
+\def\left{\mathopen{}\mathclose\bgroup\oldleft}
+\def\right{\aftergroup\egroup\oldright}
+
+% Example marking
+\RequirePackage{xcolor}
+
+\RequirePackage{xcolor-material}
+
+\RequirePackage{tikz}
+
+\definecolor{fami-blue}{HTML}{0A6EAE}
+\definecolor{fami-light-blue}{HTML}{59C6D1}
+
+\ExplSyntaxOff
+\tikzstyle{marking} = [
+  rounded corners=5pt,
+  anchor = base,
+  inner sep=5pt,
+  align = center,
+]
+
+\ExplSyntaxOn
+\cs_new:Npn \new_marking:nnn #1#2#3 {
+  \cs_gset:cpn {#1MarkName} {#1}
+  \cs_gset:cpn {#1Mark} {
+    \begin{tikzpicture}[baseline]
+      \node[marking,fill=#2,draw=#3!75!black,text=#3!75!black]
+      {\use:c {#1MarkName}\vphantom{$\sum$}};
+    \end{tikzpicture}
+  }
+}
+
+\cs_new:Npn \new_dynamic_marking:nnn #1#2#3 {
+  \cs_new:cpn {#1MarkName} {#1:\,}
+  \cs_new:cpn {#1Mark} ##1 {
+    \begin{tikzpicture}[baseline]
+      \node[marking,fill=#2,draw=#3!75!black,text=#3!75!black]
+      {\use:c {#1MarkName}##1\vphantom{$\sum$}};
+    \end{tikzpicture}
+  }
+}
+
+\NewDocumentCommand{\NewMark}{smmm}{
+  \IfBooleanTF{#1}{
+    \new_dynamic_marking:nnn {#2} {#3} {#4}
+  }{
+    \new_marking:nnn {#2} {#3} {#4}
+  }
+}
+
+\NewDocumentCommand{\SetMarkLabel}{mm}{
+  \cs_gset:cpn {#1MarkName} {#2}
+}
+
+\new_marking:nnn {Example} {MaterialYellow100} {MaterialYellow700}
+\new_marking:nnn {MustDo} {MaterialIndigo100} {MaterialIndigo700}
+\new_marking:nnn {Quick} {MaterialOrange100} {MaterialOrange700}
+\new_dynamic_marking:nnn {Answer} {MaterialGreen100} {MaterialGreen700}
+\new_dynamic_marking:nnn {OfficialIndex} {fami-light-blue} {fami-blue}
+\new_dynamic_marking:nnn {Danger} {MaterialRed100} {MaterialRed700!75!black}
+\SetMarkLabel{Danger}{}
+\SetMarkLabel{Answer}{Ans:\,}
+\SetMarkLabel{Example}{Eg}
+\SetMarkLabel{MustDo}{must-do}
+
+\NewDocumentCommand{\NewStaticMark}{mmm}{
+  \new_marking:nnn {#1} {#2} {#3}
+}
+\NewDocumentCommand{\NewDynamicMark}{mmm}{
+  \new_dynamic_marking:nnn {#1} {#2} {#3}
+}
+\ExplSyntaxOff
+
+% Theorem controlling counter
+\newcounter{theorem}
+\newcounter{proof}
+\counterwithin{theorem}{chapter}
+
+% Provide names
+\providecommand{\theoremname}{Theorem}
+\providecommand{\proofname}{Proof}
+
+% This is the section heading for proof sections
+% E.g. Section 2.1: Proof for S1.1
+% The #1 is the section number
+\providecommand{\TypesetProofSection}[1]{Proofs~for~#1.}
+
+% Typeset hint for proof.
+% The #1 is the page number.
+\providecommand{\ProofHintText}[1]{See~page~#1.}
+
+\providecommand{\TypesetProofHint}[1]{%
+  \begin{proof-typeset}\ProofHintText{#1}%
+  \end{proof-typeset}%
+}
+
+% Rename the proof environment to patch it
+\NewCommandCopy{\amsthmproof}{\proof}
+\NewCommandCopy{\endamsthmproof}{\endproof}
+\newenvironment{proof-typeset}[1][\proofname]{\amsthmproof[#1]}{\endamsthmproof}
+
+% Theorem environment with numbering
+\theoremstyle{plain}
+\newtheorem{theorem-typeset}{\theoremname}[section]
+
+\ExplSyntaxOn
+
+\int_new:N \theorem_count
+\int_new:N \proof_count
+\bool_new:N \theorem_show_proof
+\bool_new:N \theorem_has_proof
+\bool_gset_false:N \theorem_show_proof
+\bool_gset_false:N \theorem_has_proof
+\seq_new:N \theorem_ids
+\str_new:N \l_proof_label
+
+\RenewDocumentEnvironment{proof}{O{}+b}{
+  \group_begin:
+  \int_gincr:N \proof_count
+  \bool_gset_true:N \theorem_has_proof
+  \str_set:Nx \l_proof_label {auto-proof.\int_use:N \proof_count}%
+  \bool_if:NTF \theorem_show_proof {
+    % Write label to .aux file
+    % This has to be done manually because there is no counter
+    % associated with the proof environment
+    \hyper@anchorstart{\l_proof_label}%
+    \hyper@anchorend
+    \iow_now:Nx \@auxout {
+      \string\newlabel{\l_proof_label}{
+        {\l_proof_label}{\thepage}{}{\l_proof_label}{}
+      }
+    }
+    \tl_if_blank:eTF {#1} {\amsthmproof} {\amsthmproof[#1]}
+    #2
+    \endamsthmproof{}
+  } {
+    \TypesetProofHint{\pageref{\l_proof_label}}
+  }
+  \group_end:
+}{}%
+
+\NewDocumentEnvironment{theorem}{O{}+b}{
+  \group_begin:
+  % Increase counter and mark the theorem has no proof by default
+  \bool_gset_false:N \theorem_has_proof
+  \int_gincr:N \theorem_count
+  \cs_set:Npe \Id {\int_use:N \theorem_count}
+  \stepcounter{theorem}
+
+  % Store theorem id
+  \seq_gput_right:Nx \theorem_ids {\Id}
+  \cs_gset:cpn {theorem-body.\Id} {#2}
+  \cs_gset:cpn {theorem-name.\Id} {#1}
+  \cs_gset:cpe {theorem-number.\Id} {\thetheorem}
+  \cs_gset:cpe {theorem-section.\Id} {\thesection}
+  \typeset_theorem:nnn {#1} {#2} {\thetheorem}
+
+  % Store if the theorem has a proof
+  % Do not use \bool_set_eq:cN because the value of \theorem_has_proof
+  % will be overriden in the next theorem
+  \bool_new:c {theorem-has-proof.\Id}
+  \bool_if:NTF \theorem_has_proof {
+    \bool_gset_true:c {theorem-has-proof.\Id}
+  } {
+    \bool_gset_false:c {theorem-has-proof.\Id}
+  }
+
+  \group_end:
+}{}%
+
+\cs_new:Nn \typeset_theorem:nnn {
+  \cs_set:cpx {thetheorem-typeset} {#3}
+  \tl_if_blank:eTF {#1} {%
+    \begin{theorem-typeset}
+      #2
+    \end{theorem-typeset}
+  } {
+    \begin{theorem-typeset}[#1]
+      #2
+    \end{theorem-typeset}
+  }
+}
+\cs_generate_variant:Nn \typeset_theorem:nnn { nen }
+
+\cs_new:Npn \ShowProofs {
+  \group_begin:
+  \int_gset:Nn \proof_count {0}
+  \cs_set:Npn \label ##1 {}
+  \bool_gset_true:N \theorem_show_proof
+  \str_set:Nn \l_tmpa_str {}
+  \seq_map_inline:Nn \theorem_ids {
+    % Make amsthm use this number
+    \cs_set:cpx {thetheorem-typeset} {\use:c {theorem-number.##1}}
+    \bool_if:cT {theorem-has-proof.##1} {
+      % If previous section is different,
+      % print it
+      \str_set:Nx \l_tmpb_str {\use:c {theorem-section.##1}}
+      \str_if_eq:NNF \l_tmpa_str \l_tmpb_str {
+        \section{\TypesetProofSection{\S\use:c {theorem-section.##1}}}
+      }
+      % Set previous section to current
+      \str_set:Nx \l_tmpa_str {\use:c {theorem-section.##1}}
+      % Typeset the theorem
+      \typeset_theorem:nnn
+      {\use:c {theorem-name.##1}}
+      {\use:c {theorem-body.##1}}
+      {\use:c {theorem-number.##1}}
+    }
+  }
+  \bool_gset_false:N \theorem_show_proof
+  \group_end:
+}
+
+\ExplSyntaxOff
+
+% Controller problem counter
+\newcounter{problem}
+\counterwithin{problem}{chapter}
+
+\ExplSyntaxOn
+
+\cs_new:Npn \problemname {Problem}
+\cs_new:Npn \solutionname {Solution}
+\cs_new:Npn \TypesetSolutionHint #1 {Hint: p.\,#1}
+\cs_new:Npn \TypesetSolutionSection #1 {Solutions~for~#1}
+
+% Typeset environments
+\theoremstyle{definition}
+\newtheorem{problem-typeset}{\problemname}[chapter]
+\newtheorem{solution-typeset}{\solutionname}
+
+\bool_new:N \showing_solution
+\bool_set_false:N \showing_solution
+
+\int_new:N \solution_count
+\int_new:N \solution_within_problem_idx
+\int_new:N \problem_count
+\seq_new:N \problem_ids
+\bool_new:N \problem_has_solution
+\str_new:N \l_solution_label
+
+\NewDocumentEnvironment{solution}{+b}{
+  \group_begin:
+  \bool_gset_true:N \problem_has_solution
+  \str_set:Nx \l_solution_label {auto-solution.\int_use:N \solution_count}
+  \int_gincr:N \solution_count
+  \bool_if:NTF \showing_solution {
+    \hyper@anchorstart{\l_solution_label}%
+    \hyper@anchorend
+    \iow_now:Nx \@auxout {
+      \string\newlabel{\l_solution_label}{
+        {\int_use:N \solution_count}
+        {\thepage}
+        {}
+        {\l_solution_label}
+        {}
+      }
+    }
+    % Typeset solution and
+    % Create hypertarget for hyperlinking
+    \int_gincr:N \solution_within_problem_idx
+    \cs_set:cpx {thesolution-typeset} {\int_use:N \solution_within_problem_idx}
+    \begin{solution-typeset}
+      #1
+    \end{solution-typeset}
+  } {
+    \TypesetSolutionHint{\pageref{\l_solution_label}}
+  }
+  \group_end:
+}{}
+
+\NewDocumentEnvironment{problem}{O{}+b}{
+  \group_begin:
+  \refstepcounter{problem}
+  \bool_set_false:N \problem_has_solution
+  \int_gincr:N \problem_count
+  \cs_set:Npe \Id {\int_use:N \problem_count}
+  \seq_gput_right:Nx \problem_ids {\Id}
+  \cs_gset:cpn {problem-body.\Id} {#2}
+  \cs_gset:cpn {problem-name.\Id} {#1}
+  \cs_gset:cpx {problem-number.\Id} {\theproblem}
+  \cs_gset:cpx {problem-section.\Id} {\thesection}
+  \cs_set:cpx {theproblem-typeset} {\theproblem}
+  \begin{problem-typeset}
+    #2
+  \end{problem-typeset}
+  \bool_new:c {problem-has-solution.\Id}
+  \bool_if:NTF \problem_has_solution {
+    \bool_gset_true:c {problem-has-solution.\Id}
+  } {
+    \bool_gset_false:c {problem-has-solution.\Id}
+  }
+  \group_end:
+}{}
+
+\NewDocumentCommand{\ShowSolutions}{}{
+  \group_begin:
+  \int_gset:Nn \solution_count {0} % reset solution counter
+  \str_set:Nn \l_tmpa_str {} % store previous section
+  \bool_gset_true:N \showing_solution % mark that we are showing solutions
+
+  % Loop over problems
+  \seq_map_inline:Nn \problem_ids {
+    % Only print if the problem has solution
+    \bool_if:cT {problem-has-solution.##1} {
+      % Make amsthm use this number
+      \cs_set:cpx {theproblem-typeset} {\use:c {problem-number.##1}}
+      \int_gset:Nn \solution_within_problem_idx {0}
+
+      % If previous section is different,
+      % print it and set previous section to current
+      \str_set:Nx \l_tmpb_str {
+      \use:c {problem-section.##1}}
+      \str_if_eq:NNF \l_tmpa_str \l_tmpb_str {
+        \section{\TypesetSolutionSection{\use:c {problem-section.##1}}}
+      }
+      \str_set:Nx \l_tmpa_str {\use:c {problem-section.##1}}
+
+      % Typeset the problem, show the name optionally
+      % Show name of problem (optionally)
+      \cs_set:Npx \Title {
+      \use:c {problem-name.##1}}
+      \cs_set:Npn \Body {
+      \use:c {problem-body.##1}}
+      \tl_if_blank:eTF {\Title} {
+        \begin{problem-typeset}
+          \Body
+        \end{problem-typeset}
+      } {
+        \begin{problem-typeset}[\Title]
+          \Body
+        \end{problem-typeset}
+      }
+    }
+  }
+
+  % Restore the flag
+  \bool_gset_false:N \showing_solution
+  \group_end:
+}
+
+\NewMark*{SolutionHint}{MaterialPurple100}{MaterialPurple700}
+\NewMark*{ProofHint}{MaterialPurple100}{MaterialPurple700}
+\def\TypesetSolutionHint#1{\SolutionHintMark{#1}}
