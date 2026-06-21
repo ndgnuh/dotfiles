@@ -1,0 +1,84 @@
+[Added Associations]
+text/plain=nvim.desktop;userapp-sakura -e nvim-6N2TZ2.desktop;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice26.2-calc.desktop;libreoffice25.8-calc.desktop;OnlyOffice.desktop;libreoffice-calc.desktop;userapp-notify-send-4QUCB3.desktop;onlyoffice-desktopeditors.desktop;calc.desktop;
+application/msword=libreoffice-writer.desktop;OnlyOffice.desktop;writer.desktop;onlyoffice-desktopeditors.desktop;
+x-scheme-handler/http=userapp-Firefox Developer Edition-143M22.desktop;firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;
+x-scheme-handler/https=userapp-Firefox Developer Edition-143M22.desktop;firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;
+x-scheme-handler/chrome=userapp-Firefox Developer Edition-143M22.desktop;firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;
+text/html=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/x-extension-htm=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/x-extension-html=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/x-extension-shtml=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/xhtml+xml=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/x-extension-xhtml=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+application/x-extension-xht=firefox-devedition.desktop;userapp-Firefox-NBYL12.desktop;userapp-Firefox Developer Edition-143M22.desktop;
+text/x-tex=userapp-sakura -e nvim-6N2TZ2.desktop;texstudio.desktop;userapp-nvim-T6TF02.desktop;
+application/zip=userapp-peazip-7U5KY2.desktop;userapp-peazip-3C2PY2.desktop;userapp-peazip-K2CKY2.desktop;
+x-scheme-handler/tg=org.telegram.desktop.desktop;
+x-scheme-handler/tonsite=org.telegram.desktop.desktop;
+application/x-zerosize=userapp-sakura -e nvim-6N2TZ2.desktop;
+image/png=feh.desktop;userapp-gimp-0BM052.desktop;custom-feh.desktop;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;libreoffice26.2-writer.desktop;libreoffice25.8-writer.desktop;OnlyOffice.desktop;userapp-xdg-open "%f"-LTRPB3.desktop;userapp-xdg-open-6FSKB3.desktop;onlyoffice-desktopeditors.desktop;
+image/jpeg=org.gnome.Loupe.desktop;org.inkscape.Inkscape.desktop;firefox-devedition.desktop;feh.desktop;custom-feh.desktop;
+application/vnd.ms-excel=libreoffice26.2-calc.desktop;onlyoffice-desktopeditors.desktop;
+image/vnd.djvu+multipage=calibre-ebook-viewer.desktop;okularApplication_ghostview.desktop;
+application/epub+zip=calibre-ebook-viewer.desktop;com.github.xournalpp.xournalpp.desktop;atril.desktop;okularApplication_ghostview.desktop;
+application/vnd.openxmlformats-officedocument.presentationml.presentation=libreoffice26.2-impress.desktop;onlyoffice-desktopeditors.desktop;
+application/pdf=firefox-devedition.desktop;com.github.xournalpp.xournalpp.desktop;qpdfview-fork.desktop;boomaga.desktop;okularApplication_pdf.desktop;
+video/mp4=vlc.desktop;userapp-vlc-WSZMC3.desktop;
+text/csv=onlyoffice-desktopeditors.desktop;
+application/vnd.rar=xarchiver.desktop;
+video/x-matroska=vlc.desktop;
+application/vnd.oasis.opendocument.spreadsheet=OnlyOffice.desktop;
+application/x-compressed-tar=org.gnome.FileRoller.desktop;
+application/x-tar=org.gnome.FileRoller.desktop;
+application/vnd.oasis.opendocument.text=libreoffice-writer.desktop;libreoffice26.2-writer.desktop;libreoffice25.8-writer.desktop;
+application/x-mswinurl=firefox-devedition.desktop;
+
+[Default Applications]
+x-scheme-handler/http=userapp-Firefox Developer Edition-143M22.desktop
+x-scheme-handler/https=userapp-Firefox Developer Edition-143M22.desktop
+x-scheme-handler/chrome=userapp-Firefox Developer Edition-143M22.desktop
+text/html=userapp-Firefox Developer Edition-143M22.desktop
+application/x-extension-htm=userapp-Firefox Developer Edition-143M22.desktop
+application/x-extension-html=userapp-Firefox Developer Edition-143M22.desktop
+application/x-extension-shtml=userapp-Firefox Developer Edition-143M22.desktop
+application/xhtml+xml=userapp-Firefox Developer Edition-143M22.desktop
+application/x-extension-xhtml=userapp-Firefox Developer Edition-143M22.desktop
+application/x-extension-xht=userapp-Firefox Developer Edition-143M22.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/tonsite=org.telegram.desktop.desktop
+application/pdf=qpdfview-fork.desktop
+application/x-zerosize=userapp-sakura -e nvim-6N2TZ2.desktop
+inode/directory=nautilus.desktop
+image/jpeg=org.gnome.Loupe.desktop
+application/epub+zip=okularApplication_ghostview.desktop
+x-scheme-handler/zalo=Zalo.desktop
+application/vnd.sqlite3=SQLiteStudio.desktop
+video/mp4=userapp-vlc-WSZMC3.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice26.2-writer.desktop
+application/vnd.oasis.opendocument.text=libreoffice26.2-writer.desktop
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=libreoffice26.2-calc.desktop
+application/x-mswinurl=firefox-devedition.desktop
+
+# Archives
+application/vnd.rar=peazip.desktop;
+application/x-compressed-tar=peazip.desktop
+application/x-tar=peazip.desktop
+application/zip=peazip.desktop
+application/x-rar-compressed=peazip.desktop
+application/x-7z-compressed=peazip.desktop
+application/gzip=peazip.desktop
+application/x-tar=peazip.desktop
+application/x-bzip2=peazip.desktop
+application/x-bzip=peazip.desktop
+application/x-xz=peazip.desktop
+application/java-archive=peazip.desktop
+application/x-archive=peazip.desktop
+application/x-archive=peazip.desktop
+application/x-cpio=peazip.desktop
+application/x-shar=peazip.desktop
+
+# Plain text files
+text/plain=neovim.desktop
+text/x-tex=neovim.desktop
