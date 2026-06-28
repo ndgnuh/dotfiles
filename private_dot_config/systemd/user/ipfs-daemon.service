@@ -1,0 +1,13 @@
+[Install]
+WantedBy=default.target
+
+[Unit]
+Description=IPFS Daemon
+CollectMode=inactive-or-failed
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=ipfs daemon
+Restart=on-abnormal
+TimeoutStopSec=5
