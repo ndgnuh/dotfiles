@@ -1,4 +1,4 @@
-vim.pack.add({"https://github.com/neovim/nvim-lspconfig"})
+vim.pack.add({ "https://github.com/neovim/nvim-lspconfig" })
 
 vim.diagnostic.config({
 	virtual_text = true,
@@ -10,14 +10,18 @@ vim.diagnostic.config({
 vim.lsp.enable({
 	"lua_ls",
 	"html",
+	"gopls",
+	"tinymist",
 	-- "julials",
 	"texlab",
 	"dartls",
+	"rust_analyzer",
 })
 --- These LSP is not available on termux
 if vim.g.is_desktop then
 	vim.lsp.enable({
-		"pyright",
+		"pyrefly",
+		-- "pyright",
 		-- "pyls",
 		"nixd",
 		"dprint",

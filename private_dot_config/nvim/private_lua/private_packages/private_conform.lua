@@ -16,7 +16,7 @@ conform.setup({
 		css = { "prettier" },
 		scss = { "prettier" },
 		json = { "prettier" },
-		yaml = { "prettier" },
+		yaml = { "yamlfix", "prettier" },
 		less = { "prettier" },
 		typescript = { "prettier" },
 	},
